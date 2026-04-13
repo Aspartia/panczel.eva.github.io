@@ -1,0 +1,481 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+-->
+<html>
+	<head>
+		<title>Machine Learning | Panczel Eva Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			.project-hero {
+				margin-bottom: 2rem;
+			}
+
+			.project-hero .hero-image {
+				border-radius: 0.5rem;
+				overflow: hidden;
+				margin-bottom: 1.5rem;
+			}
+
+			.project-hero .hero-image img {
+				width: 100%;
+				display: block;
+			}
+
+			.project-meta {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 0.75rem;
+				margin: 1.25rem 0 1.75rem 0;
+			}
+
+			.project-meta span {
+				border: 1px solid rgba(255,255,255,0.15);
+				padding: 0.45rem 0.8rem;
+				border-radius: 999px;
+				font-size: 0.85rem;
+				letter-spacing: 0.04em;
+			}
+
+			.project-section {
+				margin-bottom: 3rem;
+			}
+
+			.project-section h2 {
+				margin-bottom: 0.75rem;
+			}
+
+			.figure-placeholder {
+				border: 1px dashed rgba(255,255,255,0.25);
+				border-radius: 0.5rem;
+				padding: 1.25rem;
+				margin: 1.25rem 0 1.5rem 0;
+				background: rgba(255,255,255,0.03);
+			}
+
+			.figure-placeholder p {
+				margin: 0;
+				font-size: 0.95rem;
+				opacity: 0.9;
+			}
+
+			.cards-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+				gap: 1.25rem;
+				margin-top: 1.25rem;
+			}
+
+			.info-card {
+				border: 1px solid rgba(255,255,255,0.12);
+				border-radius: 0.5rem;
+				padding: 1.25rem;
+				background: rgba(255,255,255,0.03);
+				height: 100%;
+			}
+
+			.info-card h3 {
+				margin-bottom: 0.6rem;
+				font-size: 1.05rem;
+			}
+
+			.metrics-list,
+			.tech-list,
+			.takeaway-list {
+				margin: 1rem 0 0 0;
+				padding-left: 1.2rem;
+			}
+
+			.metrics-list li,
+			.tech-list li,
+			.takeaway-list li {
+				margin-bottom: 0.45rem;
+			}
+
+			.pipeline-box {
+				border-left: 4px solid #ffffff;
+				padding: 1rem 1.25rem;
+				background: rgba(255,255,255,0.03);
+				margin-top: 1rem;
+				border-radius: 0.35rem;
+			}
+
+			.github-box {
+				border: 1px solid rgba(255,255,255,0.15);
+				border-radius: 0.5rem;
+				padding: 1.5rem;
+				background: rgba(255,255,255,0.03);
+				margin-top: 1rem;
+			}
+
+			.actions.stacked {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 1rem;
+			}
+
+			@media screen and (max-width: 736px) {
+				.project-meta {
+					gap: 0.5rem;
+				}
+			}
+		</style>
+	</head>
+	<body class="is-preload">
+		<div id="wrapper">
+
+			<header id="header">
+				<div class="inner">
+					<a href="index.html" class="logo">
+						<span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">Portfolio</span>
+					</a>
+					<nav>
+						<ul>
+							<li><a href="#menu">Menu</a></li>
+						</ul>
+					</nav>
+				</div>
+			</header>
+
+
+			<nav id="menu">
+				<h2>Menu</h2>
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="machine-learning.html">Machine Learning</a></li>
+					<li><a href="textmining.html">Text Mining</a></li>
+					<li><a href="powerbi.html">Power BI</a></li>
+					<li><a href="job-matching.html">Job Matching</a></li>
+					<li><a href="nav-online.html">NAV Online</a></li>
+					<li>
+						<a href="mysql.html">MySQL</a>
+						<ul class="submenu">
+							<li><a href="mysql-olympia.html">Olympic Games</a></li>
+							<li><a href="mysql-asztronauta.html">Astronaut</a></li>
+							<li><a href="mysql-hangos.html">Movies</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="tsql.html">T-SQL</a>
+						<ul class="submenu">
+							<li><a href="tsql-grouping.html">Grouping Sets</a></li>
+							<li><a href="tsql-window-functions.html">Window Functions</a></li>
+							<li><a href="tsql-cte.html">CTE</a></li>
+							<li><a href="tsql-triggers.html">Triggers</a></li>
+							<li><a href="tsql-xml-json.html">XML / JSON</a></li>
+							<li><a href="tsql-sql-pandas.html">SQL + pandas</a></li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+
+			<div id="main">
+				<div class="inner">
+
+					<section class="project-hero">
+						<div class="hero-image">
+							<img src="images/aussieWeather.jpg" alt="Australian weather machine learning project" />
+						</div>
+
+						<header>
+							<h1>Rain Prediction with Machine Learning</h1>
+							<p>End-to-end ML pipeline for predicting next-day rainfall using Australian weather data.</p>
+						</header>
+
+						<div class="project-meta">
+							<span>Python</span>
+							<span>pandas</span>
+							<span>scikit-learn</span>
+							<span>XGBoost</span>
+							<span>LightGBM</span>
+							<span>Feature Engineering</span>
+							<span>Classification</span>
+						</div>
+					</section>
+
+					<section class="project-section">
+						<h2>Overview</h2>
+						<p>
+							This project demonstrates a fully automated machine learning pipeline built to predict whether it will rain the next day.
+							The workflow loads raw weather observations, handles noisy and incomplete data, creates engineered features, compares multiple models,
+							and generates probabilistic rainfall predictions.
+						</p>
+						<p>
+							The focus was not only on building a predictive model, but on designing a reproducible and interpretable ML workflow
+							that reflects real-world data challenges such as missing values, outliers, and class imbalance.
+						</p>
+					</section>
+
+					<section class="project-section">
+						<h2>Problem &amp; Dataset</h2>
+						<p>
+							The project is based on the Australian Weather dataset, which contains daily weather observations from multiple cities across Australia.
+							The task is a binary classification problem where the target variable is <strong>RainTomorrow</strong>.
+						</p>
+
+						<div class="cards-grid">
+							<div class="info-card">
+								<h3>Classification Target</h3>
+								<p><strong>RainTomorrow = 1</strong> → Rain</p>
+								<p><strong>RainTomorrow = 0</strong> → No rain</p>
+							</div>
+
+							<div class="info-card">
+								<h3>Input Variables</h3>
+								<ul class="tech-list">
+									<li>Temperature</li>
+									<li>Humidity</li>
+									<li>Wind speed and direction</li>
+									<li>Atmospheric pressure</li>
+									<li>Rainfall and cloud coverage</li>
+								</ul>
+							</div>
+
+							<div class="info-card">
+								<h3>Real-World Challenges</h3>
+								<ul class="tech-list">
+									<li>Missing values</li>
+									<li>Measurement noise</li>
+									<li>Class imbalance</li>
+								</ul>
+							</div>
+						</div>
+					</section>
+
+					<section class="project-section">
+						<h2>Pipeline Architecture</h2>
+						<p>
+							The solution is built as a modular machine learning pipeline, where each processing step is handled by a dedicated script.
+							This makes the workflow easier to maintain, reproduce, and automate.
+						</p>
+
+						<div class="pipeline-box">
+							<p>
+								<strong>Raw Data</strong> → <strong>Outlier Detection</strong> → <strong>KNN Imputation</strong> →
+								<strong>Feature Engineering</strong> → <strong>Model Training &amp; Selection</strong> →
+								<strong>Prediction</strong> → <strong>Visualization</strong>
+							</p>
+						</div>
+
+						<div class="project-figure figure-small">
+							<img src="images_machine_learning/pipeline_overview.png" alt="Pipeline Overview diagram" />
+							<p>					
+								<strong>pipeline overview diagram</strong>
+							</p>
+								
+						</div>
+					</section>
+
+					<section class="project-section">
+						<h2>Feature Engineering</h2>
+						<p>
+							A key part of the project was transforming raw weather measurements into more informative predictors.
+							The goal was to capture temporal patterns and interactions that are not directly visible in the original columns.
+						</p>
+
+						<div class="cards-grid">
+							<div class="info-card">
+								<h3>TempRangeDiff</h3>
+								<p>Difference between daily maximum and minimum temperature.</p>
+							</div>
+							<div class="info-card">
+								<h3>HumidityRainIndex</h3>
+								<p>Captures the interaction between humidity and rainfall.</p>
+							</div>
+							<div class="info-card">
+								<h3>WindHumidityIndex</h3>
+								<p>Represents the joint effect of wind speed and humidity.</p>
+							</div>
+							<div class="info-card">
+								<h3>RainCloudPressureMix</h3>
+								<p>Combined indicator using rainfall, cloud coverage, and pressure change.</p>
+							</div>
+							<div class="info-card">
+								<h3>Rainfall_last_7days</h3>
+								<p>Rolling average used to capture short-term rainfall history.</p>
+							</div>
+							<div class="info-card">
+								<h3>Rainfall_last_30days</h3>
+								<p>Longer rolling trend showing extended rainfall patterns.</p>
+							</div>
+						</div>
+					</section>
+
+					<section class="project-section">
+						<h2>Model Training &amp; Selection</h2>
+						<p>
+							Several machine learning models were trained and compared in order to identify the most effective classifier for this task.
+							Hyperparameters were optimized with <strong>GridSearchCV</strong> using stratified cross-validation.
+						</p>
+
+						<div class="cards-grid">
+							<div class="info-card">
+								<h3>Compared Models</h3>
+								<ul class="tech-list">
+									<li>Random Forest</li>
+									<li>Balanced Random Forest</li>
+									<li>Gradient Boosting</li>
+									<li>XGBoost</li>
+									<li>LightGBM</li>
+								</ul>
+							</div>
+
+							<div class="info-card">
+								<h3>Evaluation Metrics</h3>
+								<ul class="metrics-list">
+									<li>F1 Score</li>
+									<li>Accuracy</li>
+									<li>ROC AUC</li>
+									<li>Precision-Recall metrics</li>
+								</ul>
+							</div>
+
+							<div class="info-card">
+								<h3>Selection Logic</h3>
+								<p>
+									The final model was selected based on the best <strong>test F1 score</strong>,
+									which is especially useful for imbalanced classification problems.
+								</p>
+							</div>
+						</div>
+
+						<div class="project-figure">
+							<img src="images_machine_learning/model_f1_comparison.png" alt="Model F1 Comparison Chart" />
+							<strong>Model F1 Score Comparison</strong>
+						</div>
+					</section>
+
+					<section class="project-section">
+						<h2>Best Model Performance</h2>
+						<p>
+							The selected model achieved strong performance on the holdout test set and was further evaluated through diagnostic plots.
+						</p>
+
+						<ul class="metrics-list">
+							<li><strong>Accuracy:</strong> 0.89</li> <!-- JAVÍTANI!! -->
+							<li><strong>F1 Score:</strong> 0.91</li>
+							<li><strong>ROC AUC:</strong> 0.87</li>
+						</ul>
+
+						<div class="project-figure figure-medium">
+							<img src="images_machine_learning/best_cm_counts_BalancedRandomForest.png" alt="Confusion Matrix" />
+							<strong>Confusion Matrix</strong>
+						</div>
+
+						<p>
+							The confusion matrix highlights how well the model separates rainy and non-rainy days.
+						</p>
+
+						<div class="project-figure figure-medium">
+							<img src="images_machine_learning/precision_recall.png" alt="Precision-Recall Curve" />
+							<strong>Precision-Recall curve</strong>
+						</div>
+
+						<p>
+							Because rainfall events are less frequent, the Precision-Recall curve provides a more informative view of performance than accuracy alone.
+						</p>
+					</section>
+
+					<section class="project-section">
+						<h2>Prediction Visualizations</h2>
+						<p>
+							In addition to numerical evaluation, the project focuses on making predictions interpretable.
+							The model outputs a probability between 0 and 1, representing the predicted likelihood of rain.
+						</p>
+
+						<h3>Probability Trends Over Time</h3>
+						<div class="project-figure">
+							<img src="images_machine_learning/Uluru_rolling_7d.png" alt="Uluru rainfall prediction trend" />
+							<strong>Uluru Rainfall Probability Trends</strong>
+						</div>
+						<p>
+							This view shows how rainfall probability changes over time and helps identify periods with elevated risk.
+						</p>
+
+						<h3>Top Cities Visualization</h3>
+						<div class="project-figure">
+							<img src="images_machine_learning/small_multiples_top_cities.png" alt="Top 5 cities rainfall prediction" />
+							<strong>Small Multiples Chart for Top 5 Cities</strong>
+						</div>
+						<p>
+							Small multiple charts make it easier to compare prediction behavior across multiple locations.
+						</p>
+
+					</section>
+
+					<section class="project-section">
+						<h2>Key Takeaways</h2>
+						<ul class="takeaway-list">
+							<li><strong>Data preprocessing significantly improved model stability.</strong> Handling outliers and missing values was critical.</li>
+							<li><strong>Feature engineering had a strong impact on performance.</strong> Interaction features and rolling rainfall statistics were especially useful.</li>
+							<li><strong>F1 score and Precision-Recall metrics were more informative than accuracy</strong> for this imbalanced rainfall prediction task.</li>
+							<li>The project demonstrates a <strong>reproducible end-to-end ML workflow</strong>, not just a single trained model.</li>
+						</ul>
+					</section>
+
+					<section class="project-section">
+						<h2>GitHub Repository</h2>
+						<div class="github-box">
+							<p>
+								The full source code and pipeline implementation are available on GitHub.
+							</p>
+							<ul class="actions stacked">
+								<li><a href="https://github.com/Aspartia/Machine_Learning_Aussie_Weather" class="button primary">View Repository</a></li>
+								<li><a href="index.html" class="button">Back to Portfolio</a></li>
+							</ul>
+						</div>
+					</section>
+
+				</div>
+			</div>
+
+			<footer id="footer">
+				<div class="inner">
+					<section>
+						<h2>Get in touch</h2>
+						<form method="post" action="#">
+							<div class="fields">
+								<div class="field half">
+									<input type="text" name="name" id="name" placeholder="Name" />
+								</div>
+								<div class="field half">
+									<input type="email" name="email" id="email" placeholder="Email" />
+								</div>
+								<div class="field">
+									<textarea name="message" id="message" placeholder="Message"></textarea>
+								</div>
+							</div>
+							<ul class="actions">
+								<li><input type="submit" value="Send" class="primary" /></li>
+							</ul>
+						</form>
+					</section>
+					<section>
+						<h2>Follow</h2>
+						<ul class="icons">
+							<li><a href="https://www.facebook.com/eva.panczel.56" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>
+							<li><a href="https://github.com/Aspartia" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+							<li><a href="https://www.linkedin.com/in/eva-panczel/" class="icon brands style2 fa-linkedin"><span class="label">LinkedIn</span></a></li>
+							<li><a href="tel:+36308306122" class="icon solid style2 fa-phone"><span class="label">Phone</span></a></li>
+							<li><a href="mailto:panczel.eva.f@gmail.com" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
+						</ul>
+					</section>
+					<ul class="copyright">
+						<li>&copy; All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</div>
+			</footer>
+
+		</div>
+
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+	</body>
+</html>

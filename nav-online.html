@@ -1,0 +1,463 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+-->
+<html>
+	<head>
+		<title>NAV Online Invoice Exporter | Panczel Eva Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			.project-hero {
+				margin-bottom: 2rem;
+			}
+
+			.project-hero .hero-image {
+				border-radius: 0.5rem;
+				overflow: hidden;
+				margin-bottom: 1.5rem;
+			}
+
+			.project-hero .hero-image img {
+				width: 100%;
+				display: block;
+			}
+
+			.project-meta {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 0.75rem;
+				margin: 1.25rem 0 1.75rem 0;
+			}
+
+			.project-meta span {
+				border: 1px solid rgba(255,255,255,0.15);
+				padding: 0.45rem 0.8rem;
+				border-radius: 999px;
+				font-size: 0.85rem;
+				letter-spacing: 0.04em;
+			}
+
+			.project-section {
+				margin-bottom: 3rem;
+			}
+
+			.project-section h2 {
+				margin-bottom: 0.75rem;
+			}
+
+			.cards-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+				gap: 1.25rem;
+				margin-top: 1.25rem;
+			}
+
+			.info-card {
+				border: 1px solid rgba(255,255,255,0.12);
+				border-radius: 0.5rem;
+				padding: 1.25rem;
+				background: rgba(255,255,255,0.03);
+				height: 100%;
+			}
+
+			.info-card h3 {
+				margin-bottom: 0.6rem;
+				font-size: 1.05rem;
+			}
+
+			.metrics-list,
+			.tech-list,
+			.takeaway-list {
+				margin: 1rem 0 0 0;
+				padding-left: 1.2rem;
+			}
+
+			.metrics-list li,
+			.tech-list li,
+			.takeaway-list li {
+				margin-bottom: 0.45rem;
+			}
+
+			.pipeline-box {
+				border-left: 4px solid #ffffff;
+				padding: 1rem 1.25rem;
+				background: rgba(255,255,255,0.03);
+				margin-top: 1rem;
+				border-radius: 0.35rem;
+			}
+
+			.github-box {
+				border: 1px solid rgba(255,255,255,0.15);
+				border-radius: 0.5rem;
+				padding: 1.5rem;
+				background: rgba(255,255,255,0.03);
+				margin-top: 1rem;
+			}
+
+			.figure-placeholder {
+				border: 1px dashed rgba(255,255,255,0.25);
+				border-radius: 0.5rem;
+				padding: 1.25rem;
+				margin: 1.25rem 0 1.5rem 0;
+				background: rgba(255,255,255,0.03);
+			}
+
+			.figure-placeholder p {
+				margin: 0;
+				font-size: 0.95rem;
+				opacity: 0.9;
+			}
+
+			.actions.stacked {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 1rem;
+			}
+
+			@media screen and (max-width: 736px) {
+				.project-meta {
+					gap: 0.5rem;
+				}
+			}
+		</style>
+	</head>
+	<body class="is-preload">
+		<div id="wrapper">
+
+			<header id="header">
+				<div class="inner">
+					<a href="index.html" class="logo">
+						<span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">Portfolio</span>
+					</a>
+					<nav>
+						<ul>
+							<li><a href="#menu">Menu</a></li>
+						</ul>
+					</nav>
+				</div>
+			</header>
+
+
+			<nav id="menu">
+				<h2>Menu</h2>
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="machine-learning.html">Machine Learning</a></li>
+					<li><a href="textmining.html">Text Mining</a></li>
+					<li><a href="powerbi.html">Power BI</a></li>
+					<li><a href="job-matching.html">Job Matching</a></li>
+					<li><a href="nav-online.html">NAV Online</a></li>
+					<li>
+						<a href="mysql.html">MySQL</a>
+						<ul class="submenu">
+							<li><a href="mysql-olympia.html">Olympic Games</a></li>
+							<li><a href="mysql-asztronauta.html">Astronaut</a></li>
+							<li><a href="mysql-hangos.html">Movies</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="tsql.html">T-SQL</a>
+						<ul class="submenu">
+							<li><a href="tsql-grouping.html">Grouping Sets</a></li>
+							<li><a href="tsql-window-functions.html">Window Functions</a></li>
+							<li><a href="tsql-cte.html">CTE</a></li>
+							<li><a href="tsql-triggers.html">Triggers</a></li>
+							<li><a href="tsql-xml-json.html">XML / JSON</a></li>
+							<li><a href="tsql-sql-pandas.html">SQL + pandas</a></li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+
+			<div id="main">
+				<div class="inner">
+
+					<section class="project-hero">
+						<div class="hero-image">
+							<img src="images/NAV_online.webp" alt="NAV Online invoice export automation project" />
+						</div>
+
+						<header>
+							<h1>NAV Online Invoice Exporter</h1>
+							<p>Python-based API integration for automated invoice retrieval, processing, and Excel export.</p>
+						</header>
+
+						<div class="project-meta">
+							<span>Python</span>
+							<span>REST / XML API</span>
+							<span>Automation</span>
+							<span>Excel Export</span>
+							<span>openpyxl</span>
+							<span>Data Processing</span>
+							<span>NAV Online Számla API</span>
+						</div>
+					</section>
+
+					<section class="project-section">
+						<h2>Overview</h2>
+						<p>
+							This project is an automated invoice retrieval and export solution built on top of the Hungarian NAV Online Számla API.
+							It was designed to collect invoice digest data directly from NAV, process the returned XML responses, and export the final result into a structured Excel workbook.
+						</p>
+						<p>
+							The solution supports both <strong>OUTBOUND</strong> and <strong>INBOUND</strong> invoices, handles large date ranges through automatic slicing,
+							and generates a reusable output that can support accounting, reporting, reconciliation, or further analytical workflows.
+						</p>
+					</section>
+
+					<section class="project-section">
+						<h2>Business Problem</h2>
+						<p>
+							In many reporting and finance-related workflows, invoice data must be checked, extracted, and transformed manually from multiple systems.
+							This is time-consuming, repetitive, and error-prone, especially when larger date intervals or multiple invoice directions must be processed.
+						</p>
+
+						<div class="cards-grid">
+							<div class="info-card">
+								<h3>Manual Workload</h3>
+								<p>
+									Downloading and filtering invoice data manually creates unnecessary administrative effort and slows down reporting cycles.
+								</p>
+							</div>
+
+							<div class="info-card">
+								<h3>Technical Complexity</h3>
+								<p>
+									The NAV API requires XML request generation, signature creation, namespace handling, paging, and structured response parsing.
+								</p>
+							</div>
+
+							<div class="info-card">
+								<h3>Reliable Export Need</h3>
+								<p>
+									Users often need a clean and directly usable Excel export for downstream processing, validation, or integration into BI workflows.
+								</p>
+							</div>
+						</div>
+					</section>
+
+					<section class="project-section">
+						<h2>What the Solution Does</h2>
+						<p>
+							The script authenticates against the NAV Online Számla API using the required technical user credentials and request signature logic,
+							then retrieves invoice digest data for a selected period. The response is parsed, selected fields are transformed into a tabular structure,
+							and the results are saved into an Excel file.
+						</p>
+
+						<div class="pipeline-box">
+							<p>
+								<strong>Environment Variables</strong> → <strong>Signed XML Request</strong> → <strong>NAV API Query</strong> →
+								<strong>Pagination Handling</strong> → <strong>Date Range Slicing</strong> →
+								<strong>XML Parsing</strong> → <strong>Data Transformation</strong> →
+								<strong>Excel Export</strong>
+							</p>
+						</div>
+					</section>
+
+					<section class="project-section">
+						<h2>Core Technical Challenges</h2>
+						<p>
+							A key part of the project was not only accessing the API, but handling its constraints and business-specific requirements in a robust way.
+						</p>
+
+						<div class="cards-grid">
+							<div class="info-card">
+								<h3>Secure Request Signing</h3>
+								<p>
+									The API requires hashed authentication fields and a generated request signature based on timestamp and signing key.
+								</p>
+							</div>
+
+							<div class="info-card">
+								<h3>35-Day Date Limit</h3>
+								<p>
+									Larger date intervals were automatically split into smaller slices to make the requests compatible with API constraints.
+								</p>
+							</div>
+
+							<div class="info-card">
+								<h3>Pagination</h3>
+								<p>
+									The solution iterates through multiple result pages and stops automatically after reaching the last available page.
+								</p>
+							</div>
+
+							<div class="info-card">
+								<h3>XML Parsing</h3>
+								<p>
+									The returned XML structure was processed with namespace-aware parsing to reliably extract the relevant invoice fields.
+								</p>
+							</div>
+
+							<div class="info-card">
+								<h3>Inbound + Outbound Support</h3>
+								<p>
+									The workflow was extended to retrieve both invoice directions and store them in separate sheets and a merged summary output.
+								</p>
+							</div>
+
+							<div class="info-card">
+								<h3>Excel Reporting Output</h3>
+								<p>
+									The final dataset is written into Excel to make the result directly usable in finance and reporting workflows.
+								</p>
+							</div>
+						</div>
+					</section>
+
+					<section class="project-section">
+						<h2>Exported Data</h2>
+						<p>
+							The export contains multiple business-relevant invoice fields that can support checking, reconciliation, and reporting.
+						</p>
+
+						<div class="cards-grid">
+							<div class="info-card">
+								<h3>Invoice Identification</h3>
+								<ul class="tech-list">
+									<li>Invoice number</li>
+									<li>Original invoice number</li>
+									<li>Transaction ID</li>
+									<li>Modification index</li>
+								</ul>
+							</div>
+
+							<div class="info-card">
+								<h3>Dates</h3>
+								<ul class="tech-list">
+									<li>Invoice issue date</li>
+									<li>Upload date</li>
+									<li>Payment due date</li>
+									<li>Delivery / fulfillment date</li>
+								</ul>
+							</div>
+
+							<div class="info-card">
+								<h3>Amounts</h3>
+								<ul class="tech-list">
+									<li>Net amount</li>
+									<li>VAT amount</li>
+									<li>Gross amount</li>
+									<li>HUF values</li>
+								</ul>
+							</div>
+
+							<div class="info-card">
+								<h3>Parties &amp; Metadata</h3>
+								<ul class="tech-list">
+									<li>Supplier name</li>
+									<li>Customer name</li>
+									<li>Tax numbers</li>
+									<li>Payment method / invoice category</li>
+								</ul>
+							</div>
+						</div>
+					</section>
+
+					<section class="project-section">
+						<h2>Output Structure</h2>
+						<p>
+							The generated Excel workbook is structured in a way that supports both detailed review and combined analysis.
+						</p>
+
+						<div class="cards-grid">
+							<div class="info-card">
+								<h3>OUTBOUND Sheet</h3>
+								<p>Contains outgoing invoice records retrieved from the NAV system.</p>
+							</div>
+
+							<div class="info-card">
+								<h3>INBOUND Sheet</h3>
+								<p>Contains incoming invoice records retrieved from the NAV system.</p>
+							</div>
+
+							<div class="info-card">
+								<h3>ALL Sheet</h3>
+								<p>Merged and sorted view of both invoice directions for broader review and reporting.</p>
+							</div>
+						</div>
+
+					</section>
+
+					<section class="project-section">
+						<h2>Why This Project Matters</h2>
+						<p>
+							This project demonstrates practical software engineering in a business environment: API integration, data transformation,
+							error handling, export automation, and workflow design. It is especially relevant for data analyst, BI, and data engineering roles,
+							because it shows how raw operational data can be turned into a reusable and structured reporting asset.
+						</p>
+
+						<ul class="takeaway-list">
+							<li><strong>API integration in practice:</strong> working with real-world external systems and technical authentication requirements.</li>
+							<li><strong>Automation mindset:</strong> reducing repetitive manual work through reproducible scripting.</li>
+							<li><strong>Business relevance:</strong> invoice data is directly useful in finance, reporting, reconciliation, and audit support processes.</li>
+							<li><strong>Scalable logic:</strong> pagination, slicing, and structured export make the solution reusable across larger date ranges.</li>
+						</ul>
+					</section>
+
+					<section class="project-section">
+						<h2>GitHub Repository</h2>
+						<div class="github-box">
+							<p>
+								The source code for this project is available on GitHub.
+							</p>
+							<ul class="actions stacked">
+								<li><a href="https://github.com/Aspartia/Nav_Online_Invoice_Query" class="button primary">View Repository</a></li>
+								<li><a href="index.html" class="button">Back to Portfolio</a></li>
+							</ul>
+						</div>
+					</section>
+
+				</div>
+			</div>
+
+			<footer id="footer">
+				<div class="inner">
+					<section>
+						<h2>Get in touch</h2>
+						<form method="post" action="#">
+							<div class="fields">
+								<div class="field half">
+									<input type="text" name="name" id="name" placeholder="Name" />
+								</div>
+								<div class="field half">
+									<input type="email" name="email" id="email" placeholder="Email" />
+								</div>
+								<div class="field">
+									<textarea name="message" id="message" placeholder="Message"></textarea>
+								</div>
+							</div>
+							<ul class="actions">
+								<li><input type="submit" value="Send" class="primary" /></li>
+							</ul>
+						</form>
+					</section>
+					<section>
+						<h2>Follow</h2>
+						<ul class="icons">
+							<li><a href="https://www.facebook.com/eva.panczel.56" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>
+							<li><a href="https://github.com/Aspartia" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+							<li><a href="https://www.linkedin.com/in/eva-panczel/" class="icon brands style2 fa-linkedin"><span class="label">LinkedIn</span></a></li>
+							<li><a href="tel:+36308306122" class="icon solid style2 fa-phone"><span class="label">Phone</span></a></li>
+							<li><a href="mailto:panczel.eva.f@gmail.com" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
+						</ul>
+					</section>
+					<ul class="copyright">
+						<li>&copy; All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</div>
+			</footer>
+
+		</div>
+
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+	</body>
+</html>

@@ -1,0 +1,630 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+-->
+<html>
+	<head>
+		<title>T-SQL Views, Procedures, Functions and Triggers | Panczel Eva Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			.project-hero {
+				margin-bottom: 2rem;
+			}
+
+			.project-hero .hero-image {
+				border-radius: 0.5rem;
+				overflow: hidden;
+				margin-bottom: 1.5rem;
+			}
+
+			.project-hero .hero-image img {
+				width: 100%;
+				display: block;
+			}
+
+			.project-meta {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 0.75rem;
+				margin: 1.25rem 0 1.75rem 0;
+			}
+
+			.project-meta span {
+				border: 1px solid rgba(255,255,255,0.15);
+				padding: 0.45rem 0.8rem;
+				border-radius: 999px;
+				font-size: 0.85rem;
+				letter-spacing: 0.04em;
+			}
+
+			.project-section {
+				margin-bottom: 3rem;
+			}
+
+			.project-section h2 {
+				margin-bottom: 0.75rem;
+			}
+
+			.cards-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+				gap: 1.25rem;
+				margin-top: 1.25rem;
+			}
+
+			.info-card {
+				border: 1px solid rgba(255,255,255,0.12);
+				border-radius: 0.5rem;
+				padding: 1.25rem;
+				background: rgba(255,255,255,0.03);
+				height: 100%;
+			}
+
+			.info-card h3 {
+				margin-bottom: 0.6rem;
+				font-size: 1.05rem;
+			}
+
+			.tech-list,
+			.takeaway-list {
+				margin: 1rem 0 0 0;
+				padding-left: 1.2rem;
+			}
+
+			.tech-list li,
+			.takeaway-list li {
+				margin-bottom: 0.45rem;
+			}
+
+			.pipeline-box {
+				border-left: 4px solid #ffffff;
+				padding: 1rem 1.25rem;
+				background: rgba(255,255,255,0.03);
+				margin-top: 1rem;
+				border-radius: 0.35rem;
+			}
+
+			.github-box {
+				border: 1px solid rgba(255,255,255,0.15);
+				border-radius: 0.5rem;
+				padding: 1.5rem;
+				background: rgba(255,255,255,0.03);
+				margin-top: 1rem;
+			}
+
+			.actions.stacked {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 1rem;
+			}
+
+			.code-block {
+				background: rgba(255,255,255,0.04);
+				border: 1px solid rgba(255,255,255,0.12);
+				border-radius: 0.5rem;
+				padding: 1.25rem;
+				overflow-x: auto;
+				margin-top: 1rem;
+			}
+
+			.code-block pre {
+				margin: 0;
+				white-space: pre-wrap;
+				font-size: 0.95rem;
+				line-height: 1.65;
+			}
+
+			.figure-placeholder {
+				border: 1px dashed rgba(255,255,255,0.25);
+				border-radius: 0.5rem;
+				padding: 1.25rem;
+				margin: 1.25rem 0 1.5rem 0;
+				background: rgba(255,255,255,0.03);
+			}
+
+			.figure-placeholder p {
+				margin: 0;
+				font-size: 0.95rem;
+				opacity: 0.9;
+			}
+
+			@media screen and (max-width: 736px) {
+				.project-meta {
+					gap: 0.5rem;
+				}
+			}
+		</style>
+	</head>
+	<body class="is-preload">
+		<div id="wrapper">
+
+			<header id="header">
+				<div class="inner">
+					<a href="index.html" class="logo">
+						<span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">Portfolio</span>
+					</a>
+					<nav>
+						<ul>
+							<li><a href="#menu">Menu</a></li>
+						</ul>
+					</nav>
+				</div>
+			</header>
+
+			<nav id="menu">
+				<h2>Menu</h2>
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="machine-learning.html">Machine Learning</a></li>
+					<li><a href="textmining.html">Text Mining</a></li>
+					<li><a href="powerbi.html">Power BI</a></li>
+					<li><a href="job-matching.html">Job Matching</a></li>
+					<li><a href="nav-online.html">NAV Online</a></li>
+					<li>
+						<a href="mysql.html">MySQL</a>
+						<ul class="submenu">
+							<li><a href="mysql-olympia.html">Olympic Games</a></li>
+							<li><a href="mysql-asztronauta.html">Astronaut</a></li>
+							<li><a href="mysql-hangos.html">Movies</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="tsql.html">T-SQL</a>
+						<ul class="submenu">
+							<li><a href="tsql-grouping.html">Grouping Sets</a></li>
+							<li><a href="tsql-window-functions.html">Window Functions</a></li>
+							<li><a href="tsql-cte.html">CTE</a></li>
+							<li><a href="tsql-triggers.html">Triggers</a></li>
+							<li><a href="tsql-xml-json.html">XML / JSON</a></li>
+							<li><a href="tsql-sql-pandas.html">SQL + pandas</a></li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+
+			<div id="main">
+				<div class="inner">
+
+					<section class="project-hero">
+						<div class="hero-image">
+							<img src="images_tsql/szallas.png" alt="T-SQL triggers procedures and functions project" />
+						</div>
+
+						<header>
+							<h1>T-SQL Views, Procedures, Functions and Triggers</h1>
+							<p>SQL Server examples focused on reusable database objects, encapsulated logic, validation rules, and trigger-based business control.</p>
+						</header>
+
+						<div class="project-meta">
+							<span>T-SQL</span>
+							<span>SQL Server</span>
+							<span>Views</span>
+							<span>Stored Procedures</span>
+							<span>Functions</span>
+							<span>Triggers</span>
+							<span>Transactions</span>
+							<span>Error Handling</span>
+						</div>
+					</section>
+
+					<section class="project-section">
+						<h2>Overview</h2>
+						<p>
+							This project uses a sample database containing information about accommodation providers in Hungary, including hotels and other lodging facilities in different regions of the country.
+							The dataset includes tables such as accommodations, rooms, guests, and bookings, which makes it suitable for demonstrating relational queries, analytical SQL functions, and reporting logic.						
+							The examples show how SQL Server can store reusable logic inside the database layer through views, stored procedures, scalar functions,
+							table-valued functions, and triggers.
+						</p>
+						<p>
+							The selected tasks also demonstrate transaction handling and validation logic.
+							This is important because database development is not only about retrieving data, but also about controlling data integrity
+							and enforcing business rules directly at database level.
+						</p>
+					</section>
+
+					<section class="project-section">
+						<h2>What This Project Demonstrates</h2>
+						<div class="cards-grid">
+							<div class="info-card">
+								<h3>Reusable Query Objects</h3>
+								<p>
+									Views and functions help avoid repeated query logic by storing reusable data access patterns inside the database.
+								</p>
+							</div>
+
+							<div class="info-card">
+								<h3>Parameterized Logic</h3>
+								<p>
+									Stored procedures and functions allow business questions to be answered dynamically with input parameters.
+								</p>
+							</div>
+
+							<div class="info-card">
+								<h3>Data Validation</h3>
+								<p>
+									Triggers make it possible to intercept inserts or updates and block invalid operations before they are committed.
+								</p>
+							</div>
+
+							<div class="info-card">
+								<h3>Transaction Safety</h3>
+								<p>
+									TRY/CATCH, COMMIT, and ROLLBACK ensure that invalid operations do not leave the database in an inconsistent state.
+								</p>
+							</div>
+						</div>
+					</section>
+
+					<section class="project-section">
+						<h2>Database Overview</h2>
+						<div class="figure-placeholder">
+							<img src="images_tsql/szallas_adatbazis.jpg" alt="T-SQL portfolio projects" />
+						</div>
+					</section>
+
+					<section class="project-section">
+						<h2>Core SQL Server Concepts Used</h2>
+						<div class="pipeline-box">
+							<p>
+								<strong>View</strong> → <strong>Procedure / Function</strong> →
+								<strong>Reusable Business Logic</strong> →
+								<strong>Trigger Validation</strong> →
+								<strong>Transaction Control</strong> →
+								<strong>Error Handling</strong>
+							</p>
+						</div>
+
+						<div class="cards-grid">
+							<div class="info-card">
+								<h3>View</h3>
+								<p>
+									A virtual table that stores a query definition and can be reused like a regular table in later statements.
+								</p>
+							</div>
+
+							<div class="info-card">
+								<h3>Stored Procedure</h3>
+								<p>
+									A named and executable SQL program block that can accept parameters and return result sets.
+								</p>
+							</div>
+
+							<div class="info-card">
+								<h3>Function</h3>
+								<p>
+									A reusable database object that returns either a scalar value or a table result.
+								</p>
+							</div>
+
+							<div class="info-card">
+								<h3>Trigger</h3>
+								<p>
+									An automatic action executed when an INSERT, UPDATE, or DELETE event occurs on a table.
+								</p>
+							</div>
+						</div>
+					</section>
+
+					<section class="project-section">
+						<h2>Selected Example Queries and Objects</h2>
+						<p>
+							The following examples were chosen because they show several different levels of T-SQL development:
+							a reusable view, parameterized logic with procedures and functions, table-valued output, and a trigger that actively protects business rules.
+						</p>
+					</section>
+
+					<section class="project-section">
+						<h2>Example 1 — View for Daily Booking Snapshot</h2>
+						<p>
+							This view creates a reusable query that returns bookings for a selected date together with guest names.
+							It is a good example of how a repeated reporting query can be encapsulated into a database object.
+						</p>
+						<p>
+							This kind of object is useful when the same business view needs to be reused by reports or applications.
+						</p>
+
+						<div class="code-block">
+<pre>
+CREATE VIEW AktivFoglalasok AS 
+SELECT vendeg.nev, foglalas.mettol, foglalas.szoba_fk
+FROM foglalas
+JOIN vendeg ON foglalas.ugyfel_fk = vendeg.usernev
+WHERE foglalas.mettol = '2016-05-01';
+
+SELECT * FROM AktivFoglalasok;
+</pre>
+						</div>
+						<div class="figure-placeholder">
+							<img src="images_tsql/triggers_1.png" alt="Grouping Sets SQL query result" />
+							<p><strong>Example 1 Query Results</strong> </p>
+						</div>						
+					</section>
+
+					<section class="project-section">
+						<h2>Example 2 — Stored Procedure for Guest Count by Date Range</h2>
+						<p>
+							This stored procedure accepts a date range as parameters and returns how many guests belong to that date range.
+							It is a clean and practical example of parameterized query logic.
+						</p>
+						<p>
+							Stored procedures are especially useful when the same query logic must be executed many times with different parameter values.
+						</p>
+
+						<div class="code-block">
+<pre>
+CREATE PROCEDURE SP_Kihasznaltsag
+    @tol DATETIME,
+    @ig DATETIME
+AS
+BEGIN
+    SELECT 
+        sz.szallas_id, 
+        SUM(f.felnott_szam + f.gyermek_szam) AS vendegszam
+    FROM szoba s
+    JOIN Szallashely sz ON sz.SZALLAS_ID = s.SZALLAS_FK
+    JOIN Foglalas f ON s.SZOBA_ID = f.SZOBA_FK
+    WHERE f.mettol BETWEEN @tol AND @ig
+    GROUP BY sz.szallas_id
+    ORDER BY sz.szallas_id
+END;
+
+EXEC SP_Kihasznaltsag '2016-01-01', '2016-12-31';
+</pre>
+						</div>
+
+						<div class="figure-placeholder">
+							<img src="images_tsql/triggers_2.png" alt="Grouping Sets SQL query result" />
+							<p><strong>Example 2 Query Results</strong> </p>
+						</div>						
+					</section>
+
+					<section class="project-section">
+						<h2>Example 3 — Scalar Function for Guest Count by Birth Year</h2>
+						<p>
+							This function solves a similar task, but instead of returning a full result set, it returns a single integer value.
+							It is a strong contrast to the procedure example because it shows when a scalar return value is more appropriate.
+						</p>
+						<p>
+							This is useful when the result needs to be consumed directly as a value inside other queries or reporting expressions.
+						</p>
+
+						<div class="code-block">
+<pre>
+CREATE FUNCTION UDF_VendegszamEv(@szulev INT)
+RETURNS INT
+AS
+BEGIN
+    DECLARE @db INT;
+
+    SELECT @db = COUNT(usernev)
+    FROM Vendeg
+    WHERE YEAR(SZUL_DAT) = @szulev;
+
+    RETURN @db;
+END;
+
+SELECT dbo.UDF_VendegszamEv(1990);
+</pre>
+						</div>
+
+						<div class="figure-placeholder">
+							<img src="images_tsql/triggers_3.png" alt="Grouping Sets SQL query result" />
+							<p><strong>Example 3 Query Results</strong> </p>
+					</section>
+
+					<section class="project-section">
+						<h2>Example 4 — Table-Valued Function for Accommodation Ranking</h2>
+						<p>
+							This example is one of the stronger portfolio pieces because it combines ranking logic with a table-valued function.
+							The user can request a given ranking position and receive the accommodations belonging to that rank.
+						</p>
+						<p>
+							This is a good example of combining CTE-based ranking logic with reusable table output in a single elegant object.
+						</p>
+
+						<div class="code-block">
+<pre>
+CREATE FUNCTION UDF_Rangsor(@rangsorszam INT)
+RETURNS TABLE
+AS
+RETURN 
+(
+    WITH RangSor AS (
+        SELECT 
+            szh.szallas_id,
+            szh.szallas_nev,
+            COUNT(*) AS foglalasok_szama,
+            DENSE_RANK() OVER (ORDER BY COUNT(*) DESC) AS rangsor
+        FROM foglalas f
+        JOIN szoba sz ON szoba_fk = sz.szoba_id
+        JOIN szallashely szh ON sz.szallas_fk = szh.szallas_id
+        GROUP BY szh.szallas_id, szh.szallas_nev
+    )
+    SELECT szallas_id, szallas_nev, rangsor
+    FROM RangSor
+    WHERE rangsor = @rangsorszam
+);
+
+SELECT * FROM dbo.UDF_Rangsor(1);
+SELECT * FROM dbo.UDF_Rangsor(2);
+</pre>
+						</div>
+
+						<div class="figure-placeholder">
+							<img src="images_tsql/triggers_4.png" alt="Grouping Sets SQL query result" />
+							<p><strong>Example 4 Query Results</strong> </p>
+						</div>
+					</section>
+
+					<section class="project-section">
+						<h2>Example 5 — Trigger to Limit Booking Count per Guest</h2>
+						<p>
+							This is the strongest example on the page because it shows true database-side business rule enforcement.
+							The trigger blocks inserts if a guest already has more than ten bookings, and it wraps the logic in a transaction with error handling.
+						</p>
+						<p>
+							This example demonstrates several important SQL Server concepts together: trigger timing, inserted pseudo-table usage,
+							transaction control, custom error raising, and rollback protection.
+						</p>
+
+						<div class="code-block">
+<pre>
+CREATE TRIGGER tgKorlatozas
+ON foglalas
+INSTEAD OF INSERT
+AS
+BEGIN
+    BEGIN TRANSACTION
+    BEGIN TRY
+        DECLARE @nev NVARCHAR(30);
+        DECLARE @db INT;
+
+        SELECT @nev = ugyfel_fk
+        FROM inserted;
+
+        SELECT DISTINCT @db = COUNT(FOGLALAS_PK)
+        FROM foglalas
+        GROUP BY ugyfel_fk
+        HAVING COUNT(FOGLALAS_PK) > 10;
+
+        IF @db > 10
+        BEGIN
+            RAISERROR ('Hiba: Egy ügyfél legfeljebb 10 foglalást hozhat létre!', 16, 1);
+            ROLLBACK TRANSACTION;
+            RETURN;
+        END
+
+        INSERT INTO Foglalas
+        SELECT * FROM INSERTED;
+
+        COMMIT TRANSACTION;
+        PRINT 'Foglalás sikeresen rögzítve!';
+    END TRY
+    BEGIN CATCH
+        ROLLBACK TRANSACTION;
+        PRINT 'Hiba történt a foglalás rögzítése során!';
+        PRINT ERROR_MESSAGE();
+    END CATCH
+END;
+
+INSERT INTO Foglalas values (1586, 'zoltan4',1,'2019.02.01','2019.03.05', 2,1)
+
+
+</pre>
+						</div>
+
+						<div class="figure-placeholder">
+							<img src="images_tsql/triggers_5.png" alt="Grouping Sets SQL query result" />
+							<p><strong>Example 5 Query Results</strong> </p>
+						</div>				
+					</section>
+
+					<section class="project-section">
+						<h2>Why These Examples Are Strong</h2>
+						<div class="cards-grid">
+							<div class="info-card">
+								<h3>They Show More Than Querying</h3>
+								<p>
+									The page moves beyond SELECT logic and shows how SQL Server can store business logic inside the database.
+								</p>
+							</div>
+
+							<div class="info-card">
+								<h3>They Are Reusable</h3>
+								<p>
+									Views, procedures, and functions are designed for repeated use rather than one-time querying.
+								</p>
+							</div>
+
+							<div class="info-card">
+								<h3>They Reflect Real Control Scenarios</h3>
+								<p>
+									The trigger example mirrors realistic database validation requirements that often appear in business systems.
+								</p>
+							</div>
+
+							<div class="info-card">
+								<h3>They Demonstrate SQL Server Depth</h3>
+								<p>
+									These examples show that T-SQL work is not limited to analytics, but also includes control flow and integrity enforcement.
+								</p>
+							</div>
+						</div>
+					</section>
+
+					<section class="project-section">
+						<h2>Key Takeaways</h2>
+						<ul class="takeaway-list">
+							<li><strong>T-SQL supports reusable database-side logic.</strong> Views, procedures, and functions help organize repeated query patterns.</li>
+							<li><strong>Functions and procedures serve different purposes.</strong> Scalar return values, result sets, and table outputs each fit different use cases.</li>
+							<li><strong>Triggers can actively protect business rules.</strong> They are useful when validation must happen automatically at insert or update time.</li>
+							<li><strong>Transactions and error handling are essential.</strong> COMMIT and ROLLBACK ensure that failed operations do not corrupt the data state.</li>
+						</ul>
+					</section>
+
+					<section class="project-section">
+						<h2>Navigation</h2>
+						<div class="github-box">
+							<p>
+								This page is part of the T-SQL portfolio section and focuses on reusable SQL Server objects and trigger-based validation logic.
+							</p>
+							<ul class="actions stacked">
+								<li><a href="tsql.html" class="button primary">Back to T-SQL Projects</a></li>
+								<li><a href="index.html" class="button">Back to Portfolio</a></li>
+							</ul>
+						</div>
+					</section>
+
+				</div>
+			</div>
+
+			<footer id="footer">
+				<div class="inner">
+					<section>
+						<h2>Get in touch</h2>
+						<form method="post" action="#">
+							<div class="fields">
+								<div class="field half">
+									<input type="text" name="name" id="name" placeholder="Name" />
+								</div>
+								<div class="field half">
+									<input type="email" name="email" id="email" placeholder="Email" />
+								</div>
+								<div class="field">
+									<textarea name="message" id="message" placeholder="Message"></textarea>
+								</div>
+							</div>
+							<ul class="actions">
+								<li><input type="submit" value="Send" class="primary" /></li>
+							</ul>
+						</form>
+					</section>
+					<section>
+						<h2>Follow</h2>
+						<ul class="icons">
+							<li><a href="https://www.facebook.com/eva.panczel.56" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>
+							<li><a href="https://github.com/Aspartia" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+							<li><a href="https://www.linkedin.com/in/eva-panczel/" class="icon brands style2 fa-linkedin"><span class="label">LinkedIn</span></a></li>
+							<li><a href="tel:+36308306122" class="icon solid style2 fa-phone"><span class="label">Phone</span></a></li>
+							<li><a href="mailto:panczel.eva.f@gmail.com" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
+						</ul>
+					</section>
+					<ul class="copyright">
+						<li>&copy; All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</div>
+			</footer>
+
+		</div>
+
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+	</body>
+</html>

@@ -1,0 +1,533 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+-->
+<html>
+	<head>
+		<title>HR Matcher | Panczel Eva Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			.project-hero {
+				margin-bottom: 2rem;
+			}
+
+			.project-hero .hero-image {
+				border-radius: 0.5rem;
+				overflow: hidden;
+				margin-bottom: 1.5rem;
+			}
+
+			.project-hero .hero-image img {
+				width: 100%;
+				display: block;
+			}
+
+			.project-meta {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 0.75rem;
+				margin: 1.25rem 0 1.75rem 0;
+			}
+
+			.project-meta span {
+				border: 1px solid rgba(255,255,255,0.15);
+				padding: 0.45rem 0.8rem;
+				border-radius: 999px;
+				font-size: 0.85rem;
+				letter-spacing: 0.04em;
+			}
+
+			.project-section {
+				margin-bottom: 3rem;
+			}
+
+			.project-section h2 {
+				margin-bottom: 0.75rem;
+			}
+
+			.figure-placeholder {
+				border: 1px dashed rgba(255,255,255,0.25);
+				border-radius: 0.5rem;
+				padding: 1.25rem;
+				margin: 1.25rem 0 1.5rem 0;
+				background: rgba(255,255,255,0.03);
+			}
+
+			.figure-placeholder p {
+				margin: 0;
+				font-size: 0.95rem;
+				opacity: 0.9;
+			}
+
+			.cards-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+				gap: 1.25rem;
+				margin-top: 1.25rem;
+			}
+
+			.info-card {
+				border: 1px solid rgba(255,255,255,0.12);
+				border-radius: 0.5rem;
+				padding: 1.25rem;
+				background: rgba(255,255,255,0.03);
+				height: 100%;
+			}
+
+			.info-card h3 {
+				margin-bottom: 0.6rem;
+				font-size: 1.05rem;
+			}
+
+			.metrics-list,
+			.tech-list,
+			.takeaway-list {
+				margin: 1rem 0 0 0;
+				padding-left: 1.2rem;
+			}
+
+			.metrics-list li,
+			.tech-list li,
+			.takeaway-list li {
+				margin-bottom: 0.45rem;
+			}
+
+			.pipeline-box {
+				border-left: 4px solid #ffffff;
+				padding: 1rem 1.25rem;
+				background: rgba(255,255,255,0.03);
+				margin-top: 1rem;
+				border-radius: 0.35rem;
+			}
+
+			.github-box {
+				border: 1px solid rgba(255,255,255,0.15);
+				border-radius: 0.5rem;
+				padding: 1.5rem;
+				background: rgba(255,255,255,0.03);
+				margin-top: 1rem;
+			}
+
+			.actions.stacked {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 1rem;
+			}
+
+			@media screen and (max-width: 736px) {
+				.project-meta {
+					gap: 0.5rem;
+				}
+			}
+		</style>
+	</head>
+	<body class="is-preload">
+		<div id="wrapper">
+
+			<header id="header">
+				<div class="inner">
+					<a href="index.html" class="logo">
+						<span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">Portfolio</span>
+					</a>
+					<nav>
+						<ul>
+							<li><a href="#menu">Menu</a></li>
+						</ul>
+					</nav>
+				</div>
+			</header>
+
+
+			<nav id="menu">
+				<h2>Menu</h2>
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="machine-learning.html">Machine Learning</a></li>
+					<li><a href="textmining.html">Text Mining</a></li>
+					<li><a href="powerbi.html">Power BI</a></li>
+					<li><a href="job-matching.html">Job Matching</a></li>
+					<li><a href="nav-online.html">NAV Online</a></li>
+					<li>
+						<a href="mysql.html">MySQL</a>
+						<ul class="submenu">
+							<li><a href="mysql-olympia.html">Olympic Games</a></li>
+							<li><a href="mysql-asztronauta.html">Astronaut</a></li>
+							<li><a href="mysql-hangos.html">Movies</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="tsql.html">T-SQL</a>
+						<ul class="submenu">
+							<li><a href="tsql-grouping.html">Grouping Sets</a></li>
+							<li><a href="tsql-window-functions.html">Window Functions</a></li>
+							<li><a href="tsql-cte.html">CTE</a></li>
+							<li><a href="tsql-triggers.html">Triggers</a></li>
+							<li><a href="tsql-xml-json.html">XML / JSON</a></li>
+							<li><a href="tsql-sql-pandas.html">SQL + pandas</a></li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+
+			<div id="main">
+				<div class="inner">
+
+					<section class="project-hero">
+						<div class="hero-image">
+							<img src="images/job_matching.png" alt="HR Matcher resume and job matching project" />
+						</div>
+
+						<header>
+							<h1>HR Matcher Application</h1>
+							<p>Embedding-based resume-to-role matching system with evidence retrieval and structured candidate summaries.</p>
+						</header>
+
+						<div class="project-meta">
+							<span>Python</span>
+							<span>NLP</span>
+							<span>Sentence Transformers</span>
+							<span>FAISS</span>
+							<span>TF-IDF</span>
+							<span>SQL Server</span>
+							<span>HR Analytics</span>
+						</div>
+					</section>
+
+					<section class="project-section">
+						<h2>Overview</h2>
+						<p>
+							This project focuses on building an intelligent HR support tool that compares resumes against job roles and identifies the most suitable candidates.
+							The application reads resume data from a structured dataset, preprocesses the text, generates semantic embeddings,
+							and ranks candidates based on their similarity to role descriptions.
+						</p>
+						<p>
+							The goal was not only to assign a likely role to each resume, but also to provide a more interpretable matching workflow
+							through evidence snippets, experience estimation, and exportable candidate summaries.
+						</p>
+					</section>
+
+					<section class="project-section">
+						<h2>Business Problem</h2>
+						<p>
+							In recruitment workflows, screening large numbers of resumes manually is slow and difficult to scale.
+							A recruiter often needs to compare multiple candidates against multiple roles, while also understanding why a candidate was recommended.
+						</p>
+
+						<div class="cards-grid">
+							<div class="info-card">
+								<h3>High Resume Volume</h3>
+								<p>
+									Manual resume review becomes increasingly inefficient when many candidates and multiple positions must be evaluated in parallel.
+								</p>
+							</div>
+
+							<div class="info-card">
+								<h3>Role Fit Ambiguity</h3>
+								<p>
+									Candidates often have overlapping skills, so matching them to the most suitable role requires deeper semantic comparison than keyword search alone.
+								</p>
+							</div>
+
+							<div class="info-card">
+								<h3>Need for Explainability</h3>
+								<p>
+									Beyond ranking, HR users need interpretable output: role suggestions, evidence snippets, and an estimate of seniority or experience level.
+								</p>
+							</div>
+						</div>
+					</section>
+
+					<section class="project-section">
+						<h2>What the Application Does</h2>
+						<p>
+							The HR Matcher application processes resumes as text documents, transforms them into embeddings, and compares them with job descriptions.
+							Role descriptions can either be loaded from PDF-based job postings or replaced by predefined fallback roles.
+						</p>
+
+						<div class="pipeline-box">
+							<p>
+								<strong>Resume CSV</strong> → <strong>Text Cleaning</strong> → <strong>Chunking</strong> →
+								<strong>Embedding Generation</strong> → <strong>FAISS / TF-IDF Retrieval</strong> →
+								<strong>Role Matching</strong> → <strong>Experience Estimation</strong> →
+								<strong>Summary Export</strong>
+							</p>
+						</div>
+					</section>
+
+					<section class="project-section">
+						<h2>Input Data &amp; Role Definitions</h2>
+						<p>
+							The system works with a resume dataset stored in CSV format and supports external role descriptions loaded from PDF files.
+							This makes the workflow flexible: it can be adapted to real job postings instead of relying only on manually written text templates.
+						</p>
+
+						<div class="cards-grid">
+							<div class="info-card">
+								<h3>Resume Input</h3>
+								<p>
+									Resumes are read from a CSV file. The application searches for a resume-like text column and standardizes it for further processing.
+								</p>
+							</div>
+
+							<div class="info-card">
+								<h3>PDF Role Loading</h3>
+								<p>
+									Job descriptions can be loaded directly from PDF files, allowing the system to work with realistic, externally prepared role documents.
+								</p>
+							</div>
+
+							<div class="info-card">
+								<h3>Fallback Roles</h3>
+								<p>
+									If no PDFs are available, the application can still run using predefined example roles such as Data Scientist, SAP Developer, and Java Developer.
+								</p>
+							</div>
+                            
+						</div>
+						<div class="project-figure-job">
+							<div class="gallery-item">
+								<img src="images_job_matcher/dATA sCIENTIST.png" alt="Data Scientist" />
+							</div>
+							<div class="gallery-item">
+								<img src="images_job_matcher/sap DEV.png" alt="SAP Developer" />
+								<strong>Job Role Examples</strong>
+							</div>
+							<div class="gallery-item">
+								<img src="images_job_matcher/jAVA DEV.png" alt="Java Developer" />
+							</div>
+							
+						</div>
+					</section>
+
+					<section class="project-section">
+						<h2>NLP &amp; Retrieval Architecture</h2>
+						<p>
+							A core part of the project is the document retrieval logic. Resumes are cleaned, split into word-based chunks,
+							and converted into dense vector representations using sentence embeddings.
+							This makes it possible to compare semantically similar content even when exact keywords differ.
+						</p>
+
+						<div class="cards-grid">
+							<div class="info-card">
+								<h3>Text Cleaning</h3>
+								<p>
+									URLs, punctuation, noisy formatting, and non-standard characters are removed to make the resumes more consistent before vectorization.
+								</p>
+							</div>
+
+							<div class="info-card">
+								<h3>Chunking</h3>
+								<p>
+									Long resumes are split into overlapping chunks, which improves evidence retrieval and makes the semantic search more precise.
+								</p>
+							</div>
+
+							<div class="info-card">
+								<h3>Embeddings</h3>
+								<p>
+									SentenceTransformer models are used to embed both resumes and role descriptions into the same semantic vector space.
+								</p>
+							</div>
+
+							<div class="info-card">
+								<h3>FAISS Search</h3>
+								<p>
+									FAISS is used to index vectorized resumes and support efficient similarity search for scalable role matching.
+								</p>
+							</div>
+
+							<div class="info-card">
+								<h3>TF-IDF Fallback</h3>
+								<p>
+									If embedding-based retrieval is not available, the system can switch to a TF-IDF + cosine similarity fallback workflow.
+								</p>
+							</div>
+
+							<div class="info-card">
+								<h3>Evidence Retrieval</h3>
+								<p>
+									The top chunks supporting a candidate-role match can be extracted, making the recommendation easier to interpret.
+								</p>
+							</div>
+						</div>
+					</section>
+
+					<section class="project-section">
+						<h2>Matching Logic</h2>
+						<p>
+							The final candidate-role ranking is based on embedding similarity between resumes and job roles.
+							For each resume, the application identifies the top predicted roles, while for each role it can also retrieve the most suitable candidate profiles.
+						</p>
+
+						<div class="cards-grid">
+							<div class="info-card">
+								<h3>Role Prediction</h3>
+								<p>
+									Each resume receives a ranked list of the most likely roles based on semantic similarity scores.
+								</p>
+							</div>
+
+							<div class="info-card">
+								<h3>Top Candidate Ranking</h3>
+								<p>
+									For each job description, the application identifies the strongest candidate matches from the resume dataset.
+								</p>
+							</div>
+
+							<div class="info-card">
+								<h3>Snippet-Level Evidence</h3>
+								<p>
+									The model can return the most relevant resume chunks to support why a certain candidate appears relevant to a specific role.
+								</p>
+							</div>
+						</div>
+
+						<div class="figure-placeholder">
+							<div class="project-figure">
+							<img src="images_job_matcher/data science_results.png" alt="Data Science Results" />
+							<strong>Data Science Results</strong>
+							</div>
+						</div>
+					</section>
+
+					<section class="project-section">
+						<h2>Experience Estimation</h2>
+						<p>
+							In addition to role matching, the project includes a heuristic component that attempts to extract years of experience from resume text.
+							Based on the detected values, candidates are assigned to a simplified experience category.
+						</p>
+
+						<div class="cards-grid">
+							<div class="info-card">
+								<h3>Years Detection</h3>
+								<p>
+									Regular-expression based extraction is used to detect mentions of years or months of experience in the resume text.
+								</p>
+							</div>
+
+							<div class="info-card">
+								<h3>Bucket Assignment</h3>
+								<ul class="tech-list">
+									<li>Junior</li>
+									<li>Mid</li>
+									<li>Senior</li>
+									<li>Unknown</li>
+								</ul>
+							</div>
+
+							<div class="info-card">
+								<h3>Practical Use</h3>
+								<p>
+									This extra feature helps make candidate summaries more useful in real HR review scenarios, especially when screening large applicant pools.
+								</p>
+							</div>
+						</div>
+					</section>
+
+					<section class="project-section">
+						<h2>Output &amp; Integration</h2>
+						<p>
+							The application produces a structured summary of candidates, including predicted top role, role scores, estimated experience,
+							and a short resume snippet. The output can be exported as CSV and, optionally, written into SQL Server.
+						</p>
+
+						<div class="cards-grid">
+							<div class="info-card">
+								<h3>CSV Output</h3>
+								<p>
+									A timestamped CSV export contains the final candidate summary table, making the result easy to inspect and reuse.
+								</p>
+							</div>
+
+							<div class="info-card">
+								<h3>SQL Server Save</h3>
+								<p>
+									When configured, the summary can also be stored in SQL Server for downstream reporting or further application use.
+								</p>
+							</div>
+
+							<div class="info-card">
+								<h3>Metadata Logging</h3>
+								<p>
+									The run configuration and process metadata can also be stored to support reproducibility and structured project execution.
+								</p>
+							</div>
+						</div>
+					</section>
+
+					<section class="project-section">
+						<h2>Key Takeaways</h2>
+						<ul class="takeaway-list">
+							<li><strong>The project demonstrates practical NLP in a business context.</strong> It goes beyond text cleaning and uses embeddings for semantic matching.</li>
+							<li><strong>It combines retrieval and scoring logic.</strong> The solution is not just a classifier, but a searchable recommendation workflow.</li>
+							<li><strong>Interpretability was an important design goal.</strong> Evidence snippets and experience estimation make the results more useful for human reviewers.</li>
+							<li><strong>The system is built in a modular way.</strong> This makes the project easier to maintain, extend, and integrate into broader HR analytics workflows.</li>
+						</ul>
+					</section>
+
+					<section class="project-section">
+						<h2>GitHub Repository</h2>
+						<div class="github-box">
+							<p>
+								The full source code and modular project structure are available on GitHub.
+							</p>
+							<ul class="actions stacked">
+								<li><a href="https://github.com/Aspartia/HR_Resume_Role_Matcher" class="button primary">View Repository</a></li>
+								<li><a href="index.html" class="button">Back to Portfolio</a></li>
+							</ul>
+						</div>
+					</section>
+
+				</div>
+			</div>
+
+			<footer id="footer">
+				<div class="inner">
+					<section>
+						<h2>Get in touch</h2>
+						<form method="post" action="#">
+							<div class="fields">
+								<div class="field half">
+									<input type="text" name="name" id="name" placeholder="Name" />
+								</div>
+								<div class="field half">
+									<input type="email" name="email" id="email" placeholder="Email" />
+								</div>
+								<div class="field">
+									<textarea name="message" id="message" placeholder="Message"></textarea>
+								</div>
+							</div>
+							<ul class="actions">
+								<li><input type="submit" value="Send" class="primary" /></li>
+							</ul>
+						</form>
+					</section>
+					<section>
+						<h2>Follow</h2>
+						<ul class="icons">
+							<li><a href="https://www.facebook.com/eva.panczel.56" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>
+							<li><a href="https://github.com/Aspartia" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+							<li><a href="https://www.linkedin.com/in/eva-panczel/" class="icon brands style2 fa-linkedin"><span class="label">LinkedIn</span></a></li>
+							<li><a href="tel:+36308306122" class="icon solid style2 fa-phone"><span class="label">Phone</span></a></li>
+							<li><a href="mailto:panczel.eva.f@gmail.com" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
+						</ul>
+					</section>
+					<ul class="copyright">
+						<li>&copy; All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</div>
+			</footer>
+
+		</div>
+
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+	</body>
+</html>

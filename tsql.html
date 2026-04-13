@@ -1,0 +1,554 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+-->
+<html>
+	<head>
+		<title>T-SQL | Panczel Eva Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			.project-hero {
+				margin-bottom: 2rem;
+			}
+
+			.project-hero .hero-image {
+				border-radius: 0.5rem;
+				overflow: hidden;
+				margin-bottom: 1.5rem;
+			}
+
+			.project-hero .hero-image img {
+				width: 100%;
+				display: block;
+			}
+
+			.project-meta {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 0.75rem;
+				margin: 1.25rem 0 1.75rem 0;
+			}
+
+			.project-meta span {
+				border: 1px solid rgba(255,255,255,0.15);
+				padding: 0.45rem 0.8rem;
+				border-radius: 999px;
+				font-size: 0.85rem;
+				letter-spacing: 0.04em;
+			}
+
+			.project-section {
+				margin-bottom: 3rem;
+			}
+
+			.project-section h2 {
+				margin-bottom: 0.75rem;
+			}
+
+			.cards-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+				gap: 1.25rem;
+				margin-top: 1.25rem;
+			}
+
+			.info-card {
+				border: 1px solid rgba(255,255,255,0.12);
+				border-radius: 0.5rem;
+				padding: 1.25rem;
+				background: rgba(255,255,255,0.03);
+				height: 100%;
+			}
+
+			.info-card h3 {
+				margin-bottom: 0.6rem;
+				font-size: 1.05rem;
+			}
+
+			.tech-list,
+			.takeaway-list {
+				margin: 1rem 0 0 0;
+				padding-left: 1.2rem;
+			}
+
+			.tech-list li,
+			.takeaway-list li {
+				margin-bottom: 0.45rem;
+			}
+
+			.pipeline-box {
+				border-left: 4px solid #ffffff;
+				padding: 1rem 1.25rem;
+				background: rgba(255,255,255,0.03);
+				margin-top: 1rem;
+				border-radius: 0.35rem;
+			}
+
+			.github-box {
+				border: 1px solid rgba(255,255,255,0.15);
+				border-radius: 0.5rem;
+				padding: 1.5rem;
+				background: rgba(255,255,255,0.03);
+				margin-top: 1rem;
+			}
+
+			.actions.stacked {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 1rem;
+			}
+
+			.project-gallery {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+				gap: 1.5rem;
+				margin-top: 1.5rem;
+			}
+
+			.project-tile {
+				border: 1px solid rgba(255,255,255,0.12);
+				border-radius: 0.5rem;
+				overflow: hidden;
+				background: rgba(255,255,255,0.03);
+			}
+
+			.project-tile img {
+				width: 100%;
+				display: block;
+			}
+
+			.project-tile .content {
+				padding: 1.25rem;
+			}
+
+			.project-tile .content h3 {
+				margin-bottom: 0.75rem;
+				font-size: 1.05rem;
+			}
+
+			.project-tags {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 0.5rem;
+				margin: 1rem 0 1.25rem 0;
+			}
+
+			.project-tags span {
+				border: 1px solid rgba(255,255,255,0.15);
+				padding: 0.35rem 0.7rem;
+				border-radius: 999px;
+				font-size: 0.8rem;
+			}
+
+			.section-label {
+				margin-top: 2rem;
+				margin-bottom: 0.5rem;
+				font-size: 0.95rem;
+				letter-spacing: 0.2em;
+				text-transform: uppercase;
+				opacity: 0.85;
+			}
+
+			@media screen and (max-width: 736px) {
+				.project-meta {
+					gap: 0.5rem;
+				}
+			}
+		</style>
+	</head>
+	<body class="is-preload">
+		<div id="wrapper">
+
+			<header id="header">
+				<div class="inner">
+					<a href="index.html" class="logo">
+						<span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">Portfolio</span>
+					</a>
+					<nav>
+						<ul>
+							<li><a href="#menu">Menu</a></li>
+						</ul>
+					</nav>
+				</div>
+			</header>
+
+			<nav id="menu">
+				<h2>Menu</h2>
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="machine-learning.html">Machine Learning</a></li>
+					<li><a href="textmining.html">Text Mining</a></li>
+					<li><a href="powerbi.html">Power BI</a></li>
+					<li><a href="job-matching.html">Job Matching</a></li>
+					<li><a href="nav-online.html">NAV Online</a></li>
+					<li>
+						<a href="mysql.html">MySQL</a>
+						<ul class="submenu">
+							<li><a href="mysql-olympia.html">Olympic Games</a></li>
+							<li><a href="mysql-asztronauta.html">Astronaut</a></li>
+							<li><a href="mysql-hangos.html">Movies</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="tsql.html">T-SQL</a>
+						<ul class="submenu">
+							<li><a href="tsql-grouping.html">Grouping Sets</a></li>
+							<li><a href="tsql-window-functions.html">Window Functions</a></li>
+							<li><a href="tsql-cte.html">CTE</a></li>
+							<li><a href="tsql-triggers.html">Triggers</a></li>
+							<li><a href="tsql-xml-json.html">XML / JSON</a></li>
+							<li><a href="tsql-sql-pandas.html">SQL + pandas</a></li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+
+			<div id="main">
+				<div class="inner">
+
+					<section class="project-hero">
+						<div class="hero-image">
+							<img src="images/t-sql.jpg" alt="T-SQL portfolio projects" />
+						</div>
+
+						<header>
+							<h1>T-SQL Projects</h1>
+							<p>SQL Server portfolio work covering analytical queries, window functions, triggers, semi-structured data, CTE logic, and SQL-to-Python integration.</p>
+						</header>
+
+						<div class="project-meta">
+							<span>T-SQL</span>
+							<span>SQL Server</span>
+							<span>Window Functions</span>
+							<span>CTE</span>
+							<span>Triggers</span>
+							<span>XML / JSON</span>
+							<span>Analytical SQL</span>
+							<span>pandas Integration</span>
+						</div>
+					</section>
+
+					<section class="project-section">
+						<h2>Overview</h2>
+						<p>
+							This section of the portfolio presents a focused collection of T-SQL projects created in Microsoft SQL Server.
+							The work covers both analytical query writing and more advanced database features such as triggers,
+							Common Table Expressions, XML and JSON handling, and Python-based downstream data processing.
+						</p>
+						<p>
+							The goal of these projects was to demonstrate that SQL knowledge goes beyond basic querying.
+							These scripts show how SQL Server can be used for structured analysis, modular query design,
+							database-side automation, and integration with external analytical tools.
+						</p>
+					</section>
+
+					<section class="project-section">
+						<h2>What These Projects Demonstrate</h2>
+						<div class="cards-grid">
+							<div class="info-card">
+								<h3>Analytical Query Design</h3>
+								<p>
+									Writing complex aggregation logic, ranking queries, grouped summaries, and partition-based calculations for reporting scenarios.
+								</p>
+							</div>
+
+							<div class="info-card">
+								<h3>Database Automation</h3>
+								<p>
+									Using triggers and SQL Server logic to automatically react to changes in database tables and support audit-style workflows.
+								</p>
+							</div>
+
+							<div class="info-card">
+								<h3>Semi-Structured Data Handling</h3>
+								<p>
+									Working with XML and JSON content inside SQL Server and extracting useful values from non-tabular structures.
+								</p>
+							</div>
+
+							<div class="info-card">
+								<h3>SQL-to-Python Integration</h3>
+								<p>
+									Connecting SQL query results to pandas workflows in Python for additional transformation and analysis.
+								</p>
+							</div>
+						</div>
+					</section>
+
+					<section class="project-section">
+						<h2>T-SQL Workflow</h2>
+						<p>
+							Although the topics differ, the scripts follow a shared logic: retrieve or prepare structured data,
+							apply SQL Server-specific techniques, and transform the result into something easier to interpret, automate, or analyze.
+						</p>
+
+						<div class="pipeline-box">
+							<p>
+								<strong>Data Retrieval</strong> → <strong>T-SQL Logic</strong> → <strong>Aggregation / Transformation</strong> →
+								<strong>Advanced SQL Server Features</strong> → <strong>Analytical Output</strong> →
+								<strong>Optional Python Integration</strong>
+							</p>
+						</div>
+					</section>
+
+					<section class="project-section">
+						<h2>Featured T-SQL Topics</h2>
+						<p>
+							The T-SQL portfolio is organized into two logical groups.
+							The first group focuses on analytical query techniques, while the second highlights more advanced SQL Server-specific features.
+						</p>
+
+						<h3 class="section-label">Core SQL Analytics</h3>
+						<div class="project-gallery">
+
+							<div class="project-tile">
+								<img src="images_tsql/grouping.png" alt="Grouping sets and aggregation project" />
+								<div class="content">
+									<h3>Grouping Sets, Rollup, and Cube</h3>
+									<p>
+										This project focuses on advanced aggregation techniques in SQL Server.
+										It demonstrates how grouped summaries can be generated at multiple levels without writing separate queries for each aggregation layer.
+									</p>
+									<div class="project-tags">
+										<span>GROUP BY</span>
+										<span>ROLLUP</span>
+										<span>CUBE</span>
+										<span>GROUPING SETS</span>
+									</div>
+									<ul class="actions">
+										<li><a href="tsql-grouping.html" class="button primary">View Project</a></li>
+									</ul>
+								</div>
+							</div>
+
+							<div class="project-tile">
+								<img src="images_tsql/window.png" alt="Window functions project" />
+								<div class="content">
+									<h3>Window Functions</h3>
+									<p>
+										This topic demonstrates analytical functions such as PARTITION BY, ranking logic, and row-based calculations.
+										It is especially useful for report-style SQL where grouped comparisons must remain at row level.
+									</p>
+									<div class="project-tags">
+										<span>PARTITION BY</span>
+										<span>RANK</span>
+										<span>OVER()</span>
+										<span>Analytics</span>
+									</div>
+									<ul class="actions">
+										<li><a href="tsql-window-functions.html" class="button primary">View Project</a></li>
+									</ul>
+								</div>
+							</div>
+
+							<div class="project-tile">
+								<img src="images_tsql/cte.png" alt="CTE project" />
+								<div class="content">
+									<h3>Common Table Expressions (CTE)</h3>
+									<p>
+										This project shows how complex SQL queries can be structured into clearer logical blocks.
+										CTEs make multi-step transformations easier to read, maintain, and extend.
+									</p>
+									<div class="project-tags">
+										<span>WITH</span>
+										<span>Modular SQL</span>
+										<span>Transformation</span>
+										<span>Readability</span>
+									</div>
+									<ul class="actions">
+										<li><a href="tsql-cte.html" class="button primary">View Project</a></li>
+									</ul>
+								</div>
+							</div>
+
+						</div>
+
+						<h3 class="section-label">SQL Server Advanced Features</h3>
+						<div class="project-gallery">
+
+							<div class="project-tile">
+								<img src="images_tsql/triggers.png" alt="Trigger project" />
+								<div class="content">
+									<h3>Triggers</h3>
+									<p>
+										This project focuses on automatic database-side actions triggered by data modification events.
+										It demonstrates how SQL Server can support audit logic, logging, and event-driven control directly inside the database.
+									</p>
+									<div class="project-tags">
+										<span>Triggers</span>
+										<span>Audit</span>
+										<span>Automation</span>
+										<span>inserted / deleted</span>
+									</div>
+									<ul class="actions">
+										<li><a href="tsql-triggers.html" class="button primary">View Project</a></li>
+									</ul>
+								</div>
+							</div>
+
+							<div class="project-tile">
+								<img src="images_tsql/xml_json.png" alt="XML and JSON project" />
+								<div class="content">
+									<h3>XML and JSON Handling</h3>
+									<p>
+										This topic demonstrates how SQL Server can process semi-structured data formats.
+										It covers extracting values from XML and JSON content and combining them with relational logic.
+									</p>
+									<div class="project-tags">
+										<span>XML</span>
+										<span>JSON</span>
+										<span>OPENJSON</span>
+										<span>Semi-structured Data</span>
+									</div>
+									<ul class="actions">
+										<li><a href="tsql-xml-json.html" class="button primary">View Project</a></li>
+									</ul>
+								</div>
+							</div>
+
+							<div class="project-tile">
+								<img src="images_tsql/sql_pandas.png" alt="SQL and pandas integration project" />
+								<div class="content">
+									<h3>SQL + pandas Integration</h3>
+									<p>
+										This project extends SQL work into Python by loading SQL Server query results into pandas DataFrames.
+										It demonstrates how database querying and Python-based analysis can be combined in one workflow.
+									</p>
+									<div class="project-tags">
+										<span>Python</span>
+										<span>pandas</span>
+										<span>SQL Server</span>
+										<span>Data Workflow</span>
+									</div>
+									<ul class="actions">
+										<li><a href="tsql-sql-pandas.html" class="button primary">View Project</a></li>
+									</ul>
+								</div>
+							</div>
+
+						</div>
+					</section>
+
+					<section class="project-section">
+						<h2>Core T-SQL Skills Used</h2>
+						<div class="cards-grid">
+							<div class="info-card">
+								<h3>Analytical SQL</h3>
+								<ul class="tech-list">
+									<li>GROUP BY</li>
+									<li>ROLLUP</li>
+									<li>CUBE</li>
+									<li>GROUPING SETS</li>
+								</ul>
+							</div>
+
+							<div class="info-card">
+								<h3>Window Functions</h3>
+								<ul class="tech-list">
+									<li>PARTITION BY</li>
+									<li>ROW_NUMBER()</li>
+									<li>RANK()</li>
+									<li>OVER() clauses</li>
+								</ul>
+							</div>
+
+							<div class="info-card">
+								<h3>Advanced SQL Server Features</h3>
+								<ul class="tech-list">
+									<li>Triggers</li>
+									<li>inserted / deleted tables</li>
+									<li>CTE logic</li>
+									<li>Modular query structure</li>
+								</ul>
+							</div>
+
+							<div class="info-card">
+								<h3>Modern Data Handling</h3>
+								<ul class="tech-list">
+									<li>XML parsing</li>
+									<li>JSON extraction</li>
+									<li>SQL-to-Python workflow</li>
+									<li>pandas integration</li>
+								</ul>
+							</div>
+						</div>
+					</section>
+
+					<section class="project-section">
+						<h2>Key Takeaways</h2>
+						<ul class="takeaway-list">
+							<li><strong>The T-SQL collection demonstrates more than traditional querying.</strong> It includes analytical logic, automation, and SQL Server-specific features.</li>
+							<li><strong>Advanced aggregation and window functions are central strengths.</strong> These techniques are highly relevant in reporting and business intelligence workflows.</li>
+							<li><strong>Triggers, XML, and JSON handling show broader platform knowledge.</strong> They demonstrate that the work goes beyond classroom-level SELECT statements.</li>
+							<li><strong>The SQL + pandas project connects database work with Python analysis.</strong> This makes the overall T-SQL section especially relevant for data analyst and data engineering use cases.</li>
+						</ul>
+					</section>
+
+					<section class="project-section">
+						<h2>GitHub Repository</h2>
+						<div class="github-box">
+							<p>
+								These T-SQL projects are presented mainly as portfolio demonstrations rather than standalone GitHub-ready software applications.
+								Their purpose is to showcase SQL Server query design, analytical logic, automation features, and data integration workflows.
+								For this reason, the scripts used in these projects can also be made available through GitHub as supporting portfolio material.
+							</p>
+							<ul class="actions stacked">
+								<li><a href="https://github.com/Aspartia/PortfolioProject_T-SQL" class="button primary">View Repository</a></li>
+								<li><a href="index.html" class="button">Back to Portfolio</a></li>
+							</ul>
+						</div>
+					</section>
+
+				</div>
+			</div>
+
+			<footer id="footer">
+				<div class="inner">
+					<section>
+						<h2>Get in touch</h2>
+						<form method="post" action="#">
+							<div class="fields">
+								<div class="field half">
+									<input type="text" name="name" id="name" placeholder="Name" />
+								</div>
+								<div class="field half">
+									<input type="email" name="email" id="email" placeholder="Email" />
+								</div>
+								<div class="field">
+									<textarea name="message" id="message" placeholder="Message"></textarea>
+								</div>
+							</div>
+							<ul class="actions">
+								<li><input type="submit" value="Send" class="primary" /></li>
+							</ul>
+						</form>
+					</section>
+					<section>
+						<h2>Follow</h2>
+						<ul class="icons">
+							<li><a href="https://www.facebook.com/eva.panczel.56" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>
+							<li><a href="https://github.com/Aspartia" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+							<li><a href="https://www.linkedin.com/in/eva-panczel/" class="icon brands style2 fa-linkedin"><span class="label">LinkedIn</span></a></li>
+							<li><a href="tel:+36308306122" class="icon solid style2 fa-phone"><span class="label">Phone</span></a></li>
+							<li><a href="mailto:panczel.eva.f@gmail.com" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
+						</ul>
+					</section>
+					<ul class="copyright">
+						<li>&copy; All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</div>
+			</footer>
+
+		</div>
+
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+	</body>
+</html>

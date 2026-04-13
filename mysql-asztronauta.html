@@ -1,0 +1,558 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+-->
+<html>
+	<head>
+		<title>Astronaut Project | Panczel Eva Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			.project-hero {
+				margin-bottom: 2rem;
+			}
+
+			.project-hero .hero-image {
+				border-radius: 0.5rem;
+				overflow: hidden;
+				margin-bottom: 1.5rem;
+			}
+
+			.project-hero .hero-image img {
+				width: 100%;
+				display: block;
+			}
+
+			.project-meta {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 0.75rem;
+				margin: 1.25rem 0 1.75rem 0;
+			}
+
+			.project-meta span {
+				border: 1px solid rgba(255,255,255,0.15);
+				padding: 0.45rem 0.8rem;
+				border-radius: 999px;
+				font-size: 0.85rem;
+				letter-spacing: 0.04em;
+			}
+
+			.project-section {
+				margin-bottom: 3rem;
+			}
+
+			.project-section h2 {
+				margin-bottom: 0.75rem;
+			}
+
+			.cards-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+				gap: 1.25rem;
+				margin-top: 1.25rem;
+			}
+
+			.info-card {
+				border: 1px solid rgba(255,255,255,0.12);
+				border-radius: 0.5rem;
+				padding: 1.25rem;
+				background: rgba(255,255,255,0.03);
+				height: 100%;
+			}
+
+			.info-card h3 {
+				margin-bottom: 0.6rem;
+				font-size: 1.05rem;
+			}
+
+			.tech-list,
+			.takeaway-list {
+				margin: 1rem 0 0 0;
+				padding-left: 1.2rem;
+			}
+
+			.tech-list li,
+			.takeaway-list li {
+				margin-bottom: 0.45rem;
+			}
+
+			.pipeline-box {
+				border-left: 4px solid #ffffff;
+				padding: 1rem 1.25rem;
+				background: rgba(255,255,255,0.03);
+				margin-top: 1rem;
+				border-radius: 0.35rem;
+			}
+
+			.github-box {
+				border: 1px solid rgba(255,255,255,0.15);
+				border-radius: 0.5rem;
+				padding: 1.5rem;
+				background: rgba(255,255,255,0.03);
+				margin-top: 1rem;
+			}
+
+			.figure-placeholder {
+				border: 1px dashed rgba(255,255,255,0.25);
+				border-radius: 0.5rem;
+				padding: 1.25rem;
+				margin: 1.25rem 0 1.5rem 0;
+				background: rgba(255,255,255,0.03);
+				text-align: center;
+			}
+
+			.figure-placeholder p {
+				margin: 0;
+				font-size: 0.95rem;
+				opacity: 0.9;
+			}
+
+			.project-figure {
+				margin: 2rem 0;
+				text-align: center;
+			}
+
+			.project-figure img {
+				display: inline-block;
+				max-width: 100%;
+				height: auto;
+				border-radius: 0.5rem;
+			}
+
+			.figure-medium img {
+				max-width: 720px;
+			}
+
+			.code-box {
+				border: 1px solid rgba(255,255,255,0.15);
+				border-radius: 0.5rem;
+				padding: 1.25rem;
+				background: rgba(255,255,255,0.03);
+				margin-top: 1.25rem;
+				overflow-x: auto;
+			}
+
+			.code-box pre {
+				margin: 0;
+				white-space: pre-wrap;
+				word-break: break-word;
+			}
+
+			.actions.stacked {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 1rem;
+			}
+
+			@media screen and (max-width: 736px) {
+				.project-meta {
+					gap: 0.5rem;
+				}
+
+				.figure-medium img {
+					max-width: 100%;
+				}
+			}
+		</style>
+	</head>
+	<body class="is-preload">
+		<div id="wrapper">
+
+			<header id="header">
+				<div class="inner">
+					<a href="index.html" class="logo">
+						<span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">Portfolio</span>
+					</a>
+					<nav>
+						<ul>
+							<li><a href="#menu">Menu</a></li>
+						</ul>
+					</nav>
+				</div>
+			</header>
+
+
+			<nav id="menu">
+				<h2>Menu</h2>
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="machine-learning.html">Machine Learning</a></li>
+					<li><a href="textmining.html">Text Mining</a></li>
+					<li><a href="powerbi.html">Power BI</a></li>
+					<li><a href="job-matching.html">Job Matching</a></li>
+					<li><a href="nav-online.html">NAV Online</a></li>
+					<li>
+						<a href="mysql.html">MySQL</a>
+						<ul class="submenu">
+							<li><a href="mysql-olympia.html">Olympic Games</a></li>
+							<li><a href="mysql-asztronauta.html">Astronaut</a></li>
+							<li><a href="mysql-hangos.html">Movies</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="tsql.html">T-SQL</a>
+						<ul class="submenu">
+							<li><a href="tsql-grouping.html">Grouping Sets</a></li>
+							<li><a href="tsql-window-functions.html">Window Functions</a></li>
+							<li><a href="tsql-cte.html">CTE</a></li>
+							<li><a href="tsql-triggers.html">Triggers</a></li>
+							<li><a href="tsql-xml-json.html">XML / JSON</a></li>
+							<li><a href="tsql-sql-pandas.html">SQL + pandas</a></li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+
+			<div id="main">
+				<div class="inner">
+
+					<section class="project-hero">
+						<div class="hero-image">
+							<img src="images_mysql/astronauta.jpg" alt="Astronaut MySQL project" />
+						</div>
+
+						<header>
+							<h1>Astronaut Database Project</h1>
+							<p>Relational MySQL project focused on astronaut records, missions, and multi-table analytical SQL queries.</p>
+						</header>
+
+						<div class="project-meta">
+							<span>MySQL</span>
+							<span>Relational Design</span>
+							<span>Joins</span>
+							<span>Aggregation</span>
+							<span>DDL</span>
+							<span>DML</span>
+							<span>SQL Queries</span>
+						</div>
+					</section>
+
+					<section class="project-section">
+						<h2>Overview</h2>
+						<p>
+							This project was built around an astronaut-themed relational database and focuses on practical SQL problem solving.
+							It includes schema creation, data relationships, and query tasks that require combining information from multiple tables.
+						</p>
+						<p>
+							The main goal was to demonstrate structured database thinking: not only writing individual queries,
+							but also working with entities, foreign key relationships, and more realistic data retrieval logic.
+						</p>
+					</section>
+
+					<section class="project-section">
+						<h2>Project Goal</h2>
+						<p>
+							The database stores information related to astronauts and their missions, and the SQL tasks are designed to answer meaningful questions from this domain.
+							The project demonstrates how a relational model can support both operational data storage and analytical querying.
+						</p>
+
+						<div class="cards-grid">
+							<div class="info-card">
+								<h3>Entity Modeling</h3>
+								<p>
+									The project defines structured entities and their relationships instead of storing all information in a single flat table.
+								</p>
+							</div>
+
+							<div class="info-card">
+								<h3>Multi-Table Querying</h3>
+								<p>
+									The exercises rely on joining related tables to answer more advanced questions about astronauts and missions.
+								</p>
+							</div>
+
+							<div class="info-card">
+								<h3>Analytical Logic</h3>
+								<p>
+									The project includes filtering, grouping, and result comparison tasks that go beyond basic SELECT statements.
+								</p>
+							</div>
+						</div>
+					</section>
+
+					<section class="project-section">
+						<h2>Database Structure</h2>
+						<p>
+							The Astronaut project is based on a relational schema where the database is split into logically connected tables.
+							This structure makes the data easier to maintain and allows more complex queries to be written in a clean way.
+						</p>
+
+						<div class="pipeline-box">
+							<p>
+								<strong>Schema Design</strong> → <strong>Table Creation</strong> → <strong>Primary / Foreign Keys</strong> →
+								<strong>Data Loading</strong> → <strong>Join Queries</strong> → <strong>Aggregations</strong> →
+								<strong>Result Interpretation</strong>
+							</p>
+						</div>
+
+
+						<div class="figure-placeholder">
+							<img src="images_mysql/astronaut_desc.png" alt="Astronaut SQL query result" />
+							<p><strong>Database Schema:</strong> Following tables are used in the project.</p>
+						</div>
+					</section>
+
+					<section class="project-section">
+						<h2>SQL Skills Demonstrated</h2>
+						<div class="cards-grid">
+							<div class="info-card">
+								<h3>DDL</h3>
+								<ul class="tech-list">
+									<li>CREATE DATABASE</li>
+									<li>CREATE TABLE</li>
+									<li>Column definitions</li>
+									<li>Constraints</li>
+								</ul>
+							</div>
+
+							<div class="info-card">
+								<h3>Relationships</h3>
+								<ul class="tech-list">
+									<li>Primary keys</li>
+									<li>Foreign keys</li>
+									<li>Table linking</li>
+									<li>Consistent structure</li>
+								</ul>
+							</div>
+
+							<div class="info-card">
+								<h3>Query Logic</h3>
+								<ul class="tech-list">
+									<li>INNER JOIN / LEFT JOIN</li>
+									<li>WHERE filtering</li>
+									<li>ORDER BY</li>
+									<li>Subqueries if needed</li>
+								</ul>
+							</div>
+
+							<div class="info-card">
+								<h3>Analysis</h3>
+								<ul class="tech-list">
+									<li>COUNT</li>
+									<li>GROUP BY</li>
+									<li>Aggregate calculations</li>
+									<li>Summary outputs</li>
+								</ul>
+							</div>
+						</div>
+					</section>
+
+
+<section class="project-section">
+	<h2>Example Query Scenarios</h2>
+	<p>
+		The Astronaut database project demonstrates practical SQL work on a relational dataset about astronauts,
+		missions, and mission participation. The selected examples show how SQL can be used for data insertion,
+		aggregation, join-based analysis, missing-data handling, and more advanced mission logic.
+	</p>
+</section>
+
+<section class="project-section">
+	<div class="cards-grid">
+		<div class="info-card">
+			<h3>1. Registration of a new astronaut</h3>
+			<p>
+				This example demonstrates a basic data insertion task.
+				A new astronaut record is added to the database with nationality, gender, birth year,
+				and total time spent in space.
+			</p>
+		</div>
+	</div>
+
+	<pre><code>INSERT INTO urhajos
+VALUES (570, "Fehér Anett", "HUN", "N", 1973, "T000:00:10");</code></pre>
+
+	<div class="figure-placeholder">
+		<img src="images_mysql/1. Registration of a new astronaut.png" alt="Astronaut SQL query result" />
+	</div>
+</section>
+
+
+<section class="project-section">
+	<div class="cards-grid">
+		<div class="info-card">
+			<h3>2. Which missions were conducted during Christmas?</h3>
+			<p>
+				This query identifies missions whose time interval covered Christmas.
+				It combines date filtering with <strong>DATEDIFF</strong> to calculate mission duration in days.
+			</p>
+		</div>
+	</div>
+
+	<pre><code>SELECT megnevezes,
+       DATEDIFF(kuldetes.veg, kuldetes.kezdet) AS idotartam,
+       kezdet,
+       veg
+FROM kuldetes
+JOIN repules ON kuldetes.id = repules.kuldetesid
+JOIN urhajos ON repules.urhajosid = urhajos.id
+WHERE (MONTH(kezdet) AND DAY(kezdet) &lt;= '12-24')
+  AND (MONTH(veg) AND DAY(veg) &gt;= '12-26')
+  AND YEAR(kezdet) < YEAR(veg) ORDER BY kezdet; </code></pre>
+
+	<div class="figure-placeholder">
+		<img src="images_mysql/2. Which missions were conducted during Christmas.png" alt="Astronaut SQL query result" />
+	</div>
+</section>
+
+<section class="project-section">
+	<div class="cards-grid">
+		<div class="info-card">
+			<h3>3. List astronauts and their missions, who spent the longest time in space!
+			</h3>
+			<p>
+				This query uses <strong>multiple JOIN</strong> to list all astronauts with 
+				the longest total time spent in space, which is calculated using <strong>DATEDIFF</strong> on mission start and end dates,
+				and using subqueries to find the maximum duration across all missions. It demonstrates more complex join and filtering logic.
+			</p>
+		</div>
+	</div>
+
+	<pre><code>SELECT urhajos.nev, urhajos.id, urhajos.orszag , urhajos.nem, DATEDIFF(kuldetes.veg,kuldetes.kezdet) 
+FROM kuldetes JOIN repules ON kuldetes.id = repules.kuldetesid JOIN urhajos ON repules.urhajosid =urhajos.id 
+WHERE DATEDIFF(kuldetes.veg,kuldetes.kezdet) = ( SELECT MAX(DATEDIFF(kuldetes.veg,kuldetes.kezdet)) FROM kuldetes JOIN repules ON kuldetes.id = repules.kuldetesid  JOIN urhajos ON repules.urhajosid =urhajos.id )
+ORDER BY DATEDIFF(kuldetes.veg,kuldetes.kezdet) DESC;</code></pre>
+
+	<div class="figure-placeholder">
+		<img src="images_mysql/3. List astronauts and their missions, who spent the longest time in space.png" alt="Astronaut SQL query result" />
+	</div>
+</section>
+
+<section class="project-section">
+	<div class="cards-grid">
+		<div class="info-card">
+			<h3>4. Astronauts who have traveled to space more than once</h3>
+			<p>
+				This query uses <strong>GROUP BY</strong> and <strong>HAVING</strong> to identify astronauts
+				who participated in more than one mission. It highlights repeated mission participation.
+			</p>
+		</div>
+	</div>
+
+	<pre><code>SELECT urhajos.nev,
+       COUNT(kuldetes.megnevezes)
+FROM kuldetes
+JOIN repules ON kuldetes.id = repules.kuldetesid
+JOIN urhajos ON repules.urhajosid = urhajos.id
+GROUP BY urhajos.nev
+HAVING COUNT(kuldetes.megnevezes) &gt; 1
+ORDER BY COUNT(kuldetes.megnevezes);</code></pre>
+
+	<div class="figure-placeholder">
+		<img src="images_mysql/4. Astronauts who have traveled to space more than once.png" alt="Astronaut SQL query result" />
+	</div>
+</section>
+
+<section class="project-section">
+	<div class="cards-grid">
+		<div class="info-card">
+			<h3>5. Mixed-crew missions</h3>
+			<p>
+				This is a stronger relational query using <strong>EXISTS</strong>.
+				It lists missions where both male and female crew members were present,
+				which demonstrates more advanced mission-level filtering logic.
+			</p>
+		</div>
+	</div>
+
+	<pre><code>SELECT DISTINCT k.megnevezes, u1.nem
+FROM kuldetes k
+JOIN repules r1 ON k.id = r1.kuldetesid
+JOIN urhajos u1 ON r1.urhajosid = u1.id
+WHERE EXISTS (
+    SELECT 1
+    FROM repules r2
+    JOIN urhajos u2 ON r2.urhajosid = u2.id
+    WHERE r2.kuldetesid = k.id AND u2.nem = 'f'
+)
+AND EXISTS (
+    SELECT 1
+    FROM repules r3
+    JOIN urhajos u3 ON r3.urhajosid = u3.id
+    WHERE r3.kuldetesid = k.id AND u3.nem = 'n'
+);</code></pre>
+
+	<div class="figure-placeholder">
+		<img src="images_mysql/5. Mixed-crew missions.png" alt="Astronaut SQL query result" />
+	</div>
+</section>
+
+
+
+					<section class="project-section">
+						<h2>Why This Project Is Strong for a Portfolio</h2>
+						<ul class="takeaway-list">
+							<li><strong>It shows relational thinking.</strong> The project is based on linked tables rather than a single simple dataset.</li>
+							<li><strong>It demonstrates multi-table querying.</strong> This is more representative of real SQL work than isolated beginner queries.</li>
+							<li><strong>The theme is memorable.</strong> A space-related database is visually stronger and easier to remember than a generic example.</li>
+							<li><strong>It combines structure and analysis.</strong> The project reflects both schema design and query-based problem solving.</li>
+						</ul>
+					</section>
+
+					<section class="project-section">
+						<h2>Notes</h2>
+						<div class="github-box">
+							<p>
+								This project is presented as a structured SQL portfolio example rather than a GitHub-ready software application.
+								The focus is on schema design, query writing, and result interpretation.
+							</p>
+							<ul class="actions stacked">
+								<li><a href="mysql.html" class="button primary">Back to MySQL Projects</a></li>
+								<li><a href="index.html" class="button">Back to Portfolio</a></li>
+							</ul>
+						</div>
+					</section>
+
+				</div>
+			</div>
+
+			<footer id="footer">
+				<div class="inner">
+					<section>
+						<h2>Get in touch</h2>
+						<form method="post" action="#">
+							<div class="fields">
+								<div class="field half">
+									<input type="text" name="name" id="name" placeholder="Name" />
+								</div>
+								<div class="field half">
+									<input type="email" name="email" id="email" placeholder="Email" />
+								</div>
+								<div class="field">
+									<textarea name="message" id="message" placeholder="Message"></textarea>
+								</div>
+							</div>
+							<ul class="actions">
+								<li><input type="submit" value="Send" class="primary" /></li>
+							</ul>
+						</form>
+					</section>
+					<section>
+						<h2>Follow</h2>
+						<ul class="icons">
+							<li><a href="https://www.facebook.com/eva.panczel.56" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>
+							<li><a href="https://github.com/Aspartia" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+							<li><a href="https://www.linkedin.com/in/eva-panczel/" class="icon brands style2 fa-linkedin"><span class="label">LinkedIn</span></a></li>
+							<li><a href="tel:+36308306122" class="icon solid style2 fa-phone"><span class="label">Phone</span></a></li>
+							<li><a href="mailto:panczel.eva.f@gmail.com" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
+						</ul>
+					</section>
+					<ul class="copyright">
+						<li>&copy; All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</div>
+			</footer>
+
+		</div>
+
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+	</body>
+</html>

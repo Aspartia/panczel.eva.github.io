@@ -1,0 +1,712 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+-->
+<html>
+	<head>
+		<title>T-SQL and pandas | Panczel Eva Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			.project-hero {
+				margin-bottom: 2rem;
+			}
+
+			.project-hero .hero-image {
+				border-radius: 0.5rem;
+				overflow: hidden;
+				margin-bottom: 1.5rem;
+			}
+
+			.project-hero .hero-image img {
+				width: 100%;
+				display: block;
+			}
+
+			.project-meta {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 0.75rem;
+				margin: 1.25rem 0 1.75rem 0;
+			}
+
+			.project-meta span {
+				border: 1px solid rgba(255,255,255,0.15);
+				padding: 0.45rem 0.8rem;
+				border-radius: 999px;
+				font-size: 0.85rem;
+				letter-spacing: 0.04em;
+			}
+
+			.project-section {
+				margin-bottom: 3rem;
+			}
+
+			.project-section h2 {
+				margin-bottom: 0.75rem;
+			}
+
+			.cards-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+				gap: 1.25rem;
+				margin-top: 1.25rem;
+			}
+
+			.info-card {
+				border: 1px solid rgba(255,255,255,0.12);
+				border-radius: 0.5rem;
+				padding: 1.25rem;
+				background: rgba(255,255,255,0.03);
+				height: 100%;
+			}
+
+			.info-card h3 {
+				margin-bottom: 0.6rem;
+				font-size: 1.05rem;
+			}
+
+			.tech-list,
+			.takeaway-list {
+				margin: 1rem 0 0 0;
+				padding-left: 1.2rem;
+			}
+
+			.tech-list li,
+			.takeaway-list li {
+				margin-bottom: 0.45rem;
+			}
+
+			.pipeline-box {
+				border-left: 4px solid #ffffff;
+				padding: 1rem 1.25rem;
+				background: rgba(255,255,255,0.03);
+				margin-top: 1rem;
+				border-radius: 0.35rem;
+			}
+
+			.github-box {
+				border: 1px solid rgba(255,255,255,0.15);
+				border-radius: 0.5rem;
+				padding: 1.5rem;
+				background: rgba(255,255,255,0.03);
+				margin-top: 1rem;
+			}
+
+			.actions.stacked {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 1rem;
+			}
+
+			.code-block {
+				background: rgba(255,255,255,0.04);
+				border: 1px solid rgba(255,255,255,0.12);
+				border-radius: 0.5rem;
+				padding: 1.25rem;
+				overflow-x: auto;
+				margin-top: 1rem;
+			}
+
+			.code-block pre {
+				margin: 0;
+				white-space: pre-wrap;
+				font-size: 0.95rem;
+				line-height: 1.65;
+			}
+
+			.figure-placeholder {
+				border: 1px dashed rgba(255,255,255,0.25);
+				border-radius: 0.5rem;
+				padding: 1.25rem;
+				margin: 1.25rem 0 1.5rem 0;
+				background: rgba(255,255,255,0.03);
+			}
+
+			.figure-placeholder p {
+				margin: 0;
+				font-size: 0.95rem;
+				opacity: 0.9;
+			}
+
+			@media screen and (max-width: 736px) {
+				.project-meta {
+					gap: 0.5rem;
+				}
+			}
+		</style>
+	</head>
+	<body class="is-preload">
+		<div id="wrapper">
+
+			<header id="header">
+				<div class="inner">
+					<a href="index.html" class="logo">
+						<span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">Portfolio</span>
+					</a>
+					<nav>
+						<ul>
+							<li><a href="#menu">Menu</a></li>
+						</ul>
+					</nav>
+				</div>
+			</header>
+
+			<nav id="menu">
+				<h2>Menu</h2>
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="machine-learning.html">Machine Learning</a></li>
+					<li><a href="textmining.html">Text Mining</a></li>
+					<li><a href="powerbi.html">Power BI</a></li>
+					<li><a href="job-matching.html">Job Matching</a></li>
+					<li><a href="nav-online.html">NAV Online</a></li>
+					<li>
+						<a href="mysql.html">MySQL</a>
+						<ul class="submenu">
+							<li><a href="mysql-olympia.html">Olympic Games</a></li>
+							<li><a href="mysql-asztronauta.html">Astronaut</a></li>
+							<li><a href="mysql-hangos.html">Movies</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="tsql.html">T-SQL</a>
+						<ul class="submenu">
+							<li><a href="tsql-grouping.html">Grouping Sets</a></li>
+							<li><a href="tsql-window-functions.html">Window Functions</a></li>
+							<li><a href="tsql-cte.html">CTE</a></li>
+							<li><a href="tsql-triggers.html">Triggers</a></li>
+							<li><a href="tsql-xml-json.html">XML / JSON</a></li>
+							<li><a href="tsql-sql-pandas.html">SQL + pandas</a></li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+
+			<div id="main">
+				<div class="inner">
+
+					<section class="project-hero">
+						<div class="hero-image">
+							<img src="images_tsql/airport.png" alt="SQL Server and pandas integration project" />
+						</div>
+
+						<header>
+							<h1>Connecting SQL Server and pandas</h1>
+							<p>Python-based workflow for database connection, table upload, SQL querying, and analytical result handling with pandas.</p>
+						</header>
+
+						<div class="project-meta">
+							<span>Python</span>
+							<span>pandas</span>
+							<span>SQLAlchemy</span>
+							<span>pyodbc</span>
+							<span>SQL Server</span>
+							<span>DataFrames</span>
+							<span>SQL Integration</span>
+							<span>ETL Basics</span>
+						</div>
+					</section>
+
+					<section class="project-section">
+						<h2>Overview</h2>
+						<p>
+							This project focuses on connecting Python and SQL Server through <strong>pandas</strong> and <strong>SQLAlchemy</strong>.
+							The main objective was to show how a Python workflow can establish a secure database connection,
+							upload cleaned tabular data into SQL Server, execute SQL queries directly from Python,
+							and load the results back into pandas DataFrames for further inspection and analysis.
+						</p>
+						<p>
+							Unlike the other T-SQL pages, this project is not centered only on SQL syntax.
+							Instead, it demonstrates how SQL querying can be integrated into a Python-based analytics workflow,
+							which is especially useful in data analysis, data engineering, and reporting scenarios.
+						</p>
+					</section>
+
+					<section class="project-section">
+						<h2>Project Goal</h2>
+						<p>
+							The goal of this file was to demonstrate that database work does not need to stay isolated inside SQL Server Management Studio.
+							Using pandas, SQL queries can become part of a broader Python workflow where data is loaded, transformed, queried, and reused in one environment.
+						</p>
+
+						<div class="cards-grid">
+							<div class="info-card">
+								<h3>Database Connection</h3>
+								<p>
+									Create a reusable connection from Python to SQL Server using environment variables and SQLAlchemy.
+								</p>
+							</div>
+
+							<div class="info-card">
+								<h3>Data Upload</h3>
+								<p>
+									Load cleaned CSV data into a SQL table directly from pandas with <strong>to_sql()</strong>.
+								</p>
+							</div>
+
+							<div class="info-card">
+								<h3>Query Execution</h3>
+								<p>
+									Run SQL statements from Python and collect the results into DataFrames.
+								</p>
+							</div>
+
+							<div class="info-card">
+								<h3>Analysis Workflow</h3>
+								<p>
+									Combine SQL logic and pandas inspection in a single reproducible analysis process.
+								</p>
+							</div>
+						</div>
+					</section>
+
+					<section class="project-section">
+						<h2>Workflow Structure</h2>
+						<p>
+							The script follows a simple but realistic workflow: connect to the database, test the connection,
+							upload a cleaned dataset, read the uploaded table back, and then execute multiple analytical queries on another SQL Server database.
+						</p>
+
+						<div class="pipeline-box">
+							<p>
+								<strong>.env Configuration</strong> → <strong>SQLAlchemy Engine</strong> →
+								<strong>Connection Test</strong> → <strong>CSV Load with pandas</strong> →
+								<strong>Upload to SQL Server</strong> → <strong>Run SQL Queries</strong> →
+								<strong>Load Results into DataFrames</strong>
+							</p>
+						</div>
+					</section>
+
+					<section class="project-section">
+						<h2>Connection Setup</h2>
+						<p>
+							The first step is establishing the connection between Python and SQL Server.
+							The script uses environment variables stored in a <strong>.env</strong> file, which is a more secure and reusable approach than hardcoding credentials directly into the source code.
+						</p>
+
+						<div class="code-block">
+<pre>
+from sqlalchemy import create_engine, text
+import pandas as pd
+import os
+from dotenv import find_dotenv, load_dotenv
+
+dotenv_path = find_dotenv()
+load_dotenv(dotenv_path)
+
+USER = os.getenv("USER")
+PASSWORD = os.getenv("PASSWORD")
+LOCALHOST = os.getenv("LOCALHOST")
+DATABASE = os.getenv("DATABASE")
+DRIVER = os.getenv("DRIVER")
+
+engine = create_engine(
+    f"mssql+pyodbc://{USER}:{PASSWORD}@{LOCALHOST}/{DATABASE}?driver={DRIVER}"
+)
+
+print("Kapcsolat létrehozva az adatbázissal!")
+</pre>
+						</div>
+
+						<p>
+							This section demonstrates a practical Python-to-database integration pattern that is directly relevant in real-world analytics projects.
+						</p>
+						
+					</section>
+
+					<section class="project-section">
+						<h2>Connection Validation</h2>
+						<p>
+							Before running any upload or query logic, the script verifies that the connection works correctly by requesting the SQL Server version.
+							This is a useful diagnostic step because it confirms that the engine is valid and the database is reachable.
+						</p>
+
+						<div class="code-block">
+<pre>
+with engine.connect() as connection:
+    result = connection.execute(text("SELECT @@VERSION"))
+    for row in result:
+        print(row)
+</pre>
+						</div>
+						<div class="figure-placeholder">
+							<img src="images_tsql/pandas_1.png" alt="Connection Setup" />
+							
+						</div>
+					</section>
+
+					<section class="project-section">
+						<h2>Uploading Data from pandas to SQL Server</h2>
+						<p>
+							One of the key purposes of the script is to demonstrate that a cleaned CSV file can be loaded into a pandas DataFrame
+							and then uploaded into SQL Server as a real database table.
+						</p>
+
+						<div class="code-block">
+<pre>
+df = pd.read_csv(
+    r'C:\Users\Évi\OneDrive\Asztali gép\Portfoliio project\Data Science Folder Template (jelszólevédés)\project-name\data\raw\Clean_Dataset.csv',
+    delimiter=','
+)
+
+tablename = 'flight_clean_table'
+df.to_sql(tablename, engine, if_exists='replace', index=True)
+
+print("Adatok feltöltve az adatbázisba!")
+</pre>
+						</div>
+						<div class="figure-placeholder">
+							<img src="images_tsql/pandas_2.png" alt="Connection Setup" />
+							
+						</div>
+
+						<p>
+							This part is especially useful because it shows the bridge between file-based preprocessing and relational database storage.
+						</p>
+					</section>
+
+					<section class="project-section">
+						<h2>Reading Data Back into pandas</h2>
+						<p>
+							After uploading the table, the script reads it back from SQL Server using pandas.
+							This confirms that the upload succeeded and that the data can immediately be reused inside Python.
+						</p>
+						<p>
+							This demonstrates a full round trip: file → DataFrame → SQL table → query result → DataFrame.
+						</p>
+
+						<div class="code-block">
+<pre>
+tablename = 'flight_clean_table'
+sql_df = pd.read_sql(tablename, engine)
+sql_df.head()
+
+df_query = pd.read_sql_query(
+    "SELECT * FROM flight_clean_table WHERE airline = 'Vistara'",
+    engine
+)
+print(df_query.head())
+</pre>
+						</div>
+						<div class="figure-placeholder">
+							<img src="images_tsql/pandas_3.png" alt="Connection Setup" />
+							
+						</div>
+					</section>
+
+					<section class="project-section">
+						<h2>Running SQL Queries from Python</h2>
+						<p>
+							The second half of the script focuses on analytical SQL queries executed from Python against a hotel-style SQL Server database.
+							The results are loaded into pandas DataFrames, which makes them easy to inspect, export, or visualize later.
+						</p>
+
+						<div class="cards-grid">
+							<div class="info-card">
+								<h3>Table Retrieval</h3>
+								<p>
+									Read full SQL tables into pandas one by one for inspection and validation.
+								</p>
+							</div>
+
+							<div class="info-card">
+								<h3>Grouped Reports</h3>
+								<p>
+								 Execute grouped SQL reports and subtotal logic directly from Python.
+								</p>
+							</div>
+
+							<div class="info-card">
+								<h3>Window Functions</h3>
+								<p>
+								 Use ranking, lag, and partition-based SQL logic, then inspect the output in DataFrames.
+								</p>
+							</div>
+
+							<div class="info-card">
+								<h3>Reusable Results</h3>
+								<p>
+								 Store SQL query outputs as DataFrames for downstream processing in Python.
+								</p>
+							</div>
+						</div>
+					</section>
+
+					<section class="project-section">
+						<h2>Representative Query Examples</h2>
+						<p>
+							The script includes many SQL queries, but these examples best represent the integration value of the project.
+							They show grouped summaries, window functions, and practical reporting tasks executed through pandas.
+						</p>
+					</section>
+
+					<section class="project-section">
+						<h2>Example 1 — Total Bookings per Guest</h2>
+						<p>
+							This query counts how many bookings each guest has in total, including the grand total row.
+							It shows that even more advanced SQL grouping logic can be executed directly from Python and returned as a DataFrame.
+						</p>
+
+						<div class="code-block">
+<pre>
+df_query = pd.read_sql_query('''
+select iif(Grouping_ID(vendeg.nev)=1,'Végösszeg', cast(vendeg.nev as nvarchar(20))) as 'Vendég',
+count(Foglalas.FOGLALAS_PK) as 'Foglalások száma'
+from Vendeg join Foglalas on Vendeg.USERNEV = Foglalas.UGYFEL_FK
+group by rollup(vendeg.nev)
+order by 'Foglalások száma';
+''', engine)
+
+print(df_query)
+</pre>
+						</div>
+						<div class="figure-placeholder">
+							<img src="images_tsql/pandas_4.png" alt="Example 1: Total Bookings per Guest" />
+							
+						</div>
+					</section>
+
+					<section class="project-section">
+						<h2>Example 2 — Shortest and Longest Booking per Guest</h2>
+						<p>
+							This query combines relational joins with window functions to show the length of each booking,
+							together with the shortest and longest stay for the same guest.
+						</p>
+
+						<div class="code-block">
+<pre>
+df_query = pd.read_sql_query('''
+select vendeg.nev,
+       Foglalas.FOGLALAS_PK,
+       DATEDIFF(DAY, foglalas.mettol, foglalas.meddig) AS 'Foglalás hossza',
+       min(datediff(day, foglalas.mettol, foglalas.meddig)) over(partition by foglalas.ugyfel_fk) as 'Ügyfél legrövidebb foglalása',
+       max(datediff(day, foglalas.mettol, foglalas.meddig)) over(partition by foglalas.ugyfel_fk) as 'Ügyfél leghosszabb foglalása'
+from foglalas
+join vendeg on foglalas.ugyfel_fk = vendeg.usernev
+order by vendeg.nev, foglalas.mettol;
+''', engine)
+
+print(df_query)
+</pre>
+						</div>
+						<div class="figure-placeholder">
+							<img src="images_tsql/pandas_5.png" alt="Example 2: Shortest and Longest Booking per Guest" />
+							
+						</div>
+					</section>
+
+					<section class="project-section">
+						<h2>Example 3 — Previous Booking Size with LAG()</h2>
+						<p>
+							This example uses the <strong>LAG()</strong> window function to compare each booking with the previous booking of the same guest.
+							It is a strong example because it shows how analytical SQL logic can be applied and then handled directly in pandas.
+						</p>
+
+						<div class="code-block">
+<pre>
+df_query = pd.read_sql_query('''
+select f.ugyfel_fk,
+       v.nev,
+       f.mettol,
+       f.meddig,
+       (f.felnott_szam + f.gyermek_szam) as 'FoglalásHányFőre',
+       lag(f.felnott_szam + f.gyermek_szam,1,0)
+           over(partition by f.ugyfel_fk order by f.foglalas_pk) as 'Előző Foglalás Hány főre'
+from vendeg v
+join foglalas f on v.usernev = f.ugyfel_fk
+order by 'FoglalásHányFőre';
+''', engine)
+
+print(df_query)
+</pre>
+						</div>
+						<div class="figure-placeholder">
+							<img src="images_tsql/pandas_6.png" alt="Example 3: Previous Booking Size with LAG()" />
+							
+						</div>
+
+					</section>
+
+					<section class="project-section">
+						<h2>Example 4 — Yearly and Monthly Guest Counts with Subtotals</h2>
+						<p>
+							This query groups bookings by year and month, and includes subtotal and total rows.
+							It shows that grouped reporting logic from T-SQL can be embedded in a Python analysis workflow without modification.
+						</p>
+
+						<div class="code-block">
+<pre>
+df_query = pd.read_sql_query('''
+SELECT 
+    GROUPING_ID(YEAR(foglalas.mettol), MONTH(foglalas.mettol)) AS 'GroupingID',
+    CASE 
+        GROUPING_ID(YEAR(foglalas.mettol), MONTH(foglalas.mettol))
+            WHEN 0 THEN CAST(MONTH(foglalas.mettol) AS nvarchar(4))
+            WHEN 1 THEN CONCAT(YEAR(foglalas.mettol), ' évre összesen')
+            WHEN 2 THEN DATENAME(MONTH, DATEADD(MONTH, month(foglalas.mettol) - 1, '2000-01-01')) + ' hónap foglalásai'
+            WHEN 3 THEN 'Grand Total'
+    END AS 'Hónap',
+    COUNT(*) AS 'Vendégszám'
+FROM Foglalas
+JOIN vendeg ON foglalas.ugyfel_fk = vendeg.usernev
+GROUP BY CUBE(YEAR(foglalas.mettol), MONTH(foglalas.mettol))
+HAVING GROUPING_ID(YEAR(foglalas.mettol), MONTH(foglalas.mettol)) >= 1
+ORDER BY COUNT(*);
+''', engine)
+
+print(df_query)
+</pre>
+						</div>
+						<div class="figure-placeholder">
+							<img src="images_tsql/pandas_7.png" alt="Example 4: Yearly and Monthly Guest Counts with Subtotals" />
+							
+						</div>
+					</section>
+
+					<section class="project-section">
+						<h2>Example 5 — Accommodation Classification with NTILE()</h2>
+						<p>
+							This example classifies accommodation records into four groups based on capacity and type,
+							using the <strong>NTILE()</strong> function. It demonstrates that the script is not limited to simple data retrieval,
+							but also includes ranking and segmentation logic.
+						</p>
+
+						<div class="code-block">
+<pre>
+df_query = pd.read_sql_query('''
+select distinct szallas_nev,
+       klimas,
+       ferohely,
+       tipus,
+       NTILE(4) over(partition by tipus order by szoba.ferohely) 'Szálláshelyosztályok'
+from szoba
+join szallashely on szallas_id = szallas_fk
+where klimas = 'n';
+''', engine)
+
+print(df_query)
+</pre>
+						</div>
+						<div class="figure-placeholder">
+							<img src="images_tsql/pandas_8.png" alt="Example 5: Accommodation Classification with NTILE()" />
+							
+						</div>
+					</section>
+
+					<section class="project-section">
+						<h2>Why This Project Matters</h2>
+						<div class="cards-grid">
+							<div class="info-card">
+								<h3>It Connects SQL and Python</h3>
+								<p>
+									The project demonstrates how SQL Server querying can become part of a Python-based data workflow.
+								</p>
+							</div>
+
+							<div class="info-card">
+								<h3>It Supports Reproducible Analysis</h3>
+								<p>
+									Data loading, querying, and result retrieval happen in one script, which makes the process easier to repeat.
+								</p>
+							</div>
+
+							<div class="info-card">
+								<h3>It Reflects Real Analytics Practice</h3>
+								<p>
+									In real-world work, analysts often need both SQL for extraction and pandas for further processing.
+								</p>
+							</div>
+
+							<div class="info-card">
+								<h3>It Extends Database Use Cases</h3>
+								<p>
+									The database is not only queried manually, but programmatically integrated into a broader data pipeline.
+								</p>
+							</div>
+						</div>
+					</section>
+<!-- 
+					<section class="project-section">
+						<h2>Optional Visual Placeholders</h2>
+						<div class="figure-placeholder">
+							<p><strong>Image placeholder:</strong> insert screenshots here of the SQLAlchemy connection, uploaded table preview, or pandas DataFrame query outputs.</p>
+						</div>
+					</section> -->
+
+					<section class="project-section">
+						<h2>Key Takeaways</h2>
+						<ul class="takeaway-list">
+							<li><strong>This project demonstrates practical SQL Server integration from Python.</strong> It goes beyond isolated SQL scripts.</li>
+							<li><strong>pandas and SQLAlchemy create an efficient bridge between files, databases, and analysis code.</strong></li>
+							<li><strong>The workflow supports both upload and retrieval.</strong> Data can move into SQL Server and back into DataFrames in the same script.</li>
+							<li><strong>Analytical SQL remains fully usable inside Python.</strong> Grouping, window functions, and ranking logic can all be embedded in pandas workflows.</li>
+							<li><strong>This is especially relevant for data analyst and data engineering work.</strong> It reflects a realistic integration pattern between SQL and Python tooling.</li>
+						</ul>
+					</section>
+
+					<section class="project-section">
+						<h2>Navigation</h2>
+						<div class="github-box">
+							<p>
+								This page is part of the T-SQL portfolio section and presents Python-based database interaction with pandas and SQL Server.
+							</p>
+							<ul class="actions stacked">
+								<li><a href="tsql.html" class="button primary">Back to T-SQL Projects</a></li>
+								<li><a href="index.html" class="button">Back to Portfolio</a></li>
+							</ul>
+						</div>
+					</section>
+
+				</div>
+			</div>
+
+			<footer id="footer">
+				<div class="inner">
+					<section>
+						<h2>Get in touch</h2>
+						<form method="post" action="#">
+							<div class="fields">
+								<div class="field half">
+									<input type="text" name="name" id="name" placeholder="Name" />
+								</div>
+								<div class="field half">
+									<input type="email" name="email" id="email" placeholder="Email" />
+								</div>
+								<div class="field">
+									<textarea name="message" id="message" placeholder="Message"></textarea>
+								</div>
+							</div>
+							<ul class="actions">
+								<li><input type="submit" value="Send" class="primary" /></li>
+							</ul>
+						</form>
+					</section>
+					<section>
+						<h2>Follow</h2>
+						<ul class="icons">
+							<li><a href="https://www.facebook.com/eva.panczel.56" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>
+							<li><a href="https://github.com/Aspartia" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+							<li><a href="https://www.linkedin.com/in/eva-panczel/" class="icon brands style2 fa-linkedin"><span class="label">LinkedIn</span></a></li>
+							<li><a href="tel:+36308306122" class="icon solid style2 fa-phone"><span class="label">Phone</span></a></li>
+							<li><a href="mailto:panczel.eva.f@gmail.com" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
+						</ul>
+					</section>
+					<ul class="copyright">
+						<li>&copy; All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</div>
+			</footer>
+
+		</div>
+
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+	</body>
+</html>

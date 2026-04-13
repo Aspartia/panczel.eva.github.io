@@ -1,0 +1,588 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+-->
+<html>
+	<head>
+		<title>T-SQL CTE, Recursive CTE and Pivot | Panczel Eva Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			.project-hero {
+				margin-bottom: 2rem;
+			}
+
+			.project-hero .hero-image {
+				border-radius: 0.5rem;
+				overflow: hidden;
+				margin-bottom: 1.5rem;
+			}
+
+			.project-hero .hero-image img {
+				width: 100%;
+				display: block;
+			}
+
+			.project-meta {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 0.75rem;
+				margin: 1.25rem 0 1.75rem 0;
+			}
+
+			.project-meta span {
+				border: 1px solid rgba(255,255,255,0.15);
+				padding: 0.45rem 0.8rem;
+				border-radius: 999px;
+				font-size: 0.85rem;
+				letter-spacing: 0.04em;
+			}
+
+			.project-section {
+				margin-bottom: 3rem;
+			}
+
+			.project-section h2 {
+				margin-bottom: 0.75rem;
+			}
+
+			.cards-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+				gap: 1.25rem;
+				margin-top: 1.25rem;
+			}
+
+			.info-card {
+				border: 1px solid rgba(255,255,255,0.12);
+				border-radius: 0.5rem;
+				padding: 1.25rem;
+				background: rgba(255,255,255,0.03);
+				height: 100%;
+			}
+
+			.info-card h3 {
+				margin-bottom: 0.6rem;
+				font-size: 1.05rem;
+			}
+
+			.tech-list,
+			.takeaway-list {
+				margin: 1rem 0 0 0;
+				padding-left: 1.2rem;
+			}
+
+			.tech-list li,
+			.takeaway-list li {
+				margin-bottom: 0.45rem;
+			}
+
+			.pipeline-box {
+				border-left: 4px solid #ffffff;
+				padding: 1rem 1.25rem;
+				background: rgba(255,255,255,0.03);
+				margin-top: 1rem;
+				border-radius: 0.35rem;
+			}
+
+			.github-box {
+				border: 1px solid rgba(255,255,255,0.15);
+				border-radius: 0.5rem;
+				padding: 1.5rem;
+				background: rgba(255,255,255,0.03);
+				margin-top: 1rem;
+			}
+
+			.actions.stacked {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 1rem;
+			}
+
+			.code-block {
+				background: rgba(255,255,255,0.04);
+				border: 1px solid rgba(255,255,255,0.12);
+				border-radius: 0.5rem;
+				padding: 1.25rem;
+				overflow-x: auto;
+				margin-top: 1rem;
+			}
+
+			.code-block pre {
+				margin: 0;
+				white-space: pre-wrap;
+				font-size: 0.95rem;
+				line-height: 1.65;
+			}
+
+			.figure-placeholder {
+				border: 1px dashed rgba(255,255,255,0.25);
+				border-radius: 0.5rem;
+				padding: 1.25rem;
+				margin: 1.25rem 0 1.5rem 0;
+				background: rgba(255,255,255,0.03);
+			}
+
+			.figure-placeholder p {
+				margin: 0;
+				font-size: 0.95rem;
+				opacity: 0.9;
+			}
+
+			@media screen and (max-width: 736px) {
+				.project-meta {
+					gap: 0.5rem;
+				}
+			}
+		</style>
+	</head>
+	<body class="is-preload">
+		<div id="wrapper">
+
+			<header id="header">
+				<div class="inner">
+					<a href="index.html" class="logo">
+						<span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">Portfolio</span>
+					</a>
+					<nav>
+						<ul>
+							<li><a href="#menu">Menu</a></li>
+						</ul>
+					</nav>
+				</div>
+			</header>
+
+			<nav id="menu">
+				<h2>Menu</h2>
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="machine-learning.html">Machine Learning</a></li>
+					<li><a href="textmining.html">Text Mining</a></li>
+					<li><a href="powerbi.html">Power BI</a></li>
+					<li><a href="job-matching.html">Job Matching</a></li>
+					<li><a href="nav-online.html">NAV Online</a></li>
+					<li>
+						<a href="mysql.html">MySQL</a>
+						<ul class="submenu">
+							<li><a href="mysql-olympia.html">Olympic Games</a></li>
+							<li><a href="mysql-asztronauta.html">Astronaut</a></li>
+							<li><a href="mysql-hangos.html">Movies</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="tsql.html">T-SQL</a>
+						<ul class="submenu">
+							<li><a href="tsql-grouping.html">Grouping Sets</a></li>
+							<li><a href="tsql-window-functions.html">Window Functions</a></li>
+							<li><a href="tsql-cte.html">CTE</a></li>
+							<li><a href="tsql-triggers.html">Triggers</a></li>
+							<li><a href="tsql-xml-json.html">XML / JSON</a></li>
+							<li><a href="tsql-sql-pandas.html">SQL + pandas</a></li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+
+			<div id="main">
+				<div class="inner">
+
+					<section class="project-hero">
+						<div class="hero-image">
+							<img src="images_tsql/szallas.png" alt="T-SQL CTE project" />
+						</div>
+
+						<header>
+							<h1>T-SQL CTE, Recursive CTE and Pivot</h1>
+							<p>Advanced SQL Server examples using common table expressions, recursive logic, ranking, and pivot-based result transformation.</p>
+						</header>
+
+						<div class="project-meta">
+							<span>T-SQL</span>
+							<span>SQL Server</span>
+							<span>CTE</span>
+							<span>Recursive CTE</span>
+							<span>Pivot</span>
+							<span>Ranking</span>
+							<span>Aggregation</span>
+							<span>Reporting Logic</span>
+						</div>
+					</section>
+
+					<section class="project-section">
+						<h2>Overview</h2>
+						<p>
+							This project uses a sample database containing information about accommodation providers in Hungary, including hotels and other lodging facilities in different regions of the country.
+							The dataset includes tables such as accommodations, rooms, guests, and bookings, which makes it suitable for demonstrating relational queries, analytical SQL functions, and reporting logic.
+							The examples on this page use this dataset to showcase practical SQL Server querying techniques.
+
+						</p>
+						<p>
+							This page focuses on T-SQL techniques that make complex queries easier to structure and interpret.
+							Common Table Expressions, or CTEs, are especially useful when a query needs to be broken into logical steps instead of writing everything in one large nested statement.
+							The selected examples demonstrate how CTEs can be used for aggregation, ranking, filtering based on calculated values,
+							recursive hierarchy traversal, and pivot-style result reshaping. These techniques are highly relevant for analytical SQL development and structured reporting tasks.
+						</p>
+					</section>
+
+					<section class="project-section">
+						<h2>What This Project Demonstrates</h2>
+						<div class="cards-grid">
+							<div class="info-card">
+								<h3>Readable Query Design</h3>
+								<p>
+									CTEs make longer SQL logic easier to understand by separating the preparation step from the final result query.
+								</p>
+							</div>
+
+							<div class="info-card">
+								<h3>Reusable Intermediate Results</h3>
+								<p>
+									Calculated or aggregated datasets can be named once and referenced immediately in the next SELECT statement.
+								</p>
+							</div>
+
+							<div class="info-card">
+								<h3>Recursive Hierarchies</h3>
+								<p>
+									Recursive CTEs make it possible to walk through parent-child structures such as product categories or organizational trees.
+								</p>
+							</div>
+
+							<div class="info-card">
+								<h3>Pivot Reporting</h3>
+								<p>
+									T-SQL can transform row-based data into a report-style matrix format directly inside the database engine.
+								</p>
+							</div>
+						</div>
+					</section>
+
+					<section class="project-section">
+						<h2>Database Overview</h2>
+						<div class="figure-placeholder">
+							<img src="images_tsql/szallas_adatbazis.jpg" alt="T-SQL portfolio projects" />
+						</div>
+					</section>
+
+					<section class="project-section">
+						<h2>Core T-SQL Concepts Used</h2>
+						<div class="pipeline-box">
+							<p>
+								<strong>WITH CTE</strong> → <strong>Aggregated Intermediate Result</strong> →
+								<strong>Ranking / Filtering / Comparison</strong> →
+								<strong>Recursive Expansion</strong> →
+								<strong>PIVOT Transformation</strong>
+							</p>
+						</div>
+
+						<div class="cards-grid">
+							<div class="info-card">
+								<h3>CTE</h3>
+								<p>
+									A named temporary result set used inside a single statement to simplify more complex queries.
+								</p>
+							</div>
+
+							<div class="info-card">
+								<h3>Recursive CTE</h3>
+								<p>
+									A special form of CTE that repeatedly joins back to itself to explore hierarchical data step by step.
+								</p>
+							</div>
+
+							<div class="info-card">
+								<h3>Ranking</h3>
+								<p>
+									CTEs can be combined with window functions such as DENSE_RANK to build ordered analytical output.
+								</p>
+							</div>
+
+							<div class="info-card">
+								<h3>Pivoting</h3>
+								<p>
+									Transforms detailed row values into summary columns for easier comparison in reports.
+								</p>
+							</div>
+						</div>
+					</section>
+
+					<section class="project-section">
+						<h2>Selected Example Queries</h2>
+						<p>
+							The following examples were selected because together they show several different ways CTEs improve query structure:
+							year comparison, ranking, average-based filtering, recursive hierarchy handling, and cross-tab style pivot reporting.
+						</p>
+					</section>
+
+					<section class="project-section">
+						<h2>Example 1 — Comparing Guest Counts Between Two Years</h2>
+						<p>
+							This query first builds an aggregated yearly result inside a CTE, then compares the total guest count between 2016 and 2017.
+							It is a clean example of using a CTE as a preparation layer for a final comparison query.
+						</p>
+						
+						<p>
+							This pattern is useful when totals need to be calculated first and only then compared in a final output row.
+						</p>
+						<div class="code-block">
+<pre>
+WITH ev_vendeg_szam_CTE AS (
+    SELECT YEAR(mettol) AS ev,
+           SUM(felnott_szam + gyermek_szam) AS osszes_vendeg
+    FROM foglalas
+    WHERE YEAR(mettol) IN (2016, 2017)
+    GROUP BY YEAR(mettol)
+)
+SELECT 
+    MAX(CASE WHEN ev = 2016 THEN osszes_vendeg END) AS vendeg_2016,
+    MAX(CASE WHEN ev = 2017 THEN osszes_vendeg END) AS vendeg_2017,
+    MAX(CASE WHEN ev = 2016 THEN osszes_vendeg END) -
+    MAX(CASE WHEN ev = 2017 THEN osszes_vendeg END) AS kulonbseg
+FROM ev_vendeg_szam_CTE;
+</pre>
+						</div>
+
+						<div class="figure-placeholder">
+							<img src="images_tsql/cte_1.png" alt="Grouping Sets SQL query result" />
+							<p><strong>Example 1 Query Results</strong> </p>
+						</div>
+					</section>
+
+					<section class="project-section">
+						<h2>Example 2 — Ranking Accommodations by Number of Bookings</h2>
+						<p>
+							This example combines a CTE with <strong>DENSE_RANK()</strong> to produce a ranked list of accommodations based on how many bookings they received.
+							It is a strong portfolio query because it joins multiple tables and generates business-style ranking output.
+						</p>
+						<p>
+							This is a good example of how CTEs and window functions can work together in a structured analytical query.
+						</p>
+
+						<div class="code-block">
+<pre>
+WITH RangSor_CTE AS (
+    SELECT 
+        szh.szallas_id,
+        szh.szallas_nev,
+        COUNT(*) AS foglalasok_szama,
+        DENSE_RANK() OVER (ORDER BY COUNT(*) DESC) AS rangsor
+    FROM foglalas f
+    JOIN szoba sz ON szoba_fk = sz.szoba_id
+    JOIN szallashely szh ON sz.szallas_fk = szh.szallas_id
+    GROUP BY szh.szallas_id, szh.szallas_nev
+)
+SELECT szallas_nev, rangsor, foglalasok_szama
+FROM RangSor_CTE;
+</pre>
+						</div>
+
+						<div class="figure-placeholder">
+							<img src="images_tsql/cte_2.png" alt="Grouping Sets SQL query result" />
+							<p><strong>Example 2 Query Results</strong> </p>
+						</div>
+					</section>
+
+					<section class="project-section">
+						<h2>Example 3 — Bookings Longer Than the Average Stay</h2>
+						<p>
+							This query calculates the average booking duration inside a CTE, then returns only the bookings that are longer than that average.
+							It is a simple but effective example of separating a reference metric from the final filtered result.
+						</p>
+
+						<p>
+							This approach makes the query easier to read than repeating the same aggregate expression directly inside the WHERE clause.
+						</p>
+						<div class="code-block">
+<pre>
+WITH cte_atlag(atlag) AS (
+    SELECT AVG(DATEDIFF(day, METTOL, MEDDIG))
+    FROM Foglalas
+)
+SELECT FOGLALAS_PK, METTOL, MEDDIG
+FROM Foglalas
+WHERE DATEDIFF(day, METTOL, MEDDIG) > (SELECT atlag FROM cte_atlag);
+</pre>
+						</div>
+
+						<div class="figure-placeholder">
+							<img src="images_tsql/cte_3.png" alt="Grouping Sets SQL query result" />
+							<p><strong>Example 3 Query Results</strong> </p>
+						</div>
+					</section>
+
+					<section class="project-section">
+						<h2>Example 4 — Recursive CTE for Product Category Levels</h2>
+						<p>
+							This is one of the strongest examples on the page because it uses a <strong>recursive CTE</strong>.
+							The query starts from top-level categories and then repeatedly joins child categories to assign their hierarchy level.
+						</p>
+						<p>
+							Recursive logic like this is especially useful when working with nested category structures, organizational charts, or tree-shaped master data.
+						</p>
+
+						<div class="code-block">
+<pre>
+WITH cte_kat (id, nev, parent, szint) AS 
+(
+    SELECT kat_id, kat_nev, szulo_kat, 1
+    FROM Termekkategoria
+    WHERE szulo_kat IS NULL
+
+    UNION ALL
+
+    SELECT tk.kat_id, tk.kat_nev, tk.szulo_kat, ck.szint + 1
+    FROM Termekkategoria tk
+    JOIN cte_kat ck ON tk.szulo_kat = ck.id
+)
+SELECT id, nev, parent, szint
+FROM cte_kat
+ORDER BY szint, nev;
+</pre>
+						</div>
+
+						<div class="figure-placeholder">
+							<img src="images_tsql/cte_4.png" alt="Grouping Sets SQL query result" />
+							<p><strong>Example 4 Query Results</strong> </p>
+						</div>		
+					</section>
+
+					<section class="project-section">
+						<h2>Example 5 — Pivot Table for Accommodation Counts by Star Rating</h2>
+						<p>
+							This query uses <strong>PIVOT</strong> to transform row-based accommodation data into a compact report format.
+							Instead of returning one row per record, it shows how many accommodations exist in each star category.
+						</p>
+						<p>
+							This is a useful reporting pattern because it produces a presentation-friendly output directly in SQL Server.
+						</p>
+
+						<div class="code-block">
+<pre>
+SELECT 'db' AS 'Szálláshelyek száma csillagonként',
+       [1], [2], [3], [4], [5]
+FROM (
+    SELECT szallas_ID, csillagok_szama
+    FROM szallashely
+) AS Szálláshely
+PIVOT(
+    COUNT(szallas_ID)
+    FOR csillagok_szama IN ([1], [2], [3], [4], [5])
+) AS pivottabla;
+</pre>
+						</div>
+
+						<div class="figure-placeholder">
+							<img src="images_tsql/cte_5.png" alt="Grouping Sets SQL query result" />
+							<p><strong>Example 5 Query Results</strong> </p>
+					</section>
+
+					<section class="project-section">
+						<h2>Why These Examples Are Strong</h2>
+						<div class="cards-grid">
+							<div class="info-card">
+								<h3>They Improve Readability</h3>
+								<p>
+									Each query becomes easier to read because the preparation logic is separated from the final result.
+								</p>
+							</div>
+
+							<div class="info-card">
+								<h3>They Show Different CTE Use Cases</h3>
+								<p>
+									The selection includes aggregation, filtering, ranking, recursion, and data reshaping.
+								</p>
+							</div>
+
+							<div class="info-card">
+								<h3>They Reflect Real SQL Tasks</h3>
+								<p>
+									These are the kinds of problems that often appear in reporting, exam tasks, and business-style query development.
+								</p>
+							</div>
+
+							<div class="info-card">
+								<h3>They Are Portfolio-Friendly</h3>
+								<p>
+									The examples are compact enough to present visually, but still advanced enough to show strong SQL knowledge.
+								</p>
+							</div>
+						</div>
+					</section>
+
+
+
+					<section class="project-section">
+						<h2>Key Takeaways</h2>
+						<ul class="takeaway-list">
+							<li><strong>CTEs make complex SQL easier to structure.</strong> They allow large problems to be solved in clearly separated logical steps.</li>
+							<li><strong>Recursive CTEs are especially powerful.</strong> They make hierarchical data analysis possible directly inside SQL Server.</li>
+							<li><strong>CTEs work very well with ranking and filtering.</strong> They provide a clean foundation for analytical result sets.</li>
+							<li><strong>Pivoting improves report readability.</strong> It transforms transactional row data into a matrix-style summary that is easier to present.</li>
+						</ul>
+					</section>
+
+					<section class="project-section">
+						<h2>Navigation</h2>
+						<div class="github-box">
+							<p>
+								This page is part of the T-SQL portfolio section and focuses on CTE-based query design, recursive logic, and pivot reporting.
+							</p>
+							<ul class="actions stacked">
+								<li><a href="tsql.html" class="button primary">Back to T-SQL Projects</a></li>
+								<li><a href="index.html" class="button">Back to Portfolio</a></li>
+							</ul>
+						</div>
+					</section>
+
+				</div>
+			</div>
+
+			<footer id="footer">
+				<div class="inner">
+					<section>
+						<h2>Get in touch</h2>
+						<form method="post" action="#">
+							<div class="fields">
+								<div class="field half">
+									<input type="text" name="name" id="name" placeholder="Name" />
+								</div>
+								<div class="field half">
+									<input type="email" name="email" id="email" placeholder="Email" />
+								</div>
+								<div class="field">
+									<textarea name="message" id="message" placeholder="Message"></textarea>
+								</div>
+							</div>
+							<ul class="actions">
+								<li><input type="submit" value="Send" class="primary" /></li>
+							</ul>
+						</form>
+					</section>
+					<section>
+						<h2>Follow</h2>
+						<ul class="icons">
+							<li><a href="https://www.facebook.com/eva.panczel.56" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>
+							<li><a href="https://github.com/Aspartia" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+							<li><a href="https://www.linkedin.com/in/eva-panczel/" class="icon brands style2 fa-linkedin"><span class="label">LinkedIn</span></a></li>
+							<li><a href="tel:+36308306122" class="icon solid style2 fa-phone"><span class="label">Phone</span></a></li>
+							<li><a href="mailto:panczel.eva.f@gmail.com" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
+						</ul>
+					</section>
+					<ul class="copyright">
+						<li>&copy; All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</div>
+			</footer>
+
+		</div>
+
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+	</body>
+</html>

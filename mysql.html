@@ -1,0 +1,564 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+-->
+<html>
+	<head>
+		<title>MySQL | Panczel Eva Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			.project-hero {
+				margin-bottom: 2rem;
+			}
+
+			.project-hero .hero-image {
+				border-radius: 0.5rem;
+				overflow: hidden;
+				margin-bottom: 1.5rem;
+			}
+
+			.project-hero .hero-image img {
+				width: 100%;
+				display: block;
+			}
+
+			.project-meta {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 0.75rem;
+				margin: 1.25rem 0 1.75rem 0;
+			}
+
+			.project-meta span {
+				border: 1px solid rgba(255,255,255,0.15);
+				padding: 0.45rem 0.8rem;
+				border-radius: 999px;
+				font-size: 0.85rem;
+				letter-spacing: 0.04em;
+			}
+
+			.project-section {
+				margin-bottom: 3rem;
+			}
+
+			.project-section h2 {
+				margin-bottom: 0.75rem;
+			}
+
+			.cards-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+				gap: 1.25rem;
+				margin-top: 1.25rem;
+			}
+
+			.info-card {
+				border: 1px solid rgba(255,255,255,0.12);
+				border-radius: 0.5rem;
+				padding: 1.25rem;
+				background: rgba(255,255,255,0.03);
+				height: 100%;
+			}
+
+			.info-card h3 {
+				margin-bottom: 0.6rem;
+				font-size: 1.05rem;
+			}
+
+			.tech-list,
+			.takeaway-list {
+				margin: 1rem 0 0 0;
+				padding-left: 1.2rem;
+			}
+
+			.tech-list li,
+			.takeaway-list li {
+				margin-bottom: 0.45rem;
+			}
+
+			.pipeline-box {
+				border-left: 4px solid #ffffff;
+				padding: 1rem 1.25rem;
+				background: rgba(255,255,255,0.03);
+				margin-top: 1rem;
+				border-radius: 0.35rem;
+			}
+
+			.github-box {
+				border: 1px solid rgba(255,255,255,0.15);
+				border-radius: 0.5rem;
+				padding: 1.5rem;
+				background: rgba(255,255,255,0.03);
+				margin-top: 1rem;
+			}
+
+			.actions.stacked {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 1rem;
+			}
+
+			.project-gallery {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+				gap: 1.5rem;
+				margin-top: 1.5rem;
+			}
+
+			.project-tile {
+				border: 1px solid rgba(255,255,255,0.12);
+				border-radius: 0.5rem;
+				overflow: hidden;
+				background: rgba(255,255,255,0.03);
+			}
+
+			.project-tile img {
+				width: 100%;
+				display: block;
+			}
+
+			.project-tile .content {
+				padding: 1.25rem;
+			}
+
+			.project-tile .content h3 {
+				margin-bottom: 0.75rem;
+				font-size: 1.05rem;
+			}
+
+			.project-tags {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 0.5rem;
+				margin: 1rem 0 1.25rem 0;
+			}
+
+			.project-tags span {
+				border: 1px solid rgba(255,255,255,0.15);
+				padding: 0.35rem 0.7rem;
+				border-radius: 999px;
+				font-size: 0.8rem;
+			}
+
+			.mini-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+				gap: 1rem;
+				margin-top: 1.25rem;
+			}
+
+			.mini-card {
+				border: 1px solid rgba(255,255,255,0.1);
+				border-radius: 0.5rem;
+				padding: 1rem;
+				background: rgba(255,255,255,0.02);
+			}
+
+			.mini-card h4 {
+				margin-bottom: 0.5rem;
+				font-size: 0.95rem;
+			}
+
+			@media screen and (max-width: 736px) {
+				.project-meta {
+					gap: 0.5rem;
+				}
+			}
+		</style>
+	</head>
+	<body class="is-preload">
+		<div id="wrapper">
+
+			<header id="header">
+				<div class="inner">
+					<a href="index.html" class="logo">
+						<span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">Portfolio</span>
+					</a>
+					<nav>
+						<ul>
+							<li><a href="#menu">Menu</a></li>
+						</ul>
+					</nav>
+				</div>
+			</header>
+
+			<nav id="menu">
+				<h2>Menu</h2>
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="machine-learning.html">Machine Learning</a></li>
+					<li><a href="textmining.html">Text Mining</a></li>
+					<li><a href="powerbi.html">Power BI</a></li>
+					<li><a href="job-matching.html">Job Matching</a></li>
+					<li><a href="nav-online.html">NAV Online</a></li>
+					<li>
+						<a href="mysql.html">MySQL</a>
+						<ul class="submenu">
+							<li><a href="mysql-olympia.html">Olympic Games</a></li>
+							<li><a href="mysql-asztronauta.html">Astronaut</a></li>
+							<li><a href="mysql-hangos.html">Movies</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="tsql.html">T-SQL</a>
+						<ul class="submenu">
+							<li><a href="tsql-grouping.html">Grouping Sets</a></li>
+							<li><a href="tsql-window-functions.html">Window Functions</a></li>
+							<li><a href="tsql-cte.html">CTE</a></li>
+							<li><a href="tsql-triggers.html">Triggers</a></li>
+							<li><a href="tsql-xml-json.html">XML / JSON</a></li>
+							<li><a href="tsql-sql-pandas.html">SQL + pandas</a></li>
+						</ul>
+					</li>
+
+				</ul>
+			</nav>
+
+			<div id="main">
+				<div class="inner">
+
+					<section class="project-hero">
+						<div class="hero-image">
+							<img src="images/mysql.png" alt="MySQL portfolio projects" />
+						</div>
+
+						<header>
+							<h1>MySQL Projects</h1>
+							<p>Collection of SQL projects covering database design, schema creation, joins, aggregations, constraints, and analytical query solving.</p>
+						</header>
+
+						<div class="project-meta">
+							<span>MySQL</span>
+							<span>Database Design</span>
+							<span>DDL</span>
+							<span>DML</span>
+							<span>Joins</span>
+							<span>Aggregation</span>
+							<span>Constraints</span>
+							<span>Query Writing</span>
+						</div>
+					</section>
+
+					<section class="project-section">
+						<h2>Overview</h2>
+						<p>
+							This section of the portfolio presents a collection of MySQL projects created around database design and query writing.
+							The work includes both schema-building tasks and analytical SQL exercises based on different domains such as space missions,
+							sports results, transportation, culture, dictionaries, and film-related datasets.
+						</p>
+						<p>
+							The goal of these projects was to demonstrate practical SQL thinking: building relational structures,
+							defining keys and constraints, inserting structured data, and solving real query problems with clear and well-organized SQL statements.
+						</p>
+					</section>
+
+					<section class="project-section">
+						<h2>What These Projects Demonstrate</h2>
+						<div class="cards-grid">
+							<div class="info-card">
+								<h3>Database Modeling</h3>
+								<p>
+									Designing relational schemas with multiple related tables, clear entity structure, and proper normalization logic.
+								</p>
+							</div>
+
+							<div class="info-card">
+								<h3>SQL Querying</h3>
+								<p>
+									Writing filtering, sorting, joining, grouping, and aggregation queries to answer practical data questions.
+								</p>
+							</div>
+
+							<div class="info-card">
+								<h3>Data Integrity</h3>
+								<p>
+									Using primary keys, foreign keys, constraints, and validation logic to enforce consistency.
+								</p>
+							</div>
+
+							<div class="info-card">
+								<h3>Problem Solving</h3>
+								<p>
+									Translating business-style or exam-style questions into correct SQL solutions across different domains.
+								</p>
+							</div>
+						</div>
+					</section>
+
+					<section class="project-section">
+						<h2>SQL Workflow</h2>
+						<p>
+							Although the projects differ by topic, they follow a similar development logic: define the schema, load or insert structured data,
+							and then solve increasingly complex query tasks on top of that database.
+						</p>
+
+						<div class="pipeline-box">
+							<p>
+								<strong>Database Design</strong> → <strong>Table Creation</strong> → <strong>Keys &amp; Constraints</strong> →
+								<strong>Data Insertion / Import</strong> → <strong>Query Solving</strong> →
+								<strong>Join Logic</strong> → <strong>Aggregation &amp; Reporting</strong>
+							</p>
+						</div>
+					</section>
+
+					<section class="project-section">
+						<h2>Featured Projects</h2>
+						<p>
+							From the full MySQL collection, these three projects best represent the type of SQL work included in this portfolio.
+							They were selected because they show stronger multi-table logic, clearer analytical use cases, and more realistic relational structure.
+						</p>
+
+						<div class="project-gallery">
+
+							<div class="project-tile">
+								<img src="images_mysql/astronaut.png" alt="Astronaut database project" />
+								<div class="content">
+									<h3>Astronaut Project</h3>
+									<p>
+										A relational database project centered around astronauts, missions, and space-related records.
+										This project is useful for demonstrating joins, structured entity relationships, and query-based analysis in a more complex domain.
+									</p>
+									<div class="project-tags">
+										<span>Multi-table</span>
+										<span>Joins</span>
+										<span>Filtering</span>
+										<span>Relational Design</span>
+									</div>
+									<ul class="actions">
+										<li><a href="mysql-asztronauta.html" class="button primary">View Project</a></li>
+									</ul>
+								</div>
+							</div>
+
+							<div class="project-tile">
+								<img src="images_mysql/olympic.png" alt="Olympics database project" />
+								<div class="content">
+									<h3>Olympic Games Project</h3>
+									<p>
+										A sports-oriented SQL project focused on Olympic-style data and measurement-based results.
+										It is especially strong for ranking logic, grouped summaries, and result-based analytical queries.
+									</p>
+									<div class="project-tags">
+										<span>Aggregation</span>
+										<span>Ranking</span>
+										<span>GROUP BY</span>
+										<span>Analysis</span>
+									</div>
+									<ul class="actions">
+										<li><a href="mysql-olympia.html" class="button primary">View Project</a></li>
+									</ul>
+								</div>
+							</div>
+
+							<div class="project-tile">
+								<img src="images_mysql/movie.png" alt="Film database project" />
+								<div class="content">
+									<h3>Movie Project</h3>
+									<p>
+										A film-related relational database containing entities such as titles, people, and roles.
+										This project is a strong example of multi-table querying, relationship handling, and domain-based SQL exploration.
+									</p>
+									<div class="project-tags">
+										<span>Joins</span>
+										<span>Foreign Keys</span>
+										<span>Multi-table Queries</span>
+										<span>Reporting</span>
+									</div>
+									<ul class="actions">
+										<li><a href="mysql-hangos.html" class="button primary">View Project</a></li>
+									</ul>
+								</div>
+							</div>
+
+						</div>
+					</section>
+
+					<section class="project-section">
+						<h2>Additional MySQL Exercises</h2>
+						<p>
+							Beyond the featured projects, the full collection contains several smaller SQL exercises and schema-focused tasks.
+							These projects helped build speed and confidence in writing correct queries across different topics and data structures.
+						</p>
+
+					<div class="mini-grid">
+						<div class="mini-card">
+							<img src="images_mysql/mining.gif" alt="Mining project" />
+							<h4>Mining</h4>
+							<p>SQL query practice on smaller structured dataset correlated to mining operations.</p>
+						</div>
+
+						<div class="mini-card">
+							<img src="images_mysql/skiing.gif" alt="Skiing project" />
+							<h4>Skiing</h4>
+							<p>Schema design and query practice on smaller structured dataset related to skiing activities.</p>
+						</div>
+
+						<div class="mini-card">
+							<img src="images_mysql/airport.gif" alt="Airport project" />
+							<h4>Airport</h4>
+							<p>Airport-related relational tasks with entity linking and filtering logic.</p>
+						</div>
+
+						<div class="mini-card">
+							<img src="images_mysql/art.png" alt="Culture project" />
+							<h4>Culture</h4>
+							<p>Culture-themed SQL exercises focused on joins and data retrieval.</p>
+						</div>
+
+						<div class="mini-card">
+							<img src="images_mysql/transport.gif" alt="Delivery Service project" />
+							<h4>Delivery Service</h4>
+							<p>Delivery-related project with structured records and query tasks.</p>
+						</div>
+
+						<div class="mini-card">
+							<img src="images_mysql/dict.png" alt="Dictionary project" />
+							<h4>Dictionary</h4>
+							<p>Dictionary-style schema useful for simple relational modeling practice.</p>
+						</div>
+
+						<div class="mini-card">
+							<img src="images_mysql/solar.gif" alt="Solar System project" />
+							<h4>Solar System</h4>
+							<p>Domain-based SQL exercise with linked entities and filtered lookups.</p>
+						</div>
+
+						<div class="mini-card">
+							<img src="images_mysql/audience.png" alt="Audience project" />
+							<h4>Audience</h4>
+							<p>Attendance or audience-themed relational dataset with reporting queries.</p>
+						</div>
+
+						<div class="mini-card">
+							<img src="images_mysql/others.gif" alt="Other SQL tasks" />
+							<h4>Other tasks</h4>
+							<p>Smaller query exercises focused on SQL basics and problem-solving.</p>
+						</div>
+					</div>
+					</section>
+
+					<section class="project-section">
+						<h2>Core SQL Skills Used</h2>
+						<div class="cards-grid">
+							<div class="info-card">
+								<h3>DDL</h3>
+								<ul class="tech-list">
+									<li>CREATE DATABASE</li>
+									<li>CREATE TABLE</li>
+									<li>ALTER TABLE</li>
+									<li>DROP / structure updates</li>
+								</ul>
+							</div>
+
+							<div class="info-card">
+								<h3>DML</h3>
+								<ul class="tech-list">
+									<li>INSERT</li>
+									<li>UPDATE</li>
+									<li>DELETE</li>
+									<li>Data loading logic</li>
+								</ul>
+							</div>
+
+							<div class="info-card">
+								<h3>Query Techniques</h3>
+								<ul class="tech-list">
+									<li>INNER / LEFT JOIN</li>
+									<li>WHERE filtering</li>
+									<li>ORDER BY</li>
+									<li>GROUP BY and HAVING</li>
+								</ul>
+							</div>
+
+							<div class="info-card">
+								<h3>Integrity &amp; Control</h3>
+								<ul class="tech-list">
+									<li>PRIMARY KEY</li>
+									<li>FOREIGN KEY</li>
+									<li>CHECK constraints</li>
+									<li>GRANT / REVOKE</li>
+								</ul>
+							</div>
+						</div>
+					</section>
+
+					<section class="project-section">
+						<h2>Key Takeaways</h2>
+						<ul class="takeaway-list">
+							<li><strong>The MySQL collection shows both schema thinking and query thinking.</strong> It is not limited to isolated SELECT statements.</li>
+							<li><strong>Working across many domains improved SQL flexibility.</strong> The same query concepts had to be adapted to very different data structures.</li>
+							<li><strong>The featured projects demonstrate stronger relational complexity.</strong> They are the best examples of joins, aggregation, and realistic database structure.</li>
+							<li><strong>The smaller exercises were still valuable.</strong> They helped strengthen accuracy, syntax confidence, and problem-solving speed.</li>
+						</ul>
+					</section>
+
+					
+                    <section class="project-section">
+						<h2>GitHub Repository</h2>
+						<div class="github-box">
+							<p>
+                                These SQL projects are presented mainly as portfolio demonstrations rather than standalone GitHub-ready applications.
+                                Their purpose is to showcase relational database design and SQL query problem solving across multiple datasets.
+                                For this reason, the SQL scripts used in these projects are also available on GitHub for further exploration.
+                                The repository contains the database schemas, example datasets, and query solutions used in the exercises presented on this page.
+							</p>
+							<ul class="actions stacked">
+								<li><a href="https://github.com/Aspartia/PortfolioProject_MySQL" class="button primary">View Repository</a></li>
+								<li><a href="index.html" class="button">Back to Portfolio</a></li>
+							</ul>
+						</div>
+					</section>
+
+				</div>
+			</div>
+
+			<footer id="footer">
+				<div class="inner">
+					<section>
+						<h2>Get in touch</h2>
+						<form method="post" action="#">
+							<div class="fields">
+								<div class="field half">
+									<input type="text" name="name" id="name" placeholder="Name" />
+								</div>
+								<div class="field half">
+									<input type="email" name="email" id="email" placeholder="Email" />
+								</div>
+								<div class="field">
+									<textarea name="message" id="message" placeholder="Message"></textarea>
+								</div>
+							</div>
+							<ul class="actions">
+								<li><input type="submit" value="Send" class="primary" /></li>
+							</ul>
+						</form>
+					</section>
+					<section>
+						<h2>Follow</h2>
+						<ul class="icons">
+							<li><a href="https://www.facebook.com/eva.panczel.56" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>
+							<li><a href="https://github.com/Aspartia" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+							<li><a href="https://www.linkedin.com/in/eva-panczel/" class="icon brands style2 fa-linkedin"><span class="label">LinkedIn</span></a></li>
+							<li><a href="tel:+36308306122" class="icon solid style2 fa-phone"><span class="label">Phone</span></a></li>
+							<li><a href="mailto:panczel.eva.f@gmail.com" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
+						</ul>
+					</section>
+					<ul class="copyright">
+						<li>&copy; All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</div>
+			</footer>
+
+		</div>
+
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+	</body>
+</html>

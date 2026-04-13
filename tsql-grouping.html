@@ -1,0 +1,591 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+-->
+<html>
+	<head>
+		<title>T-SQL Grouping | Panczel Eva Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			.project-hero {
+				margin-bottom: 2rem;
+			}
+
+			.project-hero .hero-image {
+				border-radius: 0.5rem;
+				overflow: hidden;
+				margin-bottom: 1.5rem;
+			}
+
+			.project-hero .hero-image img {
+				width: 100%;
+				display: block;
+			}
+
+			.project-meta {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 0.75rem;
+				margin: 1.25rem 0 1.75rem 0;
+			}
+
+			.project-meta span {
+				border: 1px solid rgba(255,255,255,0.15);
+				padding: 0.45rem 0.8rem;
+				border-radius: 999px;
+				font-size: 0.85rem;
+				letter-spacing: 0.04em;
+			}
+
+			.project-section {
+				margin-bottom: 3rem;
+			}
+
+			.project-section h2 {
+				margin-bottom: 0.75rem;
+			}
+
+			.cards-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+				gap: 1.25rem;
+				margin-top: 1.25rem;
+			}
+
+			.info-card {
+				border: 1px solid rgba(255,255,255,0.12);
+				border-radius: 0.5rem;
+				padding: 1.25rem;
+				background: rgba(255,255,255,0.03);
+				height: 100%;
+			}
+
+			.info-card h3 {
+				margin-bottom: 0.6rem;
+				font-size: 1.05rem;
+			}
+
+			.tech-list,
+			.takeaway-list {
+				margin: 1rem 0 0 0;
+				padding-left: 1.2rem;
+			}
+
+			.tech-list li,
+			.takeaway-list li {
+				margin-bottom: 0.45rem;
+			}
+
+			.pipeline-box {
+				border-left: 4px solid #ffffff;
+				padding: 1rem 1.25rem;
+				background: rgba(255,255,255,0.03);
+				margin-top: 1rem;
+				border-radius: 0.35rem;
+			}
+
+			.github-box {
+				border: 1px solid rgba(255,255,255,0.15);
+				border-radius: 0.5rem;
+				padding: 1.5rem;
+				background: rgba(255,255,255,0.03);
+				margin-top: 1rem;
+			}
+
+			.actions.stacked {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 1rem;
+			}
+
+			.code-block {
+				background: rgba(255,255,255,0.04);
+				border: 1px solid rgba(255,255,255,0.12);
+				border-radius: 0.5rem;
+				padding: 1.25rem;
+				overflow-x: auto;
+				margin-top: 1rem;
+			}
+
+			.code-block pre {
+				margin: 0;
+				white-space: pre-wrap;
+				font-size: 0.95rem;
+				line-height: 1.65;
+			}
+
+			.figure-placeholder {
+				border: 1px dashed rgba(255,255,255,0.25);
+				border-radius: 0.5rem;
+				padding: 1.25rem;
+				margin: 1.25rem 0 1.5rem 0;
+				background: rgba(255,255,255,0.03);
+			}
+
+			.figure-placeholder p {
+				margin: 0;
+				font-size: 0.95rem;
+				opacity: 0.9;
+			}
+
+			@media screen and (max-width: 736px) {
+				.project-meta {
+					gap: 0.5rem;
+				}
+			}
+		</style>
+	</head>
+	<body class="is-preload">
+		<div id="wrapper">
+
+			<header id="header">
+				<div class="inner">
+					<a href="index.html" class="logo">
+						<span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">Portfolio</span>
+					</a>
+					<nav>
+						<ul>
+							<li><a href="#menu">Menu</a></li>
+						</ul>
+					</nav>
+				</div>
+			</header>
+
+			<nav id="menu">
+				<h2>Menu</h2>
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="machine-learning.html">Machine Learning</a></li>
+					<li><a href="textmining.html">Text Mining</a></li>
+					<li><a href="powerbi.html">Power BI</a></li>
+					<li><a href="job-matching.html">Job Matching</a></li>
+					<li><a href="nav-online.html">NAV Online</a></li>
+					<li>
+						<a href="mysql.html">MySQL</a>
+						<ul class="submenu">
+							<li><a href="mysql-olympia.html">Olympic Games</a></li>
+							<li><a href="mysql-asztronauta.html">Astronaut</a></li>
+							<li><a href="mysql-hangos.html">Movies</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="tsql.html">T-SQL</a>
+						<ul class="submenu">
+							<li><a href="tsql-grouping.html">Grouping Sets</a></li>
+							<li><a href="tsql-window-functions.html">Window Functions</a></li>
+							<li><a href="tsql-cte.html">CTE</a></li>
+							<li><a href="tsql-triggers.html">Triggers</a></li>
+							<li><a href="tsql-xml-json.html">XML / JSON</a></li>
+							<li><a href="tsql-sql-pandas.html">SQL + pandas</a></li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+
+			<div id="main">
+				<div class="inner">
+
+					<section class="project-hero">
+						<div class="hero-image">
+							<img src="images_tsql/webshop.png" alt="T-SQL grouping and aggregation project" />
+						</div>
+
+						<header>
+							<h1>Grouping Sets, Rollup, and Cube</h1>
+							<p>Advanced T-SQL reporting techniques for multi-level aggregation, subtotal generation, and summary-style analytical outputs.</p>
+						</header>
+
+						<div class="project-meta">
+							<span>T-SQL</span>
+							<span>SQL Server</span>
+							<span>GROUP BY</span>
+							<span>ROLLUP</span>
+							<span>CUBE</span>
+							<span>GROUPING SETS</span>
+							<span>GROUPING_ID</span>
+						</div>
+					</section>
+
+					<section class="project-section">
+						<h2>Overview</h2>
+						<p>
+							This project uses a sample webshop database containing information about products, orders, customers, and pricing data.
+							The dataset is designed to simulate a typical e-commerce environment and is used to demonstrate SQL querying techniques such as aggregations, joins, ranking, and analytical functions.
+							This project focuses on advanced SQL Server aggregation techniques used to build structured summary reports.
+							Instead of producing only one grouped result, the queries generate multi-level outputs containing detailed rows,
+							subtotals, and grand totals in a single statement.
+						</p>
+						<p>
+							The main goal was to demonstrate how analytical SQL can support reporting-style logic directly in the database layer.
+							These techniques are especially useful when summary rows must be calculated dynamically without writing separate queries for each level.
+						</p>
+					</section>
+
+					<section class="project-section">
+						<h2>What This Script Demonstrates</h2>
+						<div class="cards-grid">
+							<div class="info-card">
+								<h3>ROLLUP Logic</h3>
+								<p>
+									Generating hierarchical subtotals and final totals from grouped business-style data.
+								</p>
+							</div>
+
+							<div class="info-card">
+								<h3>CUBE Logic</h3>
+								<p>
+									Creating all possible grouped combinations for two-dimensional summary analysis.
+								</p>
+							</div>
+
+							<div class="info-card">
+								<h3>GROUPING SETS</h3>
+								<p>
+									Defining custom aggregation levels directly, instead of relying only on standard GROUP BY output.
+								</p>
+							</div>
+
+							<div class="info-card">
+								<h3>Readable Totals</h3>
+								<p>
+									Labeling subtotal and grand total rows with CASE, IIF, GROUPING, and GROUPING_ID.
+								</p>
+							</div>
+						</div>
+					</section>
+
+					<section class="project-section">
+						<h2>Optional Result Visuals</h2>
+						<div class="figure-placeholder">
+							<img src="images_tsql/adatb_webshop.png" alt="T-SQL portfolio projects" />
+						</div>
+					</section>
+
+					<section class="project-section">
+						<h2>Key SQL Techniques</h2>
+						<div class="pipeline-box">
+							<p>
+								<strong>GROUP BY</strong> → <strong>ROLLUP / CUBE / GROUPING SETS</strong> →
+								<strong>GROUPING / GROUPING_ID</strong> → <strong>Subtotal Labeling</strong> →
+								<strong>Readable Reporting Output</strong>
+							</p>
+						</div>
+
+						<div class="cards-grid">
+							<div class="info-card">
+								<h3>GROUPING()</h3>
+								<p>
+									Used to detect whether a value belongs to a normal row or to an aggregated total row.
+								</p>
+							</div>
+
+							<div class="info-card">
+								<h3>GROUPING_ID()</h3>
+								<p>
+									Helps distinguish multiple subtotal levels and makes custom labeling easier.
+								</p>
+							</div>
+
+							<div class="info-card">
+								<h3>CASE / IIF</h3>
+								<p>
+									Used to replace NULL-based aggregate rows with readable business labels such as subtotal or total.
+								</p>
+							</div>
+
+							<div class="info-card">
+								<h3>HAVING Filters</h3>
+								<p>
+									Used to keep only the aggregation levels that matter for the final report.
+								</p>
+							</div>
+						</div>
+					</section>
+
+					<section class="project-section">
+						<h2>Example Use Cases</h2>
+						<p>
+							The following examples were selected because together they show the full range of advanced grouping logic:
+							hierarchical subtotals, custom grouping sets, cross-dimensional cube summaries, date-based aggregation,
+							and formatted average-value reporting.
+						</p>
+					</section>
+
+					<section class="project-section">
+						<h2>Example 1 — Order Count by Customer and Delivery Method with ROLLUP</h2>
+						<p>
+							This query shows how many orders were placed per customer and, within each customer, per shipping method.
+							It also includes subtotal rows and a final total row in a single result set.
+						</p>
+						<p>
+							This is a strong reporting example because it transforms transactional order data into a readable multi-level summary.
+						</p>
+
+						<div class="code-block">
+<pre>
+SELECT GROUPING_ID([Login], SZALL_MOD) AS 'GroupingID',
+       CASE WHEN GROUPING([Login]) = 1 THEN 'ÖSSZ_Ügyfél'
+            ELSE [Login]
+       END AS '[Login]',
+       CASE WHEN GROUPING(SZALL_MOD) = 1 THEN 'ÖSSZ_Száll'
+            ELSE SZALL_MOD
+       END AS 'SZALL_MOD',
+       COUNT(*) AS 'ügyfelenként/Szállítási módonként DB'
+FROM Rendeles
+GROUP BY ROLLUP([Login], SZALL_MOD);
+</pre>
+						</div>
+
+
+						<div class="figure-placeholder">
+							<img src="images_tsql/grouping_1.png" alt="Grouping Sets SQL query result" />
+							<p><strong>Example 1 Query Results</strong> </p>
+						</div>
+					</section>
+
+					<section class="project-section">
+						<h2>Example 2 — Product Count by Category, Warehouse, and Warehouse + Unit with GROUPING SETS</h2>
+						<p>
+							This example demonstrates custom aggregation levels.
+							Instead of generating every subtotal combination automatically, the query explicitly defines the levels that matter.
+						</p>
+						<p>
+							This is useful when a report needs selected grouping layers only, without extra subtotal combinations.
+						</p>
+
+						<div class="code-block">
+<pre>
+SELECT KAT_ID,
+       RAKTAR_KOD,
+       MEGYS,
+       COUNT(*) AS 'DB'
+FROM Termek
+GROUP BY GROUPING SETS (
+    (KAT_ID),
+    (RAKTAR_KOD),
+    (RAKTAR_KOD, MEGYS)
+)
+HAVING COUNT(*) &gt;= 6;
+</pre>
+						</div>
+
+						<div class="figure-placeholder">
+							<img src="images_tsql/grouping_2.png" alt="Grouping Sets SQL query result" />
+							<p><strong>Example 2 Query Results</strong> </p>
+						</div>
+					</section>
+
+					<section class="project-section">
+						<h2>Example 3 — Customer Count by Birth Year and Gender with CUBE</h2>
+						<p>
+							This query counts customers by birth year and gender while also producing subtotal and grand total combinations.
+							It is a good example of two-dimensional analytical summarization.
+						</p>
+
+						<p>
+							This type of query is highly relevant in reporting because it combines demographic grouping with subtotal logic in one output.
+						</p>
+
+						<div class="code-block">
+<pre>
+SELECT IIF(GROUPING(SZULEV)=1,'TOTAL', CAST(SZULEV AS nvarchar(5))) AS 'Születési Év',
+       GROUPING_ID(SZULEV, NEM) AS 'GroupingID',
+       CASE GROUPING_ID(SZULEV, NEM)
+            WHEN 0 THEN NEM
+            WHEN 1 THEN 'Mindkét nem'
+            WHEN 2 THEN
+                CASE
+                    WHEN NEM = 'F' THEN 'Összes férfi'
+                    WHEN NEM = 'N' THEN 'Összes nő'
+                END
+            WHEN 3 THEN 'Total'
+       END AS 'NEM',
+       COUNT(*) AS 'Ügyfelek száma'
+FROM Ugyfel
+GROUP BY GROUPING SETS (ROLLUP(SZULEV), CUBE(NEM))
+ORDER BY 4;
+</pre>
+						</div>
+						<div class="figure-placeholder">
+							<img src="images_tsql/grouping_3.png" alt="Grouping Sets SQL query result" />
+							<p><strong>Example 3 Query Results</strong> </p>
+						</div>
+					</section>
+
+					<section class="project-section">
+						<h2>Example 4 — Product Count by Month and Day with Partial Totals Only</h2>
+						<p>
+							This query groups products by the month and day of entry date, but keeps only subtotal and total rows.
+							Detailed day-level rows are filtered out.
+						</p>
+						<p>
+							This is a nice example of controlling which aggregation levels remain visible in the final result.
+						</p>
+
+						<div class="code-block">
+<pre>
+SELECT IIF(GROUPING(MONTH(FELVITEL)) = 1, 'Össz_hónap',
+           CAST(MONTH(FELVITEL) AS nvarchar(10))) AS 'Hónap',
+       CASE GROUPING_ID(MONTH(FELVITEL), DAY(FELVITEL))
+            WHEN 0 THEN CAST(DAY(FELVITEL) AS nvarchar(10))
+            WHEN 1 THEN DATENAME(MONTH, DATEFROMPARTS(2000, MONTH(FELVITEL), 1)) + ' hónap összes'
+            WHEN 3 THEN 'Total'
+       END AS 'Nap',
+       COUNT(*) AS 'Termékszám'
+FROM Termek
+GROUP BY ROLLUP(MONTH(FELVITEL), DAY(FELVITEL))
+HAVING GROUPING_ID(MONTH(FELVITEL), DAY(FELVITEL)) NOT IN (0);
+</pre>
+						</div>
+
+							<div class="figure-placeholder">
+							<img src="images_tsql/grouping_4.png" alt="Grouping Sets SQL query result" />
+							<p><strong>Example 4 Query Results</strong> </p>
+						</div>
+					</section>
+
+					<section class="project-section">
+						<h2>Example 5 — Average Product Prices by Category and Warehouse</h2>
+						<p>
+							This query calculates average product prices by category and by category + warehouse, while also including a grand total.
+							It combines joins, formatting, and grouping logic in one business-style report.
+						</p>
+
+						<p>
+							This example is especially portfolio-friendly because it looks like a real management summary report.
+						</p>
+
+						<div class="code-block">
+<pre>
+SELECT GROUPING_ID(Termekkategoria.KAT_NEV, Raktar.RAKTAR_NEV) AS 'GroupingID',
+       IIF(GROUPING(Termekkategoria.KAT_NEV)=1,'Végösszeg',
+           CAST(Termekkategoria.KAT_NEV AS nvarchar(20))) AS 'Termékkategória',
+       CASE GROUPING_ID(Termekkategoria.KAT_NEV, Raktar.RAKTAR_NEV)
+            WHEN 0 THEN Raktar.RAKTAR_NEV
+            WHEN 1 THEN UPPER(Termekkategoria.KAT_NEV) + ' ÁTLAGÁRA'
+            WHEN 3 THEN 'Végösszeg'
+       END AS 'Raktárnév',
+       FORMAT(AVG(Termek.LISTAAR), 'N2') AS 'ÁtlagÁr'
+FROM Termekkategoria
+JOIN Termek ON Termekkategoria.KAT_ID = Termek.KAT_ID
+LEFT JOIN Raktar ON Raktar.RAKTAR_KOD = Termek.RAKTAR_KOD
+GROUP BY ROLLUP(Termekkategoria.KAT_NEV, Raktar.RAKTAR_NEV);
+</pre>
+						</div>
+							<div class="figure-placeholder">
+							<img src="images_tsql/grouping_5.png" alt="Grouping Sets SQL query result" />
+							<p><strong>Example 5 Query Results</strong> </p>
+						</div>
+					</section>
+
+					<section class="project-section">
+						<h2>Why These Examples Are Strong</h2>
+						<div class="cards-grid">
+							<div class="info-card">
+								<h3>Business Readability</h3>
+								<p>
+									The queries do not stop at raw aggregation. They produce labeled, readable report-style outputs.
+								</p>
+							</div>
+
+							<div class="info-card">
+								<h3>Advanced SQL Server Features</h3>
+								<p>
+									They show practical use of GROUPING, GROUPING_ID, ROLLUP, CUBE, and GROUPING SETS together.
+								</p>
+							</div>
+
+							<div class="info-card">
+								<h3>Real Reporting Logic</h3>
+								<p>
+									These are closer to real BI or reporting queries than simple textbook GROUP BY examples.
+								</p>
+							</div>
+
+							<div class="info-card">
+								<h3>Clear Progression</h3>
+								<p>
+									Together they show increasing complexity: from hierarchical totals to custom grouping and formatted reporting.
+								</p>
+							</div>
+						</div>
+					</section>
+
+
+
+					<section class="project-section">
+						<h2>Key Takeaways</h2>
+						<ul class="takeaway-list">
+							<li><strong>This project demonstrates advanced aggregation in SQL Server.</strong> It goes beyond simple GROUP BY and shows how to build structured summary reports.</li>
+							<li><strong>ROLLUP, CUBE, and GROUPING SETS each solve different reporting needs.</strong> Together they form a powerful toolkit for analytical SQL.</li>
+							<li><strong>Readable subtotal labeling is an important skill.</strong> GROUPING and GROUPING_ID help convert technical aggregate rows into business-friendly outputs.</li>
+							<li><strong>The selected examples are highly portfolio-relevant.</strong> They resemble the type of reporting logic often needed in BI, sales analysis, and operational dashboards.</li>
+						</ul>
+					</section>
+
+					<section class="project-section">
+						<h2>Navigation</h2>
+						<div class="github-box">
+							<p>
+								This page is part of the T-SQL portfolio section and focuses specifically on advanced grouping logic in SQL Server.
+							</p>
+							<ul class="actions stacked">
+								<li><a href="tsql.html" class="button primary">Back to T-SQL Projects</a></li>
+								<li><a href="index.html" class="button">Back to Portfolio</a></li>
+							</ul>
+						</div>
+					</section>
+
+				</div>
+			</div>
+
+			<footer id="footer">
+				<div class="inner">
+					<section>
+						<h2>Get in touch</h2>
+						<form method="post" action="#">
+							<div class="fields">
+								<div class="field half">
+									<input type="text" name="name" id="name" placeholder="Name" />
+								</div>
+								<div class="field half">
+									<input type="email" name="email" id="email" placeholder="Email" />
+								</div>
+								<div class="field">
+									<textarea name="message" id="message" placeholder="Message"></textarea>
+								</div>
+							</div>
+							<ul class="actions">
+								<li><input type="submit" value="Send" class="primary" /></li>
+							</ul>
+						</form>
+					</section>
+					<section>
+						<h2>Follow</h2>
+						<ul class="icons">
+							<li><a href="https://www.facebook.com/eva.panczel.56" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>
+							<li><a href="https://github.com/Aspartia" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+							<li><a href="https://www.linkedin.com/in/eva-panczel/" class="icon brands style2 fa-linkedin"><span class="label">LinkedIn</span></a></li>
+							<li><a href="tel:+36308306122" class="icon solid style2 fa-phone"><span class="label">Phone</span></a></li>
+							<li><a href="mailto:panczel.eva.f@gmail.com" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
+						</ul>
+					</section>
+					<ul class="copyright">
+						<li>&copy; All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</div>
+			</footer>
+
+		</div>
+
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+	</body>
+</html>

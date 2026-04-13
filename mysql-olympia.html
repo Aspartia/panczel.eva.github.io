@@ -1,0 +1,560 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+-->
+<html>
+	<head>
+		<title>Olympia Meterben | Panczel Eva Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+<style>
+
+.project-hero{
+margin-bottom:2rem;
+}
+
+.project-hero .hero-image{
+border-radius:.5rem;
+overflow:hidden;
+margin-bottom:1.5rem;
+}
+
+.project-hero img{
+width:100%;
+display:block;
+}
+
+.project-meta{
+display:flex;
+flex-wrap:wrap;
+gap:.75rem;
+margin:1.25rem 0 1.75rem 0;
+}
+
+.project-meta span{
+border:1px solid rgba(255,255,255,.15);
+padding:.45rem .8rem;
+border-radius:999px;
+font-size:.85rem;
+}
+
+.project-section{
+margin-bottom:3rem;
+}
+
+.cards-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+gap:1.25rem;
+margin-top:1.25rem;
+}
+
+.info-card{
+border:1px solid rgba(255,255,255,.12);
+border-radius:.5rem;
+padding:1.25rem;
+background:rgba(255,255,255,.03);
+}
+
+.pipeline-box{
+border-left:4px solid #fff;
+padding:1rem 1.25rem;
+background:rgba(255,255,255,.03);
+margin-top:1rem;
+border-radius:.35rem;
+}
+
+.code-box{
+border:1px solid rgba(255,255,255,.15);
+border-radius:.5rem;
+padding:1.25rem;
+background:rgba(255,255,255,.03);
+margin-top:1.25rem;
+overflow-x:auto;
+}
+
+.project-figure{
+margin:2rem 0;
+text-align:center;
+}
+
+.project-figure img{
+max-width:100%;
+border-radius:.5rem;
+}
+
+.takeaway-list{
+padding-left:1.2rem;
+}
+
+.takeaway-list li{
+margin-bottom:.5rem;
+}
+
+.github-box{
+border:1px solid rgba(255,255,255,.15);
+border-radius:.5rem;
+padding:1.5rem;
+background:rgba(255,255,255,.03);
+margin-top:1rem;
+}
+
+.actions.stacked{
+display:flex;
+flex-wrap:wrap;
+gap:1rem;
+}
+
+</style>
+
+	</head>
+
+	<body class="is-preload">
+
+<div id="wrapper">
+
+<header id="header">
+<div class="inner">
+<a href="index.html" class="logo">
+<span class="symbol"><img src="images/logo.svg" alt=""></span>
+<span class="title">Portfolio</span>
+</a>
+<nav>
+<ul>
+<li><a href="#menu">Menu</a></li>
+</ul>
+</nav>
+</div>
+</header>
+
+
+
+			<nav id="menu">
+				<h2>Menu</h2>
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="machine-learning.html">Machine Learning</a></li>
+					<li><a href="textmining.html">Text Mining</a></li>
+					<li><a href="powerbi.html">Power BI</a></li>
+					<li><a href="job-matching.html">Job Matching</a></li>
+					<li><a href="nav-online.html">NAV Online</a></li>
+					<li>
+						<a href="mysql.html">MySQL</a>
+						<ul class="submenu">
+							<li><a href="mysql-olympia.html">Olympic Games</a></li>
+							<li><a href="mysql-asztronauta.html">Astronaut</a></li>
+							<li><a href="mysql-hangos.html">Movies</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="tsql.html">T-SQL</a>
+						<ul class="submenu">
+							<li><a href="tsql-grouping.html">Grouping Sets</a></li>
+							<li><a href="tsql-window-functions.html">Window Functions</a></li>
+							<li><a href="tsql-cte.html">CTE</a></li>
+							<li><a href="tsql-triggers.html">Triggers</a></li>
+							<li><a href="tsql-xml-json.html">XML / JSON</a></li>
+							<li><a href="tsql-sql-pandas.html">SQL + pandas</a></li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+
+
+<div id="main">
+<div class="inner">
+
+
+<section class="project-hero">
+
+<div class="hero-image">
+<img src="images_mysql/olympia.jpg" alt="Olympic SQL project">
+</div>
+
+<header>
+<h1>Olympic Games SQL Project</h1>
+<p>Relational SQL project analyzing Olympic-style sports results using MySQL queries.</p>
+</header>
+
+<div class="project-meta">
+<span>MySQL</span>
+<span>Aggregation</span>
+<span>GROUP BY</span>
+<span>Ranking</span>
+<span>SQL Analysis</span>
+<span>Joins</span>
+</div>
+
+</section>
+
+
+
+<section class="project-section">
+
+<h2>Overview</h2>
+
+<p>
+The Olympic Games project focuses on analyzing Olympic-style sports results using SQL.
+The dataset contains competition results measured in meters and other performance metrics,
+information about athletes, events, and the goal is to extract meaningful insights from this relational structure.
+</p>
+
+<p>
+The project demonstrates how SQL can be used to summarize performance data,
+compare athletes, and rank results across multiple events.
+</p>
+
+</section>
+
+
+
+<section class="project-section">
+
+<h2>Project Goal</h2>
+
+<p>
+The goal of the project was to work with a sports competition dataset and answer
+analytical questions using SQL queries.
+These tasks simulate real-world analytical scenarios where structured data must be
+aggregated, filtered, and compared.
+</p>
+
+<div class="cards-grid">
+
+<div class="info-card">
+<h3>Performance Analysis</h3>
+<p>
+Identify top results and compare athlete performances across different competitions.
+</p>
+</div>
+
+<div class="info-card">
+<h3>Ranking Logic</h3>
+<p>
+Use sorting and aggregation functions to determine best performers.
+</p>
+</div>
+
+<div class="info-card">
+<h3>Statistical Queries</h3>
+<p>
+Apply SQL aggregation functions to summarize performance data.
+</p>
+</div>
+
+</div>
+
+</section>
+
+
+
+<section class="project-section">
+
+<h2>Database Structure</h2>
+
+<p>
+The project follows a structured workflow typical for analytical SQL tasks:
+creating a dataset structure, inserting records, and solving queries that
+extract insights from the stored data.
+</p>
+
+<div class="pipeline-box">
+
+<strong>Table Structure</strong> →
+<strong>Data Insertion</strong> →
+<strong>Filtering Queries</strong> →
+<strong>Aggregation</strong> →
+<strong>Ranking Results</strong>
+
+</div>
+
+<div class="figure-placeholder">
+	<img src="images_mysql/olimpia_desc.png" alt="Olympic Games SQL query result" />
+	<p><strong>Database Schema:</strong> Following tables are used in the project.</p>
+</div>
+
+</section>
+
+
+
+<section class="project-section">
+
+<h2>SQL Skills Demonstrated</h2>
+
+<div class="cards-grid">
+
+<div class="info-card">
+<h3>Filtering</h3>
+<ul>
+<li>WHERE</li>
+<li>Logical conditions</li>
+<li>Range queries</li>
+</ul>
+</div>
+
+<div class="info-card">
+<h3>Sorting</h3>
+<ul>
+<li>ORDER BY</li>
+<li>Ascending / descending results</li>
+<li>Top results selection</li>
+</ul>
+</div>
+
+<div class="info-card">
+<h3>Aggregation</h3>
+<ul>
+<li>COUNT</li>
+<li>AVG</li>
+<li>MAX / MIN</li>
+<li>GROUP BY</li>
+</ul>
+</div>
+
+<div class="info-card">
+<h3>Analytical Logic</h3>
+<ul>
+<li>Result comparison</li>
+<li>Grouped statistics</li>
+<li>Summary reports</li>
+</ul>
+</div>
+
+</div>
+
+</section>
+
+
+
+<section class="project-section">
+	<h2>Example Query Scenarios</h2>
+	<p>
+		The Olympic database project includes analytical SQL tasks, subqueries, parameterized procedures,
+		and reusable database functions. The examples below were selected to highlight stronger portfolio-level
+		SQL patterns beyond simple filtering.
+	</p>
+
+	<div class="cards-grid">
+		<div class="info-card">
+			<h3>1. Since when have women competed in each Olympic event?</h3>
+			<p>
+				This query examines which is the earliest Olympic year for each individual women's event
+				in the database. It effectively demonstrates the use of JOIN, GROUP BY, and ORDER BY.
+			</p>
+		</div>
+	</div>
+
+	<pre><code>SELECT versenyszam.nev, eredmeny.ev, nem
+FROM eredmeny
+JOIN versenyszam ON versenyszam.az = versenyszamaz
+WHERE nem = "női"
+GROUP BY versenyszam.nev
+ORDER BY ev;</code></pre>
+
+	<div class="figure-placeholder">
+		<img src="images_mysql/1.Since when have women competed in each Olympic event.png" alt="Olympic Games SQL query result" />
+	</div>
+</section>
+
+<section class="project-section">
+	<div class="cards-grid">
+		<div class="info-card">
+			<h3>2. Who are the athletes who have no registered results?</h3>
+			<p>
+				This example is a LEFT JOIN-based verification query that shows
+				which athletes do not have any associated results.
+				It is a useful data quality and consistency checking task.
+			</p>
+		</div>
+	</div>
+
+	<pre><code>SELECT nev
+FROM versenyzo, helyezes
+LEFT JOIN eredmeny ON versenyzo.az = eredmeny.versenyzoaz
+WHERE eredmeny.helyezes IS NULL;</code></pre>
+
+	<div class="figure-placeholder">
+		<img src="images_mysql/2.Who are the athletes who have no registered results.png" alt="Olympic Games SQL query result" />
+	</div>
+</section>
+
+<section class="project-section">
+	<div class="cards-grid">
+		<div class="info-card">
+			<h3>3. Who are those athletes who participated in the same events as Krisztian PARS?</h3>
+			<p>
+				This query uses a subquery and effectively demonstrates
+				how to identify other athletes who participated in the same events as a specific competitor.
+			</p>
+		</div>
+	</div>
+
+	<pre><code>SELECT versenyzo.nev, versenyszam.nev
+FROM versenyzo
+JOIN eredmeny ON versenyzo.az = eredmeny.versenyzoaz
+JOIN versenyszam ON versenyszam.az = versenyszamaz
+WHERE versenyszam.nev = (
+    SELECT versenyszam.nev
+    FROM versenyzo
+    JOIN eredmeny ON versenyzo.az = eredmeny.versenyzoaz
+    JOIN versenyszam ON versenyszam.az = versenyszamaz
+    WHERE versenyzo.nev = "Krisztian PARS"
+);</code></pre>
+
+	<div class="figure-placeholder">
+		
+		<img src="images_mysql/3.Who are those athletes who participated in the same events as Krisztian PARS.png" alt="Olympic Games SQL query result" />
+	</div>
+</section>
+
+<section class="project-section">
+	<div class="cards-grid">
+		<div class="info-card">
+			<h3>4. Stored Procedure</h3>
+			<p>
+				The project contains not only simple SELECT queries but also stored procedures.
+				This procedure displays all related data for the high jump event.
+			</p>
+		</div>
+	</div>
+
+	<pre><code>DELIMITER $$ 
+DROP PROCEDURE IF EXISTS magasugras $$  
+CREATE PROCEDURE magasugras() 
+BEGIN 
+    SELECT *
+    FROM versenyzo
+    JOIN eredmeny ON versenyzo.az = eredmeny.versenyzoaz
+    JOIN versenyszam ON versenyszam.az = versenyszamaz
+    WHERE versenyszam.nev = "magasugrás";
+END $$
+DELIMITER ;
+
+CALL magasugras();</code></pre>
+
+	<div class="figure-placeholder">
+		
+		<img src="images_mysql/4. Stored Procedure.png" alt="Olympic Games SQL query result" />
+
+	</div>
+</section>
+
+<section class="project-section">
+	<div class="cards-grid">
+		<div class="info-card">
+			<h3>5. Stored Function</h3>
+			<p>
+				This example demonstrates a parameterized stored function that returns the number of gold medals for a specified athlete.
+				It effectively illustrates how to encapsulate business logic at the database level for reusability.
+			</p>
+		</div>
+	</div>
+
+	<pre><code>DELIMITER $$
+DROP FUNCTION IF EXISTS versenyzo_db $$
+CREATE FUNCTION versenyzo_db(elsoHelyezett VARCHAR(255))
+RETURNS INT
+BEGIN 
+    DECLARE vissza INT; 
+    SET vissza = (
+        SELECT COUNT(eredmeny.helyezes)
+        FROM versenyzo
+        JOIN eredmeny ON versenyzo.az = eredmeny.versenyzoaz
+        JOIN versenyszam ON versenyszam.az = versenyszamaz 
+        WHERE eredmeny.helyezes = 1
+          AND versenyzo.nev = elsoHelyezett
+    );
+    RETURN vissza;
+END $$
+DELIMITER ;
+
+SELECT versenyzo_db('Ellery CLARK');</code></pre>
+
+	<div class="figure-placeholder">
+
+		<img src="images_mysql/5. Stored Function.png" alt="Olympic Games SQL query result" />
+	</div>
+
+
+
+
+<section class="project-section">
+
+<h2>Key Takeaways</h2>
+
+	<ul class="takeaway-list">
+
+		<li><strong>The project demonstrates analytical SQL usage.</strong></li>
+
+		<li><strong>Aggregation functions are central to the analysis.</strong></li>
+
+		<li><strong>Ranking queries help identify top performances.</strong></li>
+
+		<li><strong>The dataset shows how SQL can support sports analytics.</strong></li>
+
+	</ul>
+
+</section>
+
+
+
+<section class="project-section">
+
+<h2>Navigation</h2>
+
+<div class="github-box">
+
+<ul class="actions stacked">
+
+<li><a href="mysql.html" class="button primary">Back to MySQL Projects</a></li>
+
+<li><a href="index.html" class="button">Back to Portfolio</a></li>
+
+</ul>
+
+</div>
+
+</section>
+
+
+
+</div>
+</div>
+
+
+<footer id="footer">
+<div class="inner">
+
+<section>
+<h2>Follow</h2>
+
+<ul class="icons">
+<li><a href="https://github.com/Aspartia" class="icon brands style2 fa-github"></a></li>
+<li><a href="https://www.linkedin.com/in/eva-panczel/" class="icon brands style2 fa-linkedin"></a></li>
+</ul>
+
+</section>
+
+<ul class="copyright">
+<li>&copy; All rights reserved</li>
+<li>Design: HTML5 UP</li>
+</ul>
+
+</div>
+</footer>
+
+
+</div>
+
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,572 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+-->
+<html>
+	<head>
+		<title>T-SQL Window Functions | Panczel Eva Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			.project-hero {
+				margin-bottom: 2rem;
+			}
+
+			.project-hero .hero-image {
+				border-radius: 0.5rem;
+				overflow: hidden;
+				margin-bottom: 1.5rem;
+			}
+
+			.project-hero .hero-image img {
+				width: 100%;
+				display: block;
+			}
+
+			.project-meta {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 0.75rem;
+				margin: 1.25rem 0 1.75rem 0;
+			}
+
+			.project-meta span {
+				border: 1px solid rgba(255,255,255,0.15);
+				padding: 0.45rem 0.8rem;
+				border-radius: 999px;
+				font-size: 0.85rem;
+				letter-spacing: 0.04em;
+			}
+
+			.project-section {
+				margin-bottom: 3rem;
+			}
+
+			.project-section h2 {
+				margin-bottom: 0.75rem;
+			}
+
+			.cards-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+				gap: 1.25rem;
+				margin-top: 1.25rem;
+			}
+
+			.info-card {
+				border: 1px solid rgba(255,255,255,0.12);
+				border-radius: 0.5rem;
+				padding: 1.25rem;
+				background: rgba(255,255,255,0.03);
+				height: 100%;
+			}
+
+			.info-card h3 {
+				margin-bottom: 0.6rem;
+				font-size: 1.05rem;
+			}
+
+			.tech-list,
+			.takeaway-list {
+				margin: 1rem 0 0 0;
+				padding-left: 1.2rem;
+			}
+
+			.tech-list li,
+			.takeaway-list li {
+				margin-bottom: 0.45rem;
+			}
+
+			.pipeline-box {
+				border-left: 4px solid #ffffff;
+				padding: 1rem 1.25rem;
+				background: rgba(255,255,255,0.03);
+				margin-top: 1rem;
+				border-radius: 0.35rem;
+			}
+
+			.github-box {
+				border: 1px solid rgba(255,255,255,0.15);
+				border-radius: 0.5rem;
+				padding: 1.5rem;
+				background: rgba(255,255,255,0.03);
+				margin-top: 1rem;
+			}
+
+			.actions.stacked {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 1rem;
+			}
+
+			.code-block {
+				background: rgba(255,255,255,0.04);
+				border: 1px solid rgba(255,255,255,0.12);
+				border-radius: 0.5rem;
+				padding: 1.25rem;
+				overflow-x: auto;
+				margin-top: 1rem;
+			}
+
+			.code-block pre {
+				margin: 0;
+				white-space: pre-wrap;
+				font-size: 0.95rem;
+				line-height: 1.65;
+			}
+
+			.figure-placeholder {
+				border: 1px dashed rgba(255,255,255,0.25);
+				border-radius: 0.5rem;
+				padding: 1.25rem;
+				margin: 1.25rem 0 1.5rem 0;
+				background: rgba(255,255,255,0.03);
+			}
+
+			.figure-placeholder p {
+				margin: 0;
+				font-size: 0.95rem;
+				opacity: 0.9;
+			}
+
+			@media screen and (max-width: 736px) {
+				.project-meta {
+					gap: 0.5rem;
+				}
+			}
+		</style>
+	</head>
+	<body class="is-preload">
+		<div id="wrapper">
+
+			<header id="header">
+				<div class="inner">
+					<a href="index.html" class="logo">
+						<span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">Portfolio</span>
+					</a>
+					<nav>
+						<ul>
+							<li><a href="#menu">Menu</a></li>
+						</ul>
+					</nav>
+				</div>
+			</header>
+
+			<nav id="menu">
+				<h2>Menu</h2>
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="machine-learning.html">Machine Learning</a></li>
+					<li><a href="textmining.html">Text Mining</a></li>
+					<li><a href="powerbi.html">Power BI</a></li>
+					<li><a href="job-matching.html">Job Matching</a></li>
+					<li><a href="nav-online.html">NAV Online</a></li>
+					<li>
+						<a href="mysql.html">MySQL</a>
+						<ul class="submenu">
+							<li><a href="mysql-olympia.html">Olympic Games</a></li>
+							<li><a href="mysql-asztronauta.html">Astronaut</a></li>
+							<li><a href="mysql-hangos.html">Movies</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="tsql.html">T-SQL</a>
+						<ul class="submenu">
+							<li><a href="tsql-grouping.html">Grouping Sets</a></li>
+							<li><a href="tsql-window-functions.html">Window Functions</a></li>
+							<li><a href="tsql-cte.html">CTE</a></li>
+							<li><a href="tsql-triggers.html">Triggers</a></li>
+							<li><a href="tsql-xml-json.html">XML / JSON</a></li>
+							<li><a href="tsql-sql-pandas.html">SQL + pandas</a></li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+
+			<div id="main">
+				<div class="inner">
+
+					<section class="project-hero">
+						<div class="hero-image">
+							<img src="images_tsql/webshop.png" alt="T-SQL window functions project" />
+						</div>
+
+						<header>
+							<h1>T-SQL Window Functions</h1>
+							<p>Advanced SQL Server examples using partitions, ranking, previous and next row logic, moving averages, and cumulative calculations.</p>
+						</header>
+
+						<div class="project-meta">
+							<span>T-SQL</span>
+							<span>SQL Server</span>
+							<span>Window Functions</span>
+							<span>PARTITION BY</span>
+							<span>LAG / LEAD</span>
+							<span>DENSE_RANK</span>
+							<span>Running Total</span>
+							<span>Moving Average</span>
+						</div>
+					</section>
+
+					<section class="project-section">
+						<h2>Overview</h2>
+						<p>
+							This project uses a sample webshop database containing information about products, orders, customers, and pricing data.
+							The dataset is designed to simulate a typical e-commerce environment and is used to demonstrate SQL querying techniques such as aggregations, joins, ranking, and analytical functions.
+							This project page focuses on one of the most useful advanced topics in SQL Server: window functions.
+							These functions make it possible to analyze rows in relation to other rows without collapsing the result set like a traditional GROUP BY query would do.
+						</p>
+						<p>
+							The selected examples show how T-SQL can be used for row-by-row analytical logic such as ranking, previous and next value lookup,
+							moving averages, partition-based comparisons, and cumulative totals. These are highly practical techniques for reporting,
+							business analysis, and dashboard-oriented query design.
+						</p>
+					</section>
+
+					<section class="project-section">
+						<h2>What This Project Demonstrates</h2>
+						<div class="cards-grid">
+							<div class="info-card">
+								<h3>Partitioned Analysis</h3>
+								<p>
+									Queries can be evaluated inside logical groups without losing the detail rows of the original dataset.
+								</p>
+							</div>
+
+							<div class="info-card">
+								<h3>Row-to-Row Comparison</h3>
+								<p>
+									Functions like LAG and LEAD allow the current row to be compared with previous or next rows.
+								</p>
+							</div>
+
+							<div class="info-card">
+								<h3>Ranking and Ordering</h3>
+								<p>
+									Window functions support ranking logic, sequence generation, and ordered analytical output.
+								</p>
+							</div>
+
+							<div class="info-card">
+								<h3>Analytical Metrics</h3>
+								<p>
+									Moving averages and cumulative sums can be calculated directly in SQL without exporting the data elsewhere.
+								</p>
+							</div>
+						</div>
+					</section>
+
+					<section class="project-section">
+						<h2>Optional Result Visuals</h2>
+						<div class="figure-placeholder">
+							<img src="images_tsql/adatb_webshop.png" alt="T-SQL portfolio projects" />
+						</div>
+					</section>					
+
+					<section class="project-section">
+						<h2>Core T-SQL Concepts Used</h2>
+						<div class="pipeline-box">
+							<p>
+								<strong>OVER()</strong> → <strong>PARTITION BY</strong> → <strong>ORDER BY</strong> →
+								<strong>LAG / LEAD / FIRST_VALUE / DENSE_RANK</strong> →
+								<strong>ROWS BETWEEN</strong> → <strong>Running Calculations</strong>
+							</p>
+						</div>
+
+						<div class="cards-grid">
+							<div class="info-card">
+								<h3>OVER()</h3>
+								<p>
+									Defines the analytical window for each function and keeps the original row structure intact.
+								</p>
+							</div>
+
+							<div class="info-card">
+								<h3>PARTITION BY</h3>
+								<p>
+									Restarts the calculation inside logical groups such as category, customer, or warehouse.
+								</p>
+							</div>
+
+							<div class="info-card">
+								<h3>ORDER BY inside OVER()</h3>
+								<p>
+									Specifies the sequence used for ranking, previous/next values, and cumulative calculations.
+								</p>
+							</div>
+
+							<div class="info-card">
+								<h3>Window Frames</h3>
+								<p>
+									Used to define dynamic ranges such as previous, current, and next rows for moving averages.
+								</p>
+							</div>
+						</div>
+					</section>
+
+					<section class="project-section">
+						<h2>Selected Example Queries</h2>
+						<p>
+							The following five examples were selected because together they cover the most important practical uses of window functions in T-SQL:
+							relative row lookup, partition-based value comparison, ranking, moving averages, and cumulative totals.
+						</p>
+					</section>
+
+					<section class="project-section">
+						<h2>Example 1 — Previous and Next Customer by Name</h2>
+						<p>
+							This query lists customers in alphabetical order and shows the previous and next customer name for each row.
+							It is a simple but very clear example of how <strong>LAG()</strong> and <strong>LEAD()</strong> work.
+						</p>
+						<p>
+							This type of logic is useful when the task involves comparing neighboring rows in a sorted list.
+						</p>
+
+						<div class="code-block">
+<pre>
+SELECT nev AS 'Ügyfél neve',
+       COALESCE(LAG(nev,1) OVER (ORDER BY nev), 'Nincs') AS 'Előző ügyfél',
+       COALESCE(LEAD(nev,1) OVER (ORDER BY nev), 'Nincs') AS 'Következő ügyfél'
+FROM ugyfel
+ORDER BY nev;
+</pre>
+						</div>
+
+						<div class="figure-placeholder">
+							<img src="images_tsql/window_1.png" alt="Grouping Sets SQL query result" />
+							<p><strong>Example 1 Query Results</strong> </p>
+						</div>						
+					</section>
+
+					<section class="project-section">
+						<h2>Example 2 — Lowest and Highest Product Price Inside Each Category</h2>
+						<p>
+							This example uses <strong>FIRST_VALUE()</strong> with <strong>PARTITION BY</strong> to show the cheapest and most expensive product prices within each product category.
+							The original detail rows remain visible, which makes the query especially useful for side-by-side comparison.
+						</p>
+						<p>
+							This is a strong example of partition-based analysis because each row can be interpreted relative to its own category.
+						</p>
+
+						<div class="code-block">
+<pre>
+SELECT TERMEKKOD,
+       MEGNEVEZES,
+       KAT_ID,
+       LISTAAR,
+       FIRST_VALUE(LISTAAR) OVER(PARTITION BY KAT_ID ORDER BY LISTAAR) AS 'Legolcsóbb',
+       FIRST_VALUE(LISTAAR) OVER(PARTITION BY KAT_ID ORDER BY LISTAAR DESC) AS 'Legdrágább'
+FROM Termek;
+</pre>
+						</div>
+
+						<div class="figure-placeholder">
+							<img src="images_tsql/window_2.png" alt="Grouping Sets SQL query result" />
+							<p><strong>Example 2 Query Results</strong> </p>
+						</div>						
+					</section>
+
+					<section class="project-section">
+						<h2>Example 3 — Order Identifier with Partitioned Ranking</h2>
+						<p>
+							This query generates a custom identifier for each order based on customer and order year.
+							The numbering restarts for each customer and year combination, which demonstrates analytical ranking logic in a business-friendly form.
+						</p>
+						<p>
+							This kind of logic is useful for generating grouped sequences and readable business identifiers directly in SQL.
+						</p>
+
+						<div class="code-block">
+<pre>
+SELECT CONCAT(
+           DENSE_RANK() OVER(PARTITION BY [Login] ORDER BY YEAR(rend_datum)),
+           '_',
+           YEAR(rend_datum),
+           '_',
+           [Login]
+       ) AS 'Azonosító',
+       *
+FROM rendeles;
+</pre>
+						</div>
+
+						<div class="figure-placeholder">
+							<img src="images_tsql/window_3.png" alt="Grouping Sets SQL query result" />
+							<p><strong>Example 3 Query Results</strong> </p>
+						</div>						
+					</section>
+
+					<section class="project-section">
+						<h2>Example 4 — Moving Average of Product Prices</h2>
+						<p>
+							This query calculates a moving average of product prices by taking the previous, current, and next row into account.
+							It is one of the clearest examples of a true window frame using <strong>ROWS BETWEEN</strong>.
+						</p>
+						<p>
+							This is a valuable analytical pattern because it shows how SQL can calculate local trends, not just global summaries.
+						</p>
+
+						<div class="code-block">
+<pre>
+SELECT termekkod,
+       megnevezes,
+       listaar,
+       ROUND(
+           AVG(listaar) OVER(
+               ORDER BY listaar
+               ROWS BETWEEN 1 PRECEDING AND 1 FOLLOWING
+           ), 2
+       ) AS 'mozgóátlag'
+FROM termek;
+</pre>
+						</div>
+
+						<div class="figure-placeholder">
+							<img src="images_tsql/window_4.png" alt="Grouping Sets SQL query result" />
+							<p><strong>Example 4 Query Results</strong> </p>
+						</div>						
+					</section>
+
+					<section class="project-section">
+						<h2>Example 5 — Cumulative Order Value by Customer</h2>
+						<p>
+							This example creates a running total of order item values for each customer.
+							The calculation restarts for each customer and grows row by row according to order sequence.
+						</p>
+						<p>
+							This is one of the most practical uses of window functions, especially in financial, sales, and operational reporting.
+						</p>
+
+						<div class="code-block">
+<pre>
+SELECT rendeles.[login],
+       rendeles.sorszam,
+       (rendeles_tetel.egysegar * rendeles_tetel.mennyiseg) AS 'Rendelések értéke',
+       SUM(rendeles_tetel.egysegar * rendeles_tetel.mennyiseg)
+           OVER (
+               PARTITION BY rendeles.[login]
+               ORDER BY rendeles.sorszam, rendeles_tetel.sorszam
+               ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW
+           ) AS 'Eddigi rendelési tételek összértéke'
+FROM rendeles_tetel
+JOIN rendeles
+    ON rendeles_tetel.sorszam = rendeles.sorszam
+ORDER BY rendeles.[login], rendeles.sorszam, rendeles_tetel.sorszam;
+</pre>
+						</div>
+
+						<div class="figure-placeholder">
+							<img src="images_tsql/window_5.png" alt="Grouping Sets SQL query result" />
+							<p><strong>Example 5 Query Results</strong> </p>
+						</div>						
+					</section>
+
+					<section class="project-section">
+						<h2>Why These Examples Are Strong</h2>
+						<div class="cards-grid">
+							<div class="info-card">
+								<h3>They Keep Detail Rows</h3>
+								<p>
+									Unlike GROUP BY, window functions allow analysis without losing the original record-level output.
+								</p>
+							</div>
+
+							<div class="info-card">
+								<h3>They Show Real Analytical Patterns</h3>
+								<p>
+									The examples are close to practical BI and reporting tasks rather than only academic syntax exercises.
+								</p>
+							</div>
+
+							<div class="info-card">
+								<h3>They Cover Multiple Function Types</h3>
+								<p>
+									The selection includes lookup, ranking, partition comparison, moving windows, and cumulative logic.
+								</p>
+							</div>
+
+							<div class="info-card">
+								<h3>They Are Portfolio-Friendly</h3>
+								<p>
+									Each query is readable, demonstrative, and visually suitable for presenting SQL skills in a project portfolio.
+								</p>
+							</div>
+						</div>
+					</section>
+
+
+					<section class="project-section">
+						<h2>Key Takeaways</h2>
+						<ul class="takeaway-list">
+							<li><strong>Window functions are essential for advanced SQL analytics.</strong> They make it possible to compare rows, rank values, and calculate trends without collapsing the dataset.</li>
+							<li><strong>PARTITION BY is a powerful grouping alternative.</strong> It allows calculations to restart inside categories, customers, or other logical segments.</li>
+							<li><strong>Running totals and moving averages are highly practical.</strong> These patterns appear frequently in reporting, finance, and sales analysis.</li>
+							<li><strong>The selected queries demonstrate real SQL Server value.</strong> They go beyond basic querying and show analytical thinking directly inside the database layer.</li>
+						</ul>
+					</section>
+
+					<section class="project-section">
+						<h2>Navigation</h2>
+						<div class="github-box">
+							<p>
+								This page is part of the T-SQL portfolio section and focuses specifically on window functions and row-based analytical calculations.
+							</p>
+							<ul class="actions stacked">
+								<li><a href="tsql.html" class="button primary">Back to T-SQL Projects</a></li>
+								<li><a href="index.html" class="button">Back to Portfolio</a></li>
+							</ul>
+						</div>
+					</section>
+
+				</div>
+			</div>
+
+			<footer id="footer">
+				<div class="inner">
+					<section>
+						<h2>Get in touch</h2>
+						<form method="post" action="#">
+							<div class="fields">
+								<div class="field half">
+									<input type="text" name="name" id="name" placeholder="Name" />
+								</div>
+								<div class="field half">
+									<input type="email" name="email" id="email" placeholder="Email" />
+								</div>
+								<div class="field">
+									<textarea name="message" id="message" placeholder="Message"></textarea>
+								</div>
+							</div>
+							<ul class="actions">
+								<li><input type="submit" value="Send" class="primary" /></li>
+							</ul>
+						</form>
+					</section>
+					<section>
+						<h2>Follow</h2>
+						<ul class="icons">
+							<li><a href="https://www.facebook.com/eva.panczel.56" class="icon brands style2 fa-facebook-f"><span class="label">Facebook</span></a></li>
+							<li><a href="https://github.com/Aspartia" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+							<li><a href="https://www.linkedin.com/in/eva-panczel/" class="icon brands style2 fa-linkedin"><span class="label">LinkedIn</span></a></li>
+							<li><a href="tel:+36308306122" class="icon solid style2 fa-phone"><span class="label">Phone</span></a></li>
+							<li><a href="mailto:panczel.eva.f@gmail.com" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
+						</ul>
+					</section>
+					<ul class="copyright">
+						<li>&copy; All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</div>
+			</footer>
+
+		</div>
+
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+	</body>
+</html>

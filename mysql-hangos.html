@@ -1,0 +1,528 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+-->
+<html>
+	<head>
+		<title>Film Database | Panczel Eva Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+		<style>
+			.project-hero {
+				margin-bottom: 2rem;
+			}
+
+			.project-hero .hero-image {
+				border-radius: 0.5rem;
+				overflow: hidden;
+				margin-bottom: 1.5rem;
+			}
+
+			.project-hero .hero-image img {
+				width: 100%;
+				display: block;
+			}
+
+			.project-meta {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 0.75rem;
+				margin: 1.25rem 0 1.75rem 0;
+			}
+
+			.project-meta span {
+				border: 1px solid rgba(255,255,255,0.15);
+				padding: 0.45rem 0.8rem;
+				border-radius: 999px;
+				font-size: 0.85rem;
+				letter-spacing: 0.04em;
+			}
+
+			.project-section {
+				margin-bottom: 3rem;
+			}
+
+			.project-section h2 {
+				margin-bottom: 0.75rem;
+			}
+
+			.cards-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+				gap: 1.25rem;
+				margin-top: 1.25rem;
+			}
+
+			.info-card {
+				border: 1px solid rgba(255,255,255,0.12);
+				border-radius: 0.5rem;
+				padding: 1.25rem;
+				background: rgba(255,255,255,0.03);
+				height: 100%;
+			}
+
+			.info-card h3 {
+				margin-bottom: 0.6rem;
+				font-size: 1.05rem;
+			}
+
+			.pipeline-box {
+				border-left: 4px solid #ffffff;
+				padding: 1rem 1.25rem;
+				background: rgba(255,255,255,0.03);
+				margin-top: 1rem;
+				border-radius: 0.35rem;
+			}
+
+			.code-box {
+				border: 1px solid rgba(255,255,255,0.15);
+				border-radius: 0.5rem;
+				padding: 1.25rem;
+				background: rgba(255,255,255,0.03);
+				margin-top: 1.25rem;
+				overflow-x: auto;
+			}
+
+			.project-figure {
+				margin: 2rem 0;
+				text-align: center;
+			}
+
+			.project-figure img {
+				max-width: 100%;
+				border-radius: 0.5rem;
+			}
+
+			.takeaway-list,
+			.tech-list {
+				padding-left: 1.2rem;
+			}
+
+			.takeaway-list li,
+			.tech-list li {
+				margin-bottom: 0.5rem;
+			}
+
+			.github-box {
+				border: 1px solid rgba(255,255,255,0.15);
+				border-radius: 0.5rem;
+				padding: 1.5rem;
+				background: rgba(255,255,255,0.03);
+				margin-top: 1rem;
+			}
+
+			.actions.stacked {
+				display: flex;
+				flex-wrap: wrap;
+				gap: 1rem;
+			}
+		</style>
+	</head>
+
+	<body class="is-preload">
+		<div id="wrapper">
+
+			<header id="header">
+				<div class="inner">
+					<a href="index.html" class="logo">
+						<span class="symbol"><img src="images/logo.svg" alt="" /></span>
+						<span class="title">Portfolio</span>
+					</a>
+					<nav>
+						<ul>
+							<li><a href="#menu">Menu</a></li>
+						</ul>
+					</nav>
+				</div>
+			</header>
+
+
+			<nav id="menu">
+				<h2>Menu</h2>
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="machine-learning.html">Machine Learning</a></li>
+					<li><a href="textmining.html">Text Mining</a></li>
+					<li><a href="powerbi.html">Power BI</a></li>
+					<li><a href="job-matching.html">Job Matching</a></li>
+					<li><a href="nav-online.html">NAV Online</a></li>
+					<li>
+						<a href="mysql.html">MySQL</a>
+						<ul class="submenu">
+							<li><a href="mysql-olympia.html">Olympic Games</a></li>
+							<li><a href="mysql-asztronauta.html">Astronaut</a></li>
+							<li><a href="mysql-hangos.html">Movies</a></li>
+						</ul>
+					</li>
+					<li>
+						<a href="tsql.html">T-SQL</a>
+						<ul class="submenu">
+							<li><a href="tsql-grouping.html">Grouping Sets</a></li>
+							<li><a href="tsql-window-functions.html">Window Functions</a></li>
+							<li><a href="tsql-cte.html">CTE</a></li>
+							<li><a href="tsql-triggers.html">Triggers</a></li>
+							<li><a href="tsql-xml-json.html">XML / JSON</a></li>
+							<li><a href="tsql-sql-pandas.html">SQL + pandas</a></li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+
+			<div id="main">
+				<div class="inner">
+
+					<section class="project-hero">
+						<div class="hero-image">
+							<img src="images_mysql/hangos.jpg" alt="Film database SQL project" />
+						</div>
+
+						<header>
+							<h1>Film Database SQL Project</h1>
+							<p>Relational MySQL project for analyzing films, actors, roles, and structured relationships across multiple connected tables.</p>
+						</header>
+
+						<div class="project-meta">
+							<span>MySQL</span>
+							<span>Relational Design</span>
+							<span>JOINs</span>
+							<span>Multi-table Queries</span>
+							<span>Aggregation</span>
+							<span>SQL Analysis</span>
+						</div>
+					</section>
+
+					<section class="project-section">
+						<h2>Overview</h2>
+						<p>
+							This project focuses on a film-related relational database where multiple connected entities must be queried together.
+							The dataset includes films, people, and role-based relationships, making it a strong example of structured SQL analysis beyond single-table querying.
+						</p>
+						<p>
+							The main value of this project lies in the use of relational thinking: instead of solving isolated filtering problems,
+							the queries combine several tables to answer more realistic analytical questions.
+						</p>
+					</section>
+
+					<section class="project-section">
+						<h2>Project Goal</h2>
+						<p>
+							The goal of the project was to model and query a small film database in MySQL, then answer increasingly complex business-style questions.
+							This required understanding how entities relate to one another and how SQL joins can reconstruct meaningful information from normalized tables.
+						</p>
+
+						<div class="cards-grid">
+							<div class="info-card">
+								<h3>Relational Thinking</h3>
+								<p>
+									The project goes beyond one-table querying and focuses on how entities connect through keys and relationships.
+								</p>
+							</div>
+
+							<div class="info-card">
+								<h3>Entity Connections</h3>
+								<p>
+									Films, people, and roles are stored separately and linked together through structured relations.
+								</p>
+							</div>
+
+							<div class="info-card">
+								<h3>Analytical Queries</h3>
+								<p>
+									The tasks simulate realistic lookup and reporting scenarios often seen in content or media databases.
+								</p>
+							</div>
+						</div>
+					</section>
+
+					<section class="project-section">
+						<h2>Database Structure</h2>
+						<p>
+							This project is especially useful as a portfolio example because it demonstrates a more realistic relational schema.
+							Instead of storing everything in one table, the model separates core entities and connects them through keys.
+						</p>
+
+						<div class="pipeline-box">
+							<p>
+								<strong>Film Table</strong> →
+								<strong>Person Table</strong> →
+								<strong>Role / Relationship Table</strong> →
+								<strong>JOIN Queries</strong> →
+								<strong>Reports and Analysis</strong>
+							</p>
+						</div>
+
+						<div class="figure-placeholder">
+							<img src="images_mysql/hangos_desc.png" alt="Movies SQL query result" />
+							<p><strong>Database Schema:</strong> Following tables are used in the project.</p>
+						</div>
+
+						<div class="cards-grid">
+							<div class="info-card">
+								<h3>Films</h3>
+								<p>
+									Stores the core movie records and title-related metadata.
+								</p>
+							</div>
+
+							<div class="info-card">
+								<h3>People</h3>
+								<p>
+									Contains actors or other film-related persons participating in productions.
+								</p>
+							</div>
+
+							<div class="info-card">
+								<h3>Relationships</h3>
+								<p>
+									Links films and people together through role-specific associations.
+								</p>
+							</div>
+						</div>
+					</section>
+
+					<section class="project-section">
+						<h2>SQL Skills Demonstrated</h2>
+
+						<div class="cards-grid">
+							<div class="info-card">
+								<h3>JOIN Operations</h3>
+								<ul class="tech-list">
+									<li>INNER JOIN</li>
+									<li>Linking entities by keys</li>
+									<li>Combining normalized tables</li>
+								</ul>
+							</div>
+
+							<div class="info-card">
+								<h3>Filtering and Search</h3>
+								<ul class="tech-list">
+									<li>WHERE clauses</li>
+									<li>Conditional filtering</li>
+									<li>Text-based selection</li>
+								</ul>
+							</div>
+
+							<div class="info-card">
+								<h3>Aggregation</h3>
+								<ul class="tech-list">
+									<li>COUNT</li>
+									<li>GROUP BY</li>
+									<li>Summary reporting</li>
+								</ul>
+							</div>
+
+							<div class="info-card">
+								<h3>Reporting Logic</h3>
+								<ul class="tech-list">
+									<li>Actor-film connections</li>
+									<li>Grouped query outputs</li>
+									<li>Readable result tables</li>
+								</ul>
+							</div>
+						</div>
+					</section>
+
+					
+
+					<section class="project-section">
+							<h2>Example Query Scenarios</h2>
+							<p>
+								The Hangos database project demonstrates practical SQL query writing on a historical film dataset.
+								The selected examples show how relational SQL can be used for participant lookup, missing-data analysis,
+								stored procedures, and reusable database functions.
+							</p>
+						</section>
+
+						<section class="project-section">
+							<div class="cards-grid">
+								<div class="info-card">
+									<h3>1. Who worked on the same film as Heltai Jenő?</h3>
+									<p>
+										This query uses a subquery and multi-table joins to identify all people
+										who contributed to the same film as Heltai Jenő.
+										It is a good example of relational lookup across people, tasks, and films.
+									</p>
+								</div>
+							</div>
+
+							<pre><code>SELECT szemely.nev, film.cim
+FROM feladat
+JOIN szemely ON feladat.szemelyid = szemely.id
+JOIN film ON film.id = feladat.filmid
+WHERE cim = (
+	SELECT cim
+	FROM feladat
+	JOIN szemely ON feladat.szemelyid = szemely.id
+	JOIN film ON film.id = feladat.filmid
+	WHERE szemely.nev = "Heltai Jenő"
+)
+AND nev != "Heltai Jenő";</code></pre>
+
+							<div class="figure-placeholder">
+								<img src="images_mysql/1. Who worked on the same film as Heltai Jenő.png" alt="Film database SQL query result" />
+							</div>
+						</section>
+
+						<section class="project-section">
+							<div class="cards-grid">
+								<div class="info-card">
+									<h3>2. How many people have no recorded film-related data?</h3>
+									<p>
+										This query uses a LEFT JOIN to identify records that are missing from the relationship table.
+										It demonstrates how SQL can be used for data validation and completeness checks.
+									</p>
+								</div>
+							</div>
+
+							<pre><code>SELECT COUNT(1)
+FROM szemely
+LEFT JOIN feladat ON feladat.szemelyid = szemely.id
+WHERE feladat.filmid IS NULL;</code></pre>
+
+							<div class="figure-placeholder">
+								<img src="images_mysql/2. How many people have no recorded film-related data.png" alt="Film database SQL query result" />
+							</div>
+						</section>
+
+						<section class="project-section">
+							<div class="cards-grid">
+								<div class="info-card">
+									<h3>3. Which films still have no related data recorded?</h3>
+									<p>
+										This query lists films that do not yet have linked task or participant records.
+										It highlights missing relational data and is useful for database quality review.
+									</p>
+								</div>
+							</div>
+
+							<pre><code>SELECT cim
+FROM film.*, feladat.*
+LEFT JOIN feladat ON film.id = feladat.filmid
+WHERE filmid IS NULL;</code></pre>
+
+							<div class="figure-placeholder">
+								<img src="images_mysql/3. Which films still have no related data recorded.png" alt="Film database SQL query result" />
+							</div>
+						</section>
+
+						<section class="project-section">
+							<div class="cards-grid">
+								<div class="info-card">
+									<h3>4. Stored procedure</h3>
+									<p>
+										This stored procedure returns all films connected to Karády Katalin,
+										ordered by premiere date. It demonstrates how more complex query logic
+										can be wrapped into a reusable database object.
+									</p>
+								</div>
+							</div>
+
+							<pre><code>DELIMITER $$ 
+DROP PROCEDURE IF EXISTS Karady $$
+CREATE PROCEDURE Karady() 
+BEGIN 
+	SELECT *
+	FROM feladat
+	JOIN film ON film.id = feladat.filmid
+	JOIN szemely ON feladat.szemelyid = szemely.id
+	WHERE szemely.nev = "Karády Katalin"
+	ORDER BY bemutato;
+END $$
+DELIMITER ;
+
+CALL Karady();</code></pre>
+
+							<div class="figure-placeholder">
+								<img src="images_mysql/4. Stored procedure_hangos.png" alt="Film database SQL query result" />
+							</div>
+						</section>
+
+						<section class="project-section">
+							<div class="cards-grid">
+								<div class="info-card">
+									<h3>5. Stored function</h3>
+									<p>
+										This stored function returns how many films a given person appeared in or contributed to.
+										It demonstrates reusable logic implemented directly inside the database layer.
+									</p>
+								</div>
+							</div>
+
+							<pre><code>DELIMITER $$
+DROP FUNCTION IF EXISTS szemely_db $$
+CREATE FUNCTION szemely_db(beNev VARCHAR(255))
+RETURNS INT
+BEGIN 
+	DECLARE vissza INT; 
+	SET vissza = (
+		SELECT COUNT(filmid), nev
+		FROM feladat
+		JOIN film ON film.id = feladat.filmid
+		JOIN szemely ON feladat.szemelyid = szemely.id
+		WHERE nev = beNev
+	);
+	RETURN vissza;
+END $$
+DELIMITER ;
+
+SELECT szemely_db("Kabos Gyula");</code></pre>
+
+							<div class="figure-placeholder">
+								<img src="images_mysql/5. Stored function_hangos.png" alt="Film database SQL query result" />
+							</div>
+						</section>
+
+
+					<section class="project-section">
+						<h2>Key Takeaways</h2>
+						<ul class="takeaway-list">
+							<li><strong>This project highlights relational SQL skills.</strong></li>
+							<li><strong>JOIN logic is the central strength of the solution.</strong></li>
+							<li><strong>The schema is closer to real-world database design.</strong></li>
+							<li><strong>It is a strong portfolio example because it combines structure, logic, and readable reporting.</strong></li>
+						</ul>
+					</section>
+
+					<section class="project-section">
+						<h2>Navigation</h2>
+						<div class="github-box">
+							<ul class="actions stacked">
+								<li><a href="mysql.html" class="button primary">Back to MySQL Projects</a></li>
+								<li><a href="index.html" class="button">Back to Portfolio</a></li>
+							</ul>
+						</div>
+					</section>
+
+				</div>
+			</div>
+
+			<footer id="footer">
+				<div class="inner">
+					<section>
+						<h2>Follow</h2>
+						<ul class="icons">
+							<li><a href="https://github.com/Aspartia" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+							<li><a href="https://www.linkedin.com/in/eva-panczel/" class="icon brands style2 fa-linkedin"><span class="label">LinkedIn</span></a></li>
+						</ul>
+					</section>
+
+					<ul class="copyright">
+						<li>&copy; All rights reserved</li>
+						<li>Design: HTML5 UP</li>
+					</ul>
+				</div>
+			</footer>
+
+		</div>
+
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+	</body>
+</html>
